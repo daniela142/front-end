@@ -1,7 +1,9 @@
-import './App.css';
+//import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { SignIn } from './account/SignIn';
+import { SignIn } from './account/components/SignIn';
+import "./account/fonts/MuseoModerno.ttf";
+import "./account/fonts/DMSans.ttf";
 
 
 function App() {
@@ -15,3 +17,4 @@ function App() {
 }
 
 export default App;
+
