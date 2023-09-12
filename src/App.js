@@ -7,6 +7,7 @@ import "./account/fonts/DMSans.ttf";
 // pages
 import { SignIn } from './account/components/SignIn';
 import { Dashboard } from './components/Dashboard';
+import { SignUp } from './account/components/SignUp'
 
 function App() {
   global.route = 'http://localhost:3000';
@@ -16,6 +17,7 @@ function App() {
        <Routes>
         <Route path="/" element={<Dashboard />} ></Route>
         <Route path="/signIn" element={<SignIn />} />
+        <Route path="/signUp" element={<SignUp />} />
         <Route path="/dashboard" element={<Dashboard />} />
        </Routes>
     </Router>
