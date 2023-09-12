@@ -1,16 +1,22 @@
 //import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { SignIn } from './account/components/SignIn';
 import "./account/fonts/MuseoModerno.ttf";
 import "./account/fonts/DMSans.ttf";
 
+// pages
+import { SignIn } from './account/components/SignIn';
+import { Dashboard } from './components/Dashboard';
 
 function App() {
+  global.route = 'http://localhost:3000';
+
   return (
     <Router>
        <Routes>
-         <Route path="/" element={<SignIn />} ></Route>
+        <Route path="/" element={<Dashboard />} ></Route>
+        <Route path="/signIn" element={<SignIn />} />
+        <Route path="/dashboard" element={<Dashboard />} />
        </Routes>
     </Router>
   );
