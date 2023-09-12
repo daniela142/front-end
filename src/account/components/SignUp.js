@@ -9,7 +9,10 @@ import Icon from "../svg/icon";
 export const SignUp = _ => {
     let navigate = useNavigate();
 
-    const [name, setName] = useState("");
+    const [username, setUsername] = useState("");
+    const [firstname, setFirstname] = useState("");
+    const [lastname, setLastname] = useState("");
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -18,7 +21,9 @@ export const SignUp = _ => {
 
         try {
             const response = await axios.post(global.route + `/api/users`, {
-                name: name,
+                username: username,
+                firstname: firstname,
+                lastname: lastname,
                 email: email,
                 password: password
             }, { withCredentials: true });
@@ -36,7 +41,7 @@ export const SignUp = _ => {
                     <div className="user-authentication-input">
                         <label html="email">Email Address</label>
                     <input 
-                        id="email"
+                        id="email2"
                         name="email"
                         type="email"
                         value={email} 
@@ -46,25 +51,35 @@ export const SignUp = _ => {
                     <div className='user-authentication-input'>
                         <label>Username</label>
                         <input
+                            id="username"
                             name="username"
-                            type="text"/>
+                            type="text"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            />
                     </div>
                     <div className='user-authentication-input'>
                         <label>First Name</label>
                         <input
+                            id="firstname"
                             name="firstname"
-                            type="text"/>
+                            type="text"
+                            onChange={(e) => setFirstname(e.target.value)}
+                            />
                     </div>
                     <div className='user-authentication-input'>
                         <label>Last Name</label>
                         <input
+                            id="lastname"
                             name="lastname"
-                            type="text"/>
+                            type="text"
+                            onChange={(e) => setLastname(e.target.value)}
+                            />
                     </div>
                     <div className="user-authentication-input">
                         <label html="password">Password</label>
                         <input 
-                            id="password"
+                            id="password2"
                             name="password"
                             type="password"
                             value={password}
