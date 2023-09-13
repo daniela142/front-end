@@ -27,12 +27,18 @@ export const SignIn = _ => {
         }
     };
 
+    const handleKeypress = e => {
+        if(e.key === "Enter"){
+            SignIn();
+        }
+    };
+
     return(
         <div className="background">
             <div className="primary-box">
                 <div className="title"><h1><Icon/> Académy</h1></div>
                     <div className="user-authentication-input">
-                        <label html="email">Email Address</label>
+                        <label html="email">Email Address/Username</label>
                     <input 
                         id="email"
                         name="email"
@@ -48,9 +54,11 @@ export const SignIn = _ => {
                             name="password"
                             type="password"
                             value={password}
-                            onChange={(e) => setPassword(e.target.value)}/>
+                            onChange={(e) => setPassword(e.target.value)} 
+                            onKeyDown={handleKeypress}/>
                     </div>
                         <button 
+                            style={{cursor: "pointer"}}
                             className="sign-in-button"
                             onSubmit={(e) => handleSubmit(e)}
                             onClick={(e) => handleSubmit(e)}>
@@ -58,7 +66,7 @@ export const SignIn = _ => {
                         </button>
                     
                     <div className='sign-up-text'>
-                        <p>Don't have an account? <a onClick={(e) => navigate("/signUp", {replace: true})}>Sign Up</a></p>
+                        <p>Don't have an account? <text style={{color: "#3592c1", textDecoration: "underline", cursor: "pointer"}} onClick ={(e) => navigate("/signUp", {replace: true})}>Sign Up</text> </p>
                     </div>
             </div>
         </div>
