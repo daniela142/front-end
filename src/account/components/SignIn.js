@@ -55,7 +55,7 @@ export const SignIn = _ => {
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)} 
-                            onKeyDown={handleKeypress}/>
+                            onKeyPress={(e) => handleKeypress(e)}/>
                     </div>
                         <button 
                             style={{cursor: "pointer"}}

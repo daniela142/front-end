@@ -5,6 +5,7 @@ import axios from "axios";
 import "../fonts/font.css"
 import "../style/sign-up.css";
 import Icon from "../svg/icon";
+import Back from "../svg/back";
 
 export const SignUp = _ => {
     let navigate = useNavigate();
@@ -37,6 +38,7 @@ export const SignUp = _ => {
     return(
         <div className="background">
             <div className="primary-box-sign-up">
+                <div> <a href='/SignIn'><button className='back-button'><Back/></button></a></div>
                 <div className="title"><h1><Icon/> Académy</h1></div>
                     <div className="user-authentication-input">
                         <label html="email">Email Address</label>
@@ -58,24 +60,28 @@ export const SignUp = _ => {
                             onChange={(e) => setUsername(e.target.value)}
                             />
                     </div>
-                    <div className='user-authentication-input'>
-                        <label>First Name</label>
-                        <input
-                            id="firstname"
-                            name="firstname"
-                            type="text"
-                            onChange={(e) => setFirstname(e.target.value)}
-                            />
-                    </div>
-                    <div className='user-authentication-input'>
-                        <label>Last Name</label>
-                        <input
-                            id="lastname"
-                            name="lastname"
-                            type="text"
-                            onChange={(e) => setLastname(e.target.value)}
-                            />
-                    </div>
+                    <table className='first-last-name' style={{width: "60px"}}>
+                        <tr>
+                            <td style={{fontSize: '16px'}}>First Name</td>
+                            <td style={{fontSize: '16px'}}>Last Name</td>
+                            </tr>
+                        <tr>
+                            <td><input
+                                id="firstname"
+                                name="firstname"
+                                type="text"
+                                placeholder='John'
+                                onChange={(e) => setFirstname(e.target.value)}
+                                /></td>    
+                            <td><input
+                                id="lastname"
+                                name="lastname"
+                                type="text"
+                                placeholder='Doe'
+                                onChange={(e) => setLastname(e.target.value)}
+                                /></td>
+                        </tr>
+                    </table>
                     <div className="user-authentication-input">
                         <label html="password">Password</label>
                         <input 
