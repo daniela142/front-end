@@ -10,7 +10,7 @@ import { Dashboard } from './components/Dashboard';
 import { SignUp } from './account/components/SignUp'
 
 function App() {
-  global.route = 'http://localhost:3000';
+  global.route = 'https://testing-system-blush.vercel.app';
 
   return (
     <Router>
