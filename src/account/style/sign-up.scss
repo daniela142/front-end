@@ -26,6 +26,10 @@
         font-family: 'MuseoModerno';
     }
 
+    & .auth-name {
+        display: inline-block;
+    }
+
     & .user-authentication-input{
         font-family: 'DMSans';
         margin-left: 120px;

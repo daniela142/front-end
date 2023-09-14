@@ -42,13 +42,13 @@ export const SignUp = _ => {
                 <div className="title"><h1><Icon/> Académy</h1></div>
                     <div className="user-authentication-input">
                         <label html="email">Email Address</label>
-                    <input 
-                        id="email2"
-                        name="email"
-                        type="email"
-                        value={email} 
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="johndoe@gmail.com"/>
+                        <input 
+                            id="email2"
+                            name="email"
+                            type="email"
+                            value={email} 
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="johndoe@gmail.com"/>
                     </div>
                     <div className='user-authentication-input'>
                         <label>Username</label>
@@ -60,7 +60,29 @@ export const SignUp = _ => {
                             onChange={(e) => setUsername(e.target.value)}
                             />
                     </div>
-                    <table className='first-last-name' style={{width: "60px"}}>
+                    <div className='auth-name user-authentication-input'>
+                        <div>
+                            <label>First Name</label>
+                            <input
+                                id="firstname"
+                                name="firstname"
+                                type="text"
+                                placeholder='John'
+                                onChange={(e) => setFirstname(e.target.value)}
+                                />
+                        </div>
+                        <div>
+                            <label>Last Name</label>
+                            <input
+                                id="lastname"
+                                name="lastname"
+                                type="text"
+                                placeholder='Doe'
+                                onChange={(e) => setLastname(e.target.value)}
+                                />
+                        </div>
+                    </div>
+                    {/* <table className='first-last-name' style={{width: "60px"}}>
                         <tr>
                             <td style={{fontSize: '16px'}}>First Name</td>
                             <td style={{fontSize: '16px'}}>Last Name</td>
@@ -81,7 +103,7 @@ export const SignUp = _ => {
                                 onChange={(e) => setLastname(e.target.value)}
                                 /></td>
                         </tr>
-                    </table>
+                    </table> */}
                     <div className="user-authentication-input">
                         <label html="password">Password</label>
                         <input 

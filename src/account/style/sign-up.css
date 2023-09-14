@@ -23,6 +23,9 @@
   margin-right: auto;
   font-family: "MuseoModerno";
 }
+.primary-box-sign-up .auth-name {
+  display: inline-block;
+}
 .primary-box-sign-up .user-authentication-input {
   font-family: "DMSans";
   margin-left: 120px;
