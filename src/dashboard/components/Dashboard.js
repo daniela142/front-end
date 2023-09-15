@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../style/dashboard.css";
-import { SearchBar } from "../components/searchbar";
+import { SearchBar } from "./searchbar";
 
 export const Dashboard = _ => {
     let navigate = useNavigate();
@@ -41,6 +41,13 @@ export const Dashboard = _ => {
                         Sign out
                     </button>
                 </div>
+            <div className="search">
+                    <SearchBar/>
+            </div>
+            <div>
+            
+            </div>
+            
              </div>
     );
 }
