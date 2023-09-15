@@ -1,64 +1,62 @@
 .background {
-  width: 100%;
-  height: 100%;
-  background-color: #F5F5F5;
-  position: fixed;
+  height: 100vh;
+  background-color: #f5f5f5;
+  position: relative;
 }
 
 .primary-box {
   width: 654px;
   height: 550px;
-  left: 373px;
-  margin-top: 100px;
-  position: relative;
-  display: grid;
   background-color: rgb(255, 255, 255);
   border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
 }
 .primary-box .title {
   height: 20px;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 40px;
+  display: inline;
+  text-align: center;
   font-family: "MuseoModerno";
 }
 .primary-box .user-authentication-input {
   font-family: "DMSans";
-  margin-left: 150px;
-  margin-top: 40px;
-  text-align: left;
-  height: 0px;
-  width: 350px;
-  display: grid;
+  margin: 0 150px;
+  padding: 0 10px;
 }
 .primary-box input {
+  display: block;
+  width: 100%;
   background-color: #e8e9eb;
   color: #434242 !important;
   border-radius: 10px;
   padding: 14px;
-  margin-top: 8px;
+  margin-top: 4px;
   margin-bottom: 20px;
-  height: 15px;
   font-size: 16px;
   border: none;
 }
 .primary-box .sign-in-button {
-  margin-left: 280px;
-  margin-top: 50px;
+  display: block;
+  margin: auto;
   font-size: 14px;
   font-family: "DMSans";
   height: 40px;
   width: 90px;
   border-radius: 10px;
-  background-color: #D1D0FB;
+  background-color: #d1d0fb;
   border: none;
-  color: #403DED;
-  margin-bottom: 0%;
+  color: #403ded;
 }
 .primary-box .sign-up-text {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
   font-size: 12px;
-  margin-left: 230px;
-  margin-top: -60px;
   height: 20px;
+}
+.primary-box .sign-up-text p {
+  margin: 0;
+  margin-right: 5px;
 }/*# sourceMappingURL=sign-in.css.map */
