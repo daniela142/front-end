@@ -57,6 +57,20 @@
   margin-bottom: 0%;
   cursor: pointer;
 }
+.primary-box-sign-up .next-button {
+  margin-left: 280px;
+  margin-top: 20px;
+  font-size: 14px;
+  font-family: "DMSans";
+  height: 40px;
+  width: 90px;
+  border-radius: 10px;
+  background-color: #D1D0FB;
+  border: none;
+  color: #403DED;
+  margin-bottom: 0%;
+  cursor: pointer;
+}
 
 .box-top {
   display: flex;

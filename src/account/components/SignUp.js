@@ -88,28 +88,6 @@ export const SignUp = (_) => {
             />
           </div>
         </div>
-        {/* <table className='first-last-name' style={{width: "60px"}}>
-                        <tr>
-                            <td style={{fontSize: '16px'}}>First Name</td>
-                            <td style={{fontSize: '16px'}}>Last Name</td>
-                            </tr>
-                        <tr>
-                            <td><input
-                                id="firstname"
-                                name="firstname"
-                                type="text"
-                                placeholder='John'
-                                onChange={(e) => setFirstname(e.target.value)}
-                                /></td>    
-                            <td><input
-                                id="lastname"
-                                name="lastname"
-                                type="text"
-                                placeholder='Doe'
-                                onChange={(e) => setLastname(e.target.value)}
-                                /></td>
-                        </tr>
-                    </table> */}
         <div className="user-authentication-input">
           <label html="password">Password</label>
           <input
@@ -122,11 +100,11 @@ export const SignUp = (_) => {
         </div>
         <div>
           <button
-            className="sign-up-button"
+            className="next-button"
             onSubmit={(e) => handleSubmit(e)}
             onClick={(e) => handleSubmit(e)}
           >
-            Sign Up
+            Next
           </button>
         </div>
       </div>

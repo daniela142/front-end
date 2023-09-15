@@ -31,11 +31,11 @@ export const SignIn = (_) => {
     }
   };
 
-  const handleKeypress = (e) => {
-    if (e.key === "Enter") {
-      SignIn();
-    }
-  };
+    const handleKeypress = async (e) => {
+        if(e.key === "Enter"){
+            handleSubmit(e);
+        }
+    };
 
   return (
     <div className="background">
