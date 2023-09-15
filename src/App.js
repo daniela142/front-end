@@ -6,7 +6,7 @@ import "./account/fonts/DMSans.ttf";
 
 // pages
 import { SignIn } from './account/components/SignIn';
-import { Dashboard } from './components/Dashboard';
+import { Dashboard } from './dashboard/components/Dashboard';
 import { SignUp } from './account/components/SignUp'
 
 function App() {

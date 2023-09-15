@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import "../style/dashboard.css";
+import { SearchBar } from "../components/searchbar";
 
 export const Dashboard = _ => {
     let navigate = useNavigate();
@@ -32,19 +34,13 @@ export const Dashboard = _ => {
 
     return (
         <div className="background">
-            <div className="primary-box">
-                <div className="title">
-                    <h1>Dashboard page</h1>
-                </div>
-
-                <div>
+            <div className="sidebar">
                     <button
-                        className="sign-out-button"
+                        className="next-button"
                         onClick={() => logout()}>
                         Sign out
                     </button>
                 </div>
-            </div>
-        </div>
+             </div>
     );
 }
