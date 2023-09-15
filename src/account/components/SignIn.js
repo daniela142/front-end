@@ -27,9 +27,9 @@ export const SignIn = _ => {
         }
     };
 
-    const handleKeypress = e => {
+    const handleKeypress = async (e) => {
         if(e.key === "Enter"){
-            SignIn();
+            handleSubmit(e);
         }
     };
 

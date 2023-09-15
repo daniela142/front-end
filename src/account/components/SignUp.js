@@ -16,7 +16,7 @@ export const SignUp = _ => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -38,7 +38,7 @@ export const SignUp = _ => {
     return(
         <div className="background">
             <div className="primary-box-sign-up">
-                <div> <a href='/SignIn'><button className='back-button'><Back/></button></a></div>
+                <div> <a><button className='back-button' onClick={(e) => navigate(-1)}><Back/></button></a></div>
                 <div className="title"><h1><Icon/> Académy</h1></div>
                     <div className="user-authentication-input">
                         <label html="email">Email Address</label>
@@ -115,10 +115,10 @@ export const SignUp = _ => {
                     </div>
                     <div>
                         <button 
-                            className="sign-up-button"
+                            className="next-button"
                             onSubmit={(e) => handleSubmit(e)}
                             onClick={(e) => handleSubmit(e)}>
-                            Sign Up
+                            Next
                         </button>
                     </div>
             </div>
