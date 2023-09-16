@@ -1,0 +1,24 @@
+
+
+.course-headings {
+    font-size: 12px;
+    gap: 85px;
+    color: #9BA5B7;
+    height: 40px;
+    display: flex;
+
+    & ul{
+        padding: 0;
+        margin: 0;
+    }
+  
+    & li {
+        font-size: 18px;
+        margin-top: 20px;
+        color: black;
+        min-width: fit-content;
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+  }

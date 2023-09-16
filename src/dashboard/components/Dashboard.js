@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../style/dashboard.css";
 import { SearchBar } from "./searchbar";
+import { CourseBox } from "./courses";
 
 export const Dashboard = _ => {
     let navigate = useNavigate();
@@ -43,11 +44,11 @@ export const Dashboard = _ => {
                 </div>
             <div className="search">
                     <SearchBar/>
+                    <h1 className="name-header"> Hello, </h1>
             </div>
-            <div>
-            
+            <div className="courses-box">
+                <CourseBox/>
             </div>
-            
-             </div>
+            </div>       
     );
 }
