@@ -14,6 +14,12 @@
   text-align: center;
   font-family: "MuseoModerno";
 }
+.primary-box-sign-up .subtitle {
+  font-family: "DMSans";
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+}
 .primary-box-sign-up .auth-name {
   display: flex;
   justify-content: space-between;
@@ -31,6 +37,40 @@
   margin: 0 150px;
   padding: 0 10px;
 }
+.primary-box-sign-up .user-authentication-input-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.primary-box-sign-up .user-select-1 {
+  text-align: "center";
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "DMSans";
+  height: 62px;
+  width: 250px;
+  background-color: #ffffff;
+  border: solid;
+  border-radius: 12px;
+  border-color: #403DED;
+  border-width: 1.5px;
+  cursor: pointer;
+}
+.primary-box-sign-up .user-select-2 {
+  text-align: "center";
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "DMSans";
+  height: 62px;
+  width: 250px;
+  background-color: #ffffff;
+  border: dotted;
+  border-radius: 12px;
+  border-color: #403DED;
+  border-width: 1.5px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
 .primary-box-sign-up input {
   display: block;
   width: 100%;
@@ -43,20 +83,6 @@
   font-size: 16px;
   border: none;
   outline: none;
-}
-.primary-box-sign-up .sign-up-button {
-  margin-left: 280px;
-  margin-top: 20px;
-  font-size: 14px;
-  font-family: "DMSans";
-  height: 40px;
-  width: 90px;
-  border-radius: 10px;
-  background-color: #D1D0FB;
-  border: none;
-  color: #403DED;
-  margin-bottom: 0%;
-  cursor: pointer;
 }
 .primary-box-sign-up .next-button {
   margin-left: 520px;
@@ -104,5 +130,134 @@
   margin-top: 4px;
   font-size: 12px;
   background-color: white;
+  cursor: pointer;
+}
+
+.primary-box-sign-up-2 {
+  width: 654px;
+  height: 745px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+.primary-box-sign-up-2 .title {
+  height: 20px;
+  display: inline;
+  text-align: center;
+  font-family: "MuseoModerno";
+}
+.primary-box-sign-up-2 .subtitle {
+  font-family: "DMSans";
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+.primary-box-sign-up-2 .auth-name {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 150px;
+  padding: 0 10px;
+}
+.primary-box-sign-up-2 .auth-name div:first-child {
+  margin-right: 10px;
+}
+.primary-box-sign-up-2 .auth-name div:last-child {
+  margin-left: 10px;
+}
+.primary-box-sign-up-2 .user-authentication-input {
+  font-family: "DMSans";
+  margin: 0 150px;
+  padding: 0 10px;
+}
+.primary-box-sign-up-2 .user-authentication-input-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.primary-box-sign-up-2 .user-select-1 {
+  text-align: "center";
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "DMSans";
+  height: 62px;
+  width: 250px;
+  background-color: #ffffff;
+  border: solid;
+  border-radius: 12px;
+  border-color: #403DED;
+  border-width: 1.5px;
+  cursor: pointer;
+}
+.primary-box-sign-up-2 .user-select-1-selected {
+  text-align: "center";
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "DMSans";
+  height: 62px;
+  width: 250px;
+  background-color: #403DED;
+  border: solid;
+  border-radius: 12px;
+  border-color: #403DED;
+  border-width: 1.5px;
+  cursor: pointer;
+}
+.primary-box-sign-up-2 .user-select-2 {
+  text-align: "center";
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "DMSans";
+  height: 62px;
+  width: 250px;
+  background-color: #ffffff;
+  border: dotted;
+  border-radius: 12px;
+  border-color: #403DED;
+  border-width: 1.5px;
+  cursor: pointer;
+}
+.primary-box-sign-up-2 input {
+  display: block;
+  width: 100%;
+  background-color: #e8e9eb;
+  color: #434242 !important;
+  border-radius: 10px;
+  padding: 14px;
+  margin-top: 4px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+}
+.primary-box-sign-up-2 .next-button {
+  margin-left: 520px;
+  margin-top: 40px;
+  font-size: 14px;
+  font-family: "DMSans";
+  height: 40px;
+  width: 90px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: solid;
+  border-color: #403DED;
+  border-width: 1px;
+  color: #403DED;
+  cursor: pointer;
+}
+.primary-box-sign-up-2 .sign-up-button {
+  text-align: "center";
+  font-size: 14px;
+  font-family: "DMSans";
+  height: 48px;
+  width: 113px;
+  border-radius: 10px;
+  background-color: #D1D0FB;
+  border: none;
+  color: #403DED;
+  margin-top: 15px;
   cursor: pointer;
 }/*# sourceMappingURL=sign-up.css.map */
