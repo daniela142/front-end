@@ -24,7 +24,7 @@
 
 .sidebar {
   height: 100%;
-  width: 18%;
+  width: 250px;
   background-color: black;
   color: white;
 }
@@ -34,6 +34,7 @@
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
+  margin-top: 0px;
 }
 
 .name-header {
@@ -42,17 +43,14 @@
   height: -moz-fit-content;
   height: fit-content;
   margin-left: 30px;
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 .courses-box {
-  margin-top: 132px;
-  margin-left: 230px;
-  display: block;
-  position: fixed;
-  height: 300px;
-  width: 700px;
+  margin-top: 15px;
+  margin-left: 15px;
+  display: grid;
+  height: 316px;
+  width: 759px;
   background-color: white;
   padding-left: 20px;
   padding-right: 20px;

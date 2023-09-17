@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../style/dashboard.css";
 import { SearchBar } from "./searchbar";
 import { CourseBox } from "./courses";
+import { TeacherBox } from "./teacherBox";
 
 export const Dashboard = _ => {
     let navigate = useNavigate();
@@ -36,19 +37,28 @@ export const Dashboard = _ => {
     return (
         <div className="background">
             <div className="sidebar">
-                    <button
-                        className="next-button"
-                        onClick={() => logout()}>
-                        Sign out
-                    </button>
+                <button
+                    className="next-button"
+                    onClick={() => logout()}>
+                    Sign out
+                </button>
+            </div>
+            
+            <div style={{width: "100%"}}>
+                <div className="search">
+                    <SearchBar />
+
+                    <h1 className="name-header"> Hello, {user.firstname}</h1>
                 </div>
-            <div className="search">
-                    <SearchBar/>
-                    <h1 className="name-header"> Hello, </h1>
+                <div className="courses-box" >
+                    {user.isTeacher ? <TeacherBox/> :
+                        <CourseBox/>
+                    }
+                </div>
+                <div className="courses-box" >
+                    <CourseBox/>
+                </div>
             </div>
-            <div className="courses-box">
-                <CourseBox/>
-            </div>
-            </div>       
+        </div>       
     );
 }
