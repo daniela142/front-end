@@ -2,11 +2,9 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../style/dashboard.css";
 import { SearchBar } from "./searchbar";
+import { TeacherSummary } from "./teacherBox";
 
-import { StudentComponents } from "./StudentComponents";
-import { TeacherComponents } from "./TeacherComponents";
-
-export const Dashboard = _ => {
+export const TeacherSummary = _ => {
     let navigate = useNavigate();
 
     const user = JSON.parse(localStorage.getItem("User"));
@@ -51,10 +49,9 @@ export const Dashboard = _ => {
 
                     <h1 className="name-header"> Hello, {user.firstname}</h1>
                 </div>
-                
-                {user.isTeacher ? <TeacherComponents/> :
-                    <StudentComponents/>
-                }
+                <div className="courses-box" >
+                    <TeacherBox />
+                </div>
             </div>
         </div>       
     );

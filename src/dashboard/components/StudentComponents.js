@@ -2,11 +2,10 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../style/dashboard.css";
 import { SearchBar } from "./searchbar";
+import { CourseBox } from "./courses";
+import { TeacherBox } from "./teacherBox";
 
-import { StudentComponents } from "./StudentComponents";
-import { TeacherComponents } from "./TeacherComponents";
-
-export const Dashboard = _ => {
+export const StudentComponents = _ => {
     let navigate = useNavigate();
 
     const user = JSON.parse(localStorage.getItem("User"));
@@ -36,25 +35,9 @@ export const Dashboard = _ => {
     };
 
     return (
-        <div className="background">
-            <div className="sidebar">
-                <button
-                    className="next-button"
-                    onClick={() => logout()}>
-                    Sign out
-                </button>
-            </div>
-            
-            <div style={{width: "100%"}}>
-                <div className="search">
-                    <SearchBar />
-
-                    <h1 className="name-header"> Hello, {user.firstname}</h1>
-                </div>
-                
-                {user.isTeacher ? <TeacherComponents/> :
-                    <StudentComponents/>
-                }
+        <div>
+            <div className="courses-box" >
+                <CourseBox />
             </div>
         </div>       
     );
