@@ -1,6 +1,7 @@
 import React from "react";
 import "../style/courses.css";
 import "../fonts/font.css";
+import "../style/teacherbox.css"
 
 export const TeacherBox = () => {
     return(
@@ -10,8 +11,7 @@ export const TeacherBox = () => {
                 </div>
                 <div className="course-headings">
                 
-                    <div style={{ width: "287px", height: "95px", marginLeft: "34px", background: "#EDFBF7", borderRadius: "12px", borderStyle: "solid", borderWidth: "1px", borderColor: "#0D6047"}}>
-                    
+                    <div className="teacher-box">
                         <label style={{ }}> Active Courses </label>
                     </div>
                 </div>

@@ -36,6 +36,7 @@
   margin-bottom: 20px;
   font-size: 16px;
   border: none;
+  outline: none;
 }
 .primary-box .sign-in-button {
   display: block;

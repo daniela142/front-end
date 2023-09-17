@@ -110,4 +110,39 @@ export const SignUp = (_) => {
       </div>
     </div>
   );
+
+//   const nextAction = _ => {
+//     try{
+//         // Check if the required fields are filled
+//         if(!email || !password || !firstname || !lastname)
+//             return alert("Please fill in all fields!");
+//         // Check if the password is at least 8 characters
+//         if(password.length < 8)
+//             return alert("Password must be at least 8 characters long!");
+
+//         // Send a POST request to the server to validate the user's email and username
+//         fetch("/api/authenticateuser", {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json"
+//             },
+//             body: JSON.stringify({
+//                 username: userInput.username,
+//                 email: userInput.email
+//             })
+//         })
+//             .then((res) => {return res.json(); })
+//             .then((data) => {
+//                 if(!data.status){
+//                     alert(data.message);
+//                 }else{
+//                     // Proceed to Step 2
+//                     document.getElementById("step1").style.display = "none";
+//                     document.getElementById("step2").style.display = "block";
+//                 }
+//             });
+//     }catch(error){
+//         return alert(error);
+//     }
+// };
 };
