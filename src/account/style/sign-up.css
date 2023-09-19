@@ -8,40 +8,48 @@
   right: 50%;
   transform: translate(50%, -50%);
 }
+
 .primary-box-sign-up .title {
   height: 20px;
   display: inline;
   text-align: center;
   font-family: "MuseoModerno";
 }
+
 .primary-box-sign-up .subtitle {
   font-family: "DMSans";
   text-align: center;
   font-size: 24px;
   font-weight: 500;
 }
+
 .primary-box-sign-up .auth-name {
   display: flex;
   justify-content: space-between;
   margin: 0 150px;
   padding: 0 10px;
 }
+
 .primary-box-sign-up .auth-name div:first-child {
   margin-right: 10px;
 }
+
 .primary-box-sign-up .auth-name div:last-child {
   margin-left: 10px;
 }
+
 .primary-box-sign-up .user-authentication-input {
   font-family: "DMSans";
   margin: 0 150px;
   padding: 0 10px;
 }
+
 .primary-box-sign-up .user-authentication-input-2 {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .primary-box-sign-up .user-select-1 {
   text-align: "center";
   font-size: 20px;
@@ -56,6 +64,7 @@
   border-width: 1.5px;
   cursor: pointer;
 }
+
 .primary-box-sign-up .user-select-2 {
   text-align: "center";
   font-size: 20px;
@@ -71,6 +80,7 @@
   margin-bottom: 15px;
   cursor: pointer;
 }
+
 .primary-box-sign-up input {
   display: block;
   width: 100%;
@@ -84,6 +94,7 @@
   border: none;
   outline: none;
 }
+
 .primary-box-sign-up .next-button {
   margin-left: 520px;
   margin-top: 40px;
@@ -107,6 +118,7 @@
   margin-top: 30px;
   margin-left: 20px;
 }
+
 .box-top a {
   margin: 0;
   padding: 0;
@@ -143,40 +155,48 @@
   right: 50%;
   transform: translate(50%, -50%);
 }
+
 .primary-box-sign-up-2 .title {
   height: 20px;
   display: inline;
   text-align: center;
   font-family: "MuseoModerno";
 }
+
 .primary-box-sign-up-2 .subtitle {
   font-family: "DMSans";
   text-align: center;
   font-size: 24px;
   font-weight: 500;
 }
+
 .primary-box-sign-up-2 .auth-name {
   display: flex;
   justify-content: space-between;
   margin: 0 150px;
   padding: 0 10px;
 }
+
 .primary-box-sign-up-2 .auth-name div:first-child {
   margin-right: 10px;
 }
+
 .primary-box-sign-up-2 .auth-name div:last-child {
   margin-left: 10px;
 }
+
 .primary-box-sign-up-2 .user-authentication-input {
   font-family: "DMSans";
   margin: 0 150px;
   padding: 0 10px;
 }
+
 .primary-box-sign-up-2 .user-authentication-input-2 {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .primary-box-sign-up-2 .user-select-1 {
   text-align: "center";
   font-size: 20px;
@@ -191,6 +211,7 @@
   border-width: 1.5px;
   cursor: pointer;
 }
+
 .primary-box-sign-up-2 .user-select-1-selected {
   text-align: "center";
   color: white;
@@ -206,6 +227,7 @@
   border-width: 1.5px;
   cursor: pointer;
 }
+
 .primary-box-sign-up-2 .user-select-2 {
   text-align: "center";
   font-size: 20px;
@@ -220,6 +242,7 @@
   border-width: 1.5px;
   cursor: pointer;
 }
+
 .primary-box-sign-up-2 input {
   display: block;
   width: 100%;
@@ -233,6 +256,7 @@
   border: none;
   outline: none;
 }
+
 .primary-box-sign-up-2 .next-button {
   margin-left: 520px;
   margin-top: 40px;
@@ -248,10 +272,12 @@
   color: #403DED;
   cursor: pointer;
 }
+
 .primary-box-sign-up-2 .sign-up-button {
   text-align: "center";
-  font-size: 14px;
+  font-size: 16px;
   font-family: "DMSans";
+  font-weight: 500;
   height: 48px;
   width: 113px;
   border-radius: 10px;
@@ -260,4 +286,25 @@
   color: #403DED;
   margin-top: 15px;
   cursor: pointer;
-}/*# sourceMappingURL=sign-up.css.map */
+}
+
+.sign-up-button-disabled {
+  text-align: "center";
+  font-size: 16px;
+  font-family: "DMSans";
+  font-weight: 500;
+  height: 48px;
+  width: 113px;
+  background-color: rgba(209, 208, 251, 0.5);
+
+  color: white;
+  margin-top: 15px;
+  cursor: pointer;
+
+  border: solid;
+  border-radius: 12px;
+  border-color: rgba(209, 208, 251, 1);
+  border-width: 1.5px;
+}
+
+/*# sourceMappingURL=sign-up.css.map */

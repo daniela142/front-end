@@ -80,11 +80,23 @@
         width: 570px;
         height: 57px;
         border-radius: 10px;
-        background-color: #FAFAFF;
-        box-shadow: rgba(0, 0, 0, 0.10) 0px 14px 20px 0px;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0) 0px;
 
         display: flex;
         align-items: center;
+    }
+
+    & .class-container:hover {
+        margin-left: 60px;
+            width: 570px;
+            height: 57px;
+            border-radius: 10px;
+            background-color: #FAFAFF;
+            box-shadow: rgba(0, 0, 0, 0.10) 0px 14px 20px 0px;
+        
+            display: flex;
+            align-items: center;
     }
 
     & .class-heading {

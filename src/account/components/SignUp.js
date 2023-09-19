@@ -25,6 +25,12 @@ export const SignUp = (_) => {
       document.getElementById("admin").className = "user-select-2";
 
       document.getElementById(usertype).className = "user-select-1-selected";
+
+      if(usertype) {
+        document.getElementById("sign-up").className = "sign-up-button";
+      } else {
+        document.getElementById("sign-up").className = "sign-up-button-disabled";
+      }
     }
   });
   
@@ -175,7 +181,8 @@ export const SignUp = (_) => {
         <div className="user-authentication-input-2">
           <div>
             <button
-              className="sign-up-button"
+              id="sign-up"
+              className="sign-up-button-disabled"
               onSubmit={(e) => createAccount(e)}
               onClick={(e) => createAccount(e)}
             >
