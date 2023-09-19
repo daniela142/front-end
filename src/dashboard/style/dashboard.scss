@@ -45,4 +45,22 @@
 
 }
 
-  
+.scroll-box {
+    position: relative;
+    width: 100%;
+    height: 68%;
+    overflow: hidden;
+}
+
+.scroll-box__wrapper {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.scroll-box__container {
+    height: 100%;
+    flex-direction: column;
+    display: inline-flex;
+}

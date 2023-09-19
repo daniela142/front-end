@@ -1,4 +1,5 @@
 import React from "react";
+import "../../style/dashboard.css"
 import "../../style/assessments.css";
 import "../../fonts/font.css";
 
@@ -15,8 +16,16 @@ export const Assessments = () => {
                 <label className="assessment-h3">Time</label>
             </div>
 
-            <AssessmentItem/>
-            <AssessmentItem/>
+            <div className="scroll-box">
+                <div className="scroll-box__wrapper">
+                    <div className="scroll-box__container" role="list">
+                        <AssessmentItem />
+                        <AssessmentItem />
+                        <AssessmentItem />
+                        <AssessmentItem />
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

@@ -1,10 +1,12 @@
 import React from "react";
+import "../../style/dashboard.css";
 import "../../style/courses.css";
 import "../../fonts/font.css";
 
 import { CourseItem } from "./courseItem";
 
 export const Courses = () => {
+
     return (
         <div className="courses-box">
             <label className="course-title">Courses</label>
@@ -17,9 +19,20 @@ export const Courses = () => {
                 <label className="course-h5">Average</label>
             </div>
             
-            <CourseItem/>
-            <CourseItem />
-            <CourseItem />
+            
+
+            <div className="scroll-box">
+                <div className="scroll-box__wrapper">
+                    <div className="scroll-box__container" role="list">
+                        <CourseItem />
+                        <CourseItem />
+                        <CourseItem />
+                        <CourseItem />
+                        <CourseItem />
+                        <CourseItem />
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

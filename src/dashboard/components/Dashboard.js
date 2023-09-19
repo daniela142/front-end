@@ -35,6 +35,17 @@ export const Dashboard = _ => {
         }
     };
 
+    function loadComponents() {
+        if (user.usertype == "teacher") {
+            return <TeacherComponents/>
+        } else if (user.usertype == "admin") { 
+            return <TeacherComponents/>
+        } else {
+            return <StudentComponents/>
+        }
+
+    }
+
     return (
         <div className="background">
             <div className="sidebar">
@@ -44,19 +55,18 @@ export const Dashboard = _ => {
                     Sign out
                 </button>
             </div>
-            
-            <div style={{width: "100%"}}>
+
+            <div style={{ width: "100%" }}>
                 <div className="search">
                     <SearchBar />
 
                     <h1 className="name-header"> Hello, {user.firstname}</h1>
                 </div>
-                
-                {user.usertype = "student" ? <StudentComponents/> :
-                    <TeacherComponents/> ? user.usertype = "admin" :
-                    <TeacherComponents/>
+
+                {
+                loadComponents()
                 }
             </div>
-        </div>       
+        </div>
     );
 }
