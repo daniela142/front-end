@@ -1,7 +1,7 @@
 import React from "react";
-import "../style/courses.css";
-import "../fonts/font.css";
-import "../style/teacherbox.css"
+import "../../style/courses.css";
+import "../../fonts/font.css";
+import "../../style/teacherbox.css"
 
 export const TeacherBox = () => {
     return(

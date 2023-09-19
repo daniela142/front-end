@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "../style/dashboard.css";
-import { SearchBar } from "./searchbar";
-import { CourseBox } from "./courses";
-import { TeacherBox } from "./teacherBox";
+import "../../style/dashboard.css";
+import { TeacherBox } from "./summary";
 
 export const TeacherComponents = _ => {
     return (

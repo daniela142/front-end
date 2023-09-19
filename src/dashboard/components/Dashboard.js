@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import "../style/dashboard.css";
 import { SearchBar } from "./searchbar";
 
-import { StudentComponents } from "./StudentComponents";
-import { TeacherComponents } from "./TeacherComponents";
+import { StudentComponents } from "./student/StudentComponents";
+import { TeacherComponents } from "./teacher/TeacherComponents";
 
 export const Dashboard = _ => {
     let navigate = useNavigate();
@@ -52,8 +52,9 @@ export const Dashboard = _ => {
                     <h1 className="name-header"> Hello, {user.firstname}</h1>
                 </div>
                 
-                {user.isTeacher ? <TeacherComponents/> :
-                    <StudentComponents/>
+                {user.usertype = "student" ? <StudentComponents/> :
+                    <TeacherComponents/> ? user.usertype = "admin" :
+                    <TeacherComponents/>
                 }
             </div>
         </div>       

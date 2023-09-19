@@ -1,0 +1,115 @@
+.assessments-box {
+    margin-top: 15px;
+    margin-left: 15px;
+    height: 316px;
+    width: 759px;
+
+    background-color: white;
+    padding-left: 24px;
+    padding-right: 20px;
+    border-radius: 20px;
+
+    & .course-title {
+        padding-top: 15px;
+        font-size: 26px;
+        font-weight: 500;
+
+        display: flex;
+    }
+
+    & .headings {
+        display: flex;
+        align-items: center;
+    }
+
+    & .assessment-h1 {
+        font-size: 10px;
+        color: #9BA5B7;
+        margin-top: 15px;
+        margin-left: 8px;
+        height: 16px;
+    }
+
+    & .assessment-h2 {
+        font-size: 10px;
+        color: #9BA5B7;
+        margin-top: 15px;
+        margin-left: 101px;
+        height: 16px;
+    }
+
+    & .assessment-h3 {
+        font-size: 10px;
+        color: #9BA5B7;
+        margin-top: 15px;
+        margin-left: 372px;
+        height: 16px;
+    }
+
+    & .assessment-item {
+        margin-top: 7px;
+        margin-left: 8px;
+        height: 63px;
+        width: 100%;
+        text-align: justify;
+
+        display: flex;
+        align-items: center;
+
+    }
+
+    & .date-container {
+        height: 48px;
+        width: 91px;
+    }
+
+    & .date-1 {
+        font-size: 10px;
+        color: #9BA5B7;
+        text-align: center;
+    }
+
+    & .date-2 {
+        font-size: 18px;
+        color: black;
+        font-weight: 700;
+    }
+
+    & .class-container {
+        margin-left: 60px;
+        width: 570px;
+        height: 57px;
+        border-radius: 10px;
+        background-color: #FAFAFF;
+        box-shadow: rgba(0, 0, 0, 0.10) 0px 14px 20px 0px;
+
+        display: flex;
+        align-items: center;
+    }
+
+    & .class-heading {
+        font-size: 12px;
+        font-weight: 500;
+        color: black;
+    }
+
+    & .class-sub {
+        font-size: 11px;
+        color: #9BA5B7;
+    }
+
+    & .time-container {
+        margin-left: 190px;
+        width: 100px;
+        height: 24px;
+        border-radius: 11px;
+        background-color: #E7E7FF;
+        text-align: center;
+    }
+
+    & .time-heading {
+        font-size: 9px;
+        font-weight: 700;
+        width: 200px;
+    }
+}

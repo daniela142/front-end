@@ -1,24 +1,115 @@
+.courses-box {
+    margin-left: 15px;
+    height: 316px;
+    width: 759px;
 
+    background-color: white;
+    padding-left: 24px;
+    padding-right: 20px;
+    border-radius: 20px;
 
-.course-headings {
-    font-size: 12px;
-    gap: 85px;
-    color: #9BA5B7;
-    height: 40px;
-    display: flex;
+    & .course-title {
+        padding-top: 15px;
+        font-size: 26px;
+        font-weight: 500;
 
-    & ul{
-        padding: 0;
-        margin: 0;
-    }
-  
-    & li {
-        font-size: 18px;
-        margin-top: 20px;
-        color: black;
-        min-width: fit-content;
         display: flex;
-        height: 100%;
+    }
+
+    & .headings {
+        display: flex;
         align-items: center;
     }
-  }
+
+    & .course-h1 {
+        font-size: 10px;
+        color: #9BA5B7;
+        margin-top: 15px;
+        margin-left: 8px;
+        height: 16px;
+    }
+
+    & .course-h2 {
+        font-size: 10px;
+        color: #9BA5B7;
+        margin-top: 15px;
+        margin-left: 258px;
+        height: 16px;
+    }
+
+    & .course-h3 {
+        font-size: 10px;
+        color: #9BA5B7;
+        margin-top: 15px;
+        margin-left: 52px;
+        height: 16px;
+    }
+
+    & .course-h4 {
+        font-size: 10px;
+        color: #9BA5B7;
+        margin-top: 15px;
+        margin-left: 56px;
+        height: 16px;
+    }
+
+    & .course-h5 {
+        font-size: 10px;
+        color: #9BA5B7;
+        margin-top: 15px;
+        margin-left: 62px;
+        height: 16px;
+    }
+
+    & .course-item {
+        margin-left: 8px;
+        margin-top: 7px;
+        height: 63px;
+        flex: 1;
+        text-align: justify;
+
+        display: flex;
+        align-items: center;
+    }
+
+    & .course-icon {
+        height: 63px;
+        width: 63px;
+        border-radius: 12px;
+
+        display: inline-block;
+        vertical-align: top;
+
+        background-color: #FDEEE4;
+    }
+
+    & .course-name {
+        font-size: 14px;
+        font-weight: 500px;
+        letter-spacing: -0.24px;
+        margin-left: 13px;
+        margin-right: 60px;
+        width: 187px;
+    }
+
+    & .course-tests {
+        font-size: 28px;
+        font-weight: 700px;
+        font-family: 'MuseoModerno';
+        margin-right: 114px;
+    }
+
+    & .course-ranking {
+        font-size: 28px;
+        font-weight: 700px;
+        font-family: 'MuseoModerno';
+        margin-right: 78px;
+    }
+
+    & .course-grade {
+        font-size: 28px;
+        font-weight: 700px;
+        font-family: 'MuseoModerno';
+        margin-right: 58px;
+    }
+}
