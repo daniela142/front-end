@@ -288,4 +288,22 @@
         cursor: pointer;
 
     }
+
+    .sign-up-button-disabled {
+        text-align: "center";
+        font-size: 16px;
+        font-family: "DMSans";
+        font-weight: 500;
+        height: 48px;
+        width: 113px;
+        background-color: rgba(209, 208, 251, 0.5);
+
+        color: white;
+        margin-top: 15px;
+
+        border: solid;
+        border-radius: 12px;
+        border-color: rgba(209, 208, 251, 1);
+        border-width: 1.5px;
+    }
 }

@@ -18,7 +18,7 @@ export const Dashboard = _ => {
             navigate("/signIn");
         }
     }, []);
-    
+
     function loadComponents() {
         if (user.usertype == "teacher") {
             return <TeacherComponents/>
@@ -33,16 +33,18 @@ export const Dashboard = _ => {
         <div className="background">
             <SideBar/>
 
-            <div style={{ width: "100%" }}>
+            <div style={{ width: "100%", marginLeft: "250px" }}>
                 <div className="search">
                     <SearchBar />
 
                     <h1 className="name-header"> Hello, {user.firstname}</h1>
                 </div>
 
-                {
-                loadComponents()
-                }
+                <div>
+                    {
+                        loadComponents()
+                    }
+                </div>
             </div>
         </div>
     );

@@ -73,7 +73,7 @@ export const SideBar = () => {
             <div style={{ display: "flex", marginTop: "35px", marginLeft: "37px" }}>
                 
                 <SettingsIcon />
-                <div style={{ marginLeft: "-4px", marginTop: "1px" }}>
+                <div style={{ marginLeft: "-5px", marginTop: "1px" }}>
                     <label className="sidebar-subh">Settings</label>
                 </div>
             </div>
