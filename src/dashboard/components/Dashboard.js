@@ -5,6 +5,7 @@ import { SearchBar } from "./searchbar";
 
 import { StudentComponents } from "./student/StudentComponents";
 import { TeacherComponents } from "./teacher/TeacherComponents";
+import { SideBar } from "./sidebar";
 
 export const Dashboard = _ => {
     let navigate = useNavigate();
@@ -17,24 +18,7 @@ export const Dashboard = _ => {
             navigate("/signIn");
         }
     }, []);
-
-    const logout = async () => {
-        try {
-            const response = await fetch(global.route + `/api/users/logout`, {
-                method: "POST",
-                credentials: "include",
-                headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json",
-                },
-            });
-            localStorage.removeItem("User");
-            navigate("/signIn");
-        } catch (err) {
-            //console.log(err);
-        }
-    };
-
+    
     function loadComponents() {
         if (user.usertype == "teacher") {
             return <TeacherComponents/>
@@ -43,18 +27,11 @@ export const Dashboard = _ => {
         } else {
             return <StudentComponents/>
         }
-
     }
 
     return (
         <div className="background">
-            <div className="sidebar">
-                <button
-                    className="next-button"
-                    onClick={() => logout()}>
-                    Sign out
-                </button>
-            </div>
+            <SideBar/>
 
             <div style={{ width: "100%" }}>
                 <div className="search">

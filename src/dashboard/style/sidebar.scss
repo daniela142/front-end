@@ -1,3 +1,30 @@
-.back{
-    color: black;
+.sidebar {
+    height: 100%;
+    width: 250px;
+    padding-top: 40px;
+    text-align: center;
+    background-color: black;
+    color: white;
+
+    & .sidebar-h {
+        margin-left: 4px;
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: 0.48px;
+        height: 54.54px;
+        display: inline;
+        text-align: center;
+        font-family: "MuseoModerno";
+    }
+
+    & .subh-container {
+        margin-top: -3px;
+    }
+
+    & .sidebar-subh {
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0.32px;
+        margin-left: 26px;
+    }
 }
