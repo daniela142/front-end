@@ -23,10 +23,12 @@
 }
 
 .search{
-    display: grid;
-    height: fit-content;
+    //display: grid;
+    //height: fit-content;
     width: 100%;
     margin-top: 0px;
+    display: inline;
+    height: fit-content;
 }
 
 .name-header{
@@ -36,6 +38,14 @@
     margin-left: 30px;
     //width: 100%;
 
+}
+
+.profile-head {
+    // display: block;
+    // width: fit-content;
+    // margin-left: none;
+    // float: right;
+    gap: "16px";
 }
 
 .scroll-box {

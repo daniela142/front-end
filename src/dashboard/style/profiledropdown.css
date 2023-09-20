@@ -1,0 +1,29 @@
+.profile-header {
+  margin-left: 16px;
+  margin-top: 10px;
+  display: flex;
+  background-color: #f5f5f5;
+  padding-top: 5px;
+  width: 180px;
+  margin-right: 40px;
+  height: 50px;
+  position: relative;
+}
+
+.profile-in {
+  font-size: 20px;
+  color: white;
+  background-color: #000000;
+  width: 40px;
+  height: 40px;
+  line-height: 10%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+  text-transform: uppercase;
+  -webkit-text-size-adjust: auto;
+     -moz-text-size-adjust: auto;
+          text-size-adjust: auto;
+}/*# sourceMappingURL=profiledropdown.css.map */
