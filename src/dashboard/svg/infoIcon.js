@@ -1,0 +1,8 @@
+import * as React from "react";
+const SVGComponent = (props) => (
+    <svg width="63" height="63" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="63" height="63" rx="12" fill="#E3F4FF"/>
+        <path d="M15.7146 32.6108V29.6562L25.9987 25.3381V28.5696L19.2089 31.1051L19.3155 30.9489V31.3253L19.2089 31.1619L25.9987 33.7045V36.929L15.7146 32.6108ZM35.3201 21.7727L30.6326 39.1875H27.671L32.3585 21.7727H35.3201ZM47.2765 32.6108L36.9924 36.929V33.7045L43.7822 31.1619L43.6828 31.3253V30.9489L43.7822 31.1051L36.9924 28.5696V25.3381L47.2765 29.6562V32.6108Z" fill="#5792D8"/>
+    </svg>
+);
+export default SVGComponent;
