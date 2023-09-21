@@ -14,23 +14,6 @@ import SettingsIcon from "../svg/sidebar/settingsIcon";
 export const SideBar = () => {
     let navigate = useNavigate();
 
-    const logout = async () => {
-        try {
-            const response = await fetch(global.route + `/api/users/logout`, {
-                method: "POST",
-                credentials: "include",
-                headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json",
-                },
-            });
-            localStorage.removeItem("User");
-            navigate("/signIn");
-        } catch (err) {
-            //console.log(err);
-        }
-    };
-
     return (
         <div className="sidebar">
             <div style={{ display: "flex", marginLeft: "29px" }}>
@@ -77,12 +60,6 @@ export const SideBar = () => {
                     <label className="sidebar-subh">Settings</label>
                 </div>
             </div>
-
-            <button
-                className="next-button"
-                onClick={() => logout()}>
-                Sign out
-            </button>
         </div>
     );
 }

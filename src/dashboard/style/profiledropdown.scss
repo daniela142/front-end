@@ -3,7 +3,7 @@
 .menu-trigger div {
     position: absolute;
     top: 10px;
-    right: 120px;
+    right: 128px;
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -37,14 +37,17 @@
 
 .profile-name {
     position: absolute;
-    top: -7px;
+    top: -8px;
     right: 52px;
+    width: 65px;
 }
 
 .profile-type {
+    width: 65px;
+
     position: absolute;
-    top: 11px;
-    right: 66px;
+    top: 10px;
+    right: 51px;
 
     color: #0A043C;
     font-weight: 400;
@@ -113,10 +116,11 @@
 .dropdownItem a {
     opacity: 0.75;
     transition: 100ms;
+    color: #ff0000;
 }
 
 .dropdownItem:hover .child {
     opacity: 1;
     cursor: pointer;
-    color: black;
+    color: #ff0000;
 }
