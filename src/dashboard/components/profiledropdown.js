@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../style/profiledropdown.css";
 import DownArrow from "../svg/downArrow";
 import LogOut from "../svg/logOut";
@@ -6,17 +6,40 @@ import LogOut from "../svg/logOut";
 import { useNavigate } from "react-router-dom";
 
 export const ProfileMenu = () => {
-    let navigate = useNavigate(); 
+    let navigate = useNavigate();
+
+    const user = JSON.parse(localStorage.getItem("User"));
 
     const [dropdownStatus, setDropdownStatus] = useState(false);
-    const [hoveredMenu, setHoveredMenu] = useState("");
+    let menuref = useRef();
 
-    const profileDropwdownAction = (_) => {
-        setDropdownStatus(!dropdownStatus);
-    };
+    useEffect(() => {
+        let handler = (e) => {
+            if (!menuref.current.contains(e.target)) {
+                setDropdownStatus(false);
+            }
+        }
+
+        document.addEventListener("mousedown", handler);
+
+        return () => {
+            document.removeEventListener("mousedown", handler);
+        }
+    })
+
+    function LogoutButton() {
+        return (
+            <li className='dropdownItem' onClick={() => logout()}>
+                <div className='child'>
+                    <LogOut />
+                </div>
+                <a className='child'> Log out</a>
+            </li>
+        )
+    }
 
     const logout = async () => {
-      
+
         try {
             const response = await fetch(global.route + `/api/users/logout`, {
                 method: "POST",
@@ -33,46 +56,21 @@ export const ProfileMenu = () => {
         }
     };
 
-    const user = JSON.parse(localStorage.getItem("User"));
     return (
-        <div className="profile-header">
-            <div className="profile-in">{user.firstname.charAt(0)}</div>
-            <div>
-                <h4
-                    style={{
-                        color: "#0A043C",
-                        marginLeft: "50px",
-                        marginTop: "3px",
-                        marginBottom: "0",
-        
-                    }}
-                >
-                    {user.firstname} {user.lastname.charAt(0)} 
-                </h4>
-                
-                <h6
-                    style={{
-                        color: "#0A043C",
-                        marginLeft: "50px",
-                        marginTop: "2px",
-                        marginBottom: "0",
-                        fontWeight: "500px",
-                    }}
-                >
-                    Student 
-                </h6>
-                <div className="down-arrow-position"><button className="down-arrow-button" onClick={profileDropwdownAction}><DownArrow />
-                
-                
-                { dropdownStatus &&
-                // Render the dropdown menu content if the menu status is open
-                <div className="profile-dropdown-menu"> 
-                <button className="log-out-button" onClick={() => logout()}> <LogOut/> Log Out</button>
-                </div>}
-                
-                </button> </div>
+        <div className="menu-container" ref={menuref}>
+            <div className="menu-trigger" onClick={() => { setDropdownStatus(!dropdownStatus) }}>
+                <div className="profile-in">{user.firstname.charAt(0)}</div>
 
-               
+                <h4 className="profile-name"> {user.firstname} {user.lastname.charAt(0)} </h4>
+                <h6 className="profile-type"> Student</h6>
+
+                <button className="profile-arrow">
+                    <DownArrow />
+                </button>
+            </div>
+
+            <div className={`dropdown-menu ${dropdownStatus ? 'active' : 'inactive'}`}>
+                <LogoutButton />
             </div>
         </div>
     );

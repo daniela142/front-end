@@ -31,7 +31,6 @@
 }
 
 .name-header {
-  position: relative;
   display: grid;
   height: -moz-fit-content;
   height: fit-content;

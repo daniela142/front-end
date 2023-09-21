@@ -1,72 +1,122 @@
 //@use '../style/searchbar.css';
 
-.profile-header {
-    margin-left: 16px;
-    margin-top: 5px;
-    display: flex;
-    background-color: #f5f5f5;
-    padding-top: 5px;
-    width: 180px;
-    margin-right: 40px;
-    height: 50px;
-    position: relative;
-
-    & .profile-dropdown-menu{
-        border-radius: 12px;
-        background-color: white !important;
-        position: fixed;
-        margin-right: 30px;
-        height: fit-content;
-        width: 100px;
-        margin-top: 25px;
-        margin-bottom: 20px;
-        right: 0px;
-        width: 250px;
-        background-color: transparent;
-
-    }
-
-    & .log-out-button{
-        margin-top: 10px;
-        margin-bottom: 10px;
-        border: none;
-        background-color: white;
-        font-size: 16px;
-        color: #ff0000;
-        cursor: pointer;
-    }
+.menu-trigger div {
+    position: absolute;
+    top: 10px;
+    right: 120px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
 }
 
-
+.menu-trigger:hover {
+    cursor: pointer;
+}
 
 .profile-in {
-    font-size: 20px;
-    color: white;
-    background-color: #000000;
-    width: 40px;
+    //
+    position: absolute;
+    top: 20px;
+    right: 20px;
     height: 40px;
-    line-height: 10%;
+    width: 40px;
     border-radius: 50%;
-    display: flex;
-    position: fixed;
-    justify-content: center;
-    align-items: center;
+    //
+    font-size: 20px;
     font-weight: 300;
     text-transform: uppercase;
-    text-size-adjust: auto;
-}
+    color: white;
+    background-color: #000000;
 
-.down-arrow-position{
     display: flex;
-    position: relative;
-    float: right;
-    margin-right: -40px;
-    margin-top: -22px;
+    justify-content: center;
+    align-items: center;
 }
 
-.down-arrow-button{
+.profile-name {
+    position: absolute;
+    top: -7px;
+    right: 52px;
+}
+
+.profile-type {
+    position: absolute;
+    top: 11px;
+    right: 66px;
+
+    color: #0A043C;
+    font-weight: 400;
+}
+
+.profile-arrow {
     background-color: transparent;
     border: none;
-    
+    position: absolute;
+    top: 25px;
+    right: 15px;
 }
 
+.dropdown-menu {
+    position: absolute;
+    top: 70px; // 70px or 100px
+    right: 10px; // 10px or 20px
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    width: 200px;
+}
+
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: 20px;
+    height: 20px;
+    width: 20px;
+    background: white;
+    transform: rotate(45deg);
+}
+
+.dropdown-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transforM: translateY(0);
+    transition: 100ms ease;
+}
+
+.dropdown-menu.inactive {
+    opacity: 0;
+    visibility: hidden;
+    transforM: translateY(-20px);
+    transition: 100ms ease;
+}
+
+.dropdown-menu ul li {
+    padding: 10px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dropdownItem {
+    display: flex;
+    margin: 10px auto;
+}
+
+.dropdownItem div {
+    max-width: 20px;
+    margin-right: 10px;
+    opacity: 0.75;
+    transition: 100ms;
+}
+
+.dropdownItem a {
+    opacity: 0.75;
+    transition: 100ms;
+}
+
+.dropdownItem:hover .child {
+    opacity: 1;
+    cursor: pointer;
+    color: black;
+}
