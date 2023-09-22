@@ -9,10 +9,11 @@ import { TeacherComponents } from "./teacher/TeacherComponents";
 import { SideBar } from "./sidebar";
 import {TeacherCourses} from "./teacher/TeacherCourses";
 
-export const Dashboard = _ => {
+export const Dashboard = ({page}) => {
     let navigate = useNavigate();
 
     const user = JSON.parse(localStorage.getItem("User"));
+    console.log(page);
 
     useEffect(() => {
         if (user === null) {
@@ -23,8 +24,20 @@ export const Dashboard = _ => {
 
     function loadComponents() {
         if (user.usertype == "teacher") {
-            // return <TeacherComponents/>
-            return <TeacherCourses />
+            if (page === "dashboard") {
+                return <TeacherComponents/>
+            }
+            if (page === "courses") {
+                return <TeacherCourses/>
+            }
+            if (page === "grades") {
+                return null
+            }
+            if (page === "settings") {
+                return null
+            }
+            return <TeacherComponents/>
+            // return <TeacherCourses />
         } else if (user.usertype == "admin") { 
             return <TeacherComponents/>
         } else {
