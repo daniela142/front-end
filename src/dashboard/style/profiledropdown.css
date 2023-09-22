@@ -1,0 +1,119 @@
+.menu-trigger div {
+  position: absolute;
+  top: 10px;
+  right: 128px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.menu-trigger:hover {
+  cursor: pointer;
+}
+
+.profile-in {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: white;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-name {
+  position: absolute;
+  top: -8px;
+  right: 52px;
+  width: 65px;
+}
+
+.profile-type {
+  width: 65px;
+  position: absolute;
+  top: 10px;
+  right: 51px;
+  color: #0A043C;
+  font-weight: 400;
+}
+
+.profile-arrow {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 25px;
+  right: 15px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  width: 200px;
+}
+
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: 20px;
+  height: 20px;
+  width: 20px;
+  background: white;
+  transform: rotate(45deg);
+}
+
+.dropdown-menu.active {
+  opacity: 1;
+  visibility: visible;
+  transforM: translateY(0);
+  transition: 100ms ease;
+}
+
+.dropdown-menu.inactive {
+  opacity: 0;
+  visibility: hidden;
+  transforM: translateY(-20px);
+  transition: 100ms ease;
+}
+
+.dropdown-menu ul li {
+  padding: 10px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dropdownItem {
+  display: flex;
+  margin: 10px auto;
+}
+
+.dropdownItem div {
+  max-width: 20px;
+  margin-right: 10px;
+  opacity: 0.75;
+  transition: 100ms;
+}
+
+.dropdownItem a {
+  opacity: 0.75;
+  transition: 100ms;
+  color: #ff0000;
+}
+
+.dropdownItem:hover .child {
+  opacity: 1;
+  cursor: pointer;
+  color: #ff0000;
+}/*# sourceMappingURL=profiledropdown.css.map */

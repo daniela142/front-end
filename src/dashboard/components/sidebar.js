@@ -42,23 +42,6 @@ export const SideBar = () => {
         }
     }
 
-    const logout = async () => {
-        try {
-            const response = await fetch(global.route + `/api/users/logout`, {
-                method: "POST",
-                credentials: "include",
-                headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json",
-                },
-            });
-            localStorage.removeItem("User");
-            navigate("/signIn");
-        } catch (err) {
-            //console.log(err);
-        }
-    };
-
     return (
         <div className="sidebar">
             <div className="sidebar-logo">

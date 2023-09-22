@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../style/dashboard.css";
 import { SearchBar } from "./searchbar";
+import { ProfileMenu } from './profiledropdown';
 
 import { StudentComponents } from "./student/StudentComponents";
 import { TeacherComponents } from "./teacher/TeacherComponents";
@@ -36,12 +37,13 @@ export const Dashboard = _ => {
             <SideBar/>
 
             <div style={{ width: "100%", marginLeft: "250px" }}>
-                <div className="search">
+
+            
+                <div style={{display:"flex"}}>
                     <SearchBar />
-
-                    <h1 className="name-header"> Hello, {user.firstname}</h1>
+                    <div className="profile-head"><ProfileMenu /></div>
                 </div>
-
+                <h1 className="name-header"> Hello, {user.firstname}</h1>
                 <div>
                     {
                         loadComponents()
