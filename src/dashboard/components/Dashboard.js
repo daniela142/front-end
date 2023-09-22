@@ -6,7 +6,6 @@ import { SearchBar } from "./searchbar";
 import { StudentComponents } from "./student/StudentComponents";
 import { TeacherComponents } from "./teacher/TeacherComponents";
 import { SideBar } from "./sidebar";
-import {TeacherCourses} from "./teacher/TeacherCourses";
 
 export const Dashboard = _ => {
     let navigate = useNavigate();
@@ -22,8 +21,7 @@ export const Dashboard = _ => {
 
     function loadComponents() {
         if (user.usertype == "teacher") {
-            // return <TeacherComponents/>
-            return <TeacherCourses />
+            return <TeacherComponents/>
         } else if (user.usertype == "admin") { 
             return <TeacherComponents/>
         } else {
