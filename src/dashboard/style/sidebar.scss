@@ -41,9 +41,18 @@
 
             & .courses-header {
                 display: flex;
-                gap: 20px;
+                justify-content: space-between;
                 margin-bottom: 20px;
                 cursor: pointer;
+
+                & .header-text {
+                    display: flex;
+                    gap: 20px;
+                }
+
+                & .header-arrow {
+                    padding-right: 24px;
+                }
             }
 
             & .courses-menu {
@@ -54,17 +63,37 @@
                 transition: 0.5s;
 
                 & .course-item {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 152px;
                     padding: 8px;
                     color: #FFFFFF66;
-                    width: fit-content;
+                    //width: fit-content;
                     font-size: 14px;
+                    font-weight: 500;
                     border-radius: 8px;
                     margin-bottom: 8px;
                     cursor: pointer;
 
-                    & .course-active {
-                        color: #FFFFFF;
-                        background-color: #FFFFFF19;
+                    & svg {
+                        visibility: hidden;
+                    }
+                }
+
+                & .course-item:hover {
+                    color: #FFFFFF;
+                    background-color: #FFFFFF19;
+                    transition: 0.25s;
+                }
+
+                & .course-active {
+                    color: #FFFFFF;
+                    background-color: #FFFFFF19;
+                    font-weight: 700;
+
+                    & svg {
+                        visibility: visible;
                     }
                 }
             }

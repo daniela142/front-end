@@ -10,6 +10,8 @@ import CourseIcon from "../svg/sidebar/coursesIcon";
 import CalendarIcon from "../svg/sidebar/calendarIcon";
 import GradesIcon from "../svg/sidebar/gradesIcon";
 import SettingsIcon from "../svg/sidebar/settingsIcon";
+import ThinArrowIcon from "../svg/sidebar/thinArrowIcon";
+import DownArrowIcon from "../svg/sidebar/downArrowIcon";
 
 export const SideBar = () => {
     let navigate = useNavigate();
@@ -60,24 +62,38 @@ export const SideBar = () => {
                 </li>
                 <li className={'sidebar-courses ' + (location.includes('/courses') ? 'sidebar-active' : '')}>
                     <div className="courses-header" onClick={expandCourses}>
-                        <CourseIcon />
-                        <span>Courses</span>
+                        <div className="header-text">
+                            <CourseIcon />
+                            <span>Courses</span>
+                        </div>
+                        <div className="header-arrow">
+                            <DownArrowIcon />
+                        </div>
                     </div>
                     <ul className='courses-menu' ref={coursesMenu}>
                         {courses.map((course, index) => {
-                            return (<li className={'course-item ' + (location.includes(`/${course.id}`) ? 'course-active' : '')} onClick={() => navigate(`/${course.id}`)}>{course.name}</li>);
+                            return (<li className={'course-item ' + (location.includes(`/${course.id}`) ? 'course-active' : '')} onClick={() => navigate(`/courses/${course.id}`)}>
+                                <span>{course.name}</span>
+                                <div>
+                                    <ThinArrowIcon />
+                                </div>
+                                {/*<ThinArrowIcon />*/}
+                                {/*<div style={{visibility: 'hidden'}}>*/}
+                                {/*    <ThinArrowIcon />*/}
+                                {/*</div>*/}
+                            </li>);
                         })}
                     </ul>
                 </li>
-                <li className={'sidebar-item ' + (location.includes('/calendar') ? 'sidebar-active' : '')}>
-                    <CalendarIcon />
-                    <span>Calendar</span>
-                </li>
-                <li className={'sidebar-item ' + (location.includes('/grades') ? 'sidebar-active' : '')}>
+                {/*<li className={'sidebar-item ' + (location.includes('/calendar') ? 'sidebar-active' : '')}>*/}
+                {/*    <CalendarIcon />*/}
+                {/*    <span>Calendar</span>*/}
+                {/*</li>*/}
+                <li className={'sidebar-item ' + (location.includes('/grades') ? 'sidebar-active' : '')} onClick={() => navigate(`/grades`)}>
                     <GradesIcon />
                     <span>Grades</span>
                 </li>
-                <li className={'sidebar-item ' + (location.includes('/settings') ? 'sidebar-active' : '')}>
+                <li className={'sidebar-item ' + (location.includes('/settings') ? 'sidebar-active' : '')} onClick={() => navigate(`/settings`)}>
                     <SettingsIcon />
                     <span>Settings</span>
                 </li>
