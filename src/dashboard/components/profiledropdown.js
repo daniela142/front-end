@@ -62,7 +62,7 @@ export const ProfileMenu = () => {
                 <div className="profile-in">{user.firstname.charAt(0)}</div>
 
                 <h4 className="profile-name"> {user.firstname} {user.lastname.charAt(0)} </h4>
-                <h6 className="profile-type"> Student</h6>
+                <h6 className="profile-type"> { user.usertype.charAt(0).toUpperCase() + user.usertype.slice(1) }</h6>
 
                 <button className="profile-arrow">
                     <DownArrow />

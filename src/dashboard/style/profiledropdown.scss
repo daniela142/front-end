@@ -40,6 +40,10 @@
     top: -8px;
     right: 52px;
     width: 65px;
+    
+    //overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
 }
 
 .profile-type {

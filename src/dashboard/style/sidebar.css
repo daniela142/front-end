@@ -53,6 +53,7 @@
 .sidebar .sidebar-list .sidebar-courses .courses-menu .course-item {
   padding: 8px;
   color: rgba(255, 255, 255, 0.4);
+  width: -moz-fit-content;
   width: fit-content;
   font-size: 14px;
   border-radius: 8px;
@@ -78,6 +79,4 @@
   width: 8px;
   border-bottom-right-radius: 6px;
   border-top-right-radius: 6px;
-}
-
-/*# sourceMappingURL=sidebar.css.map */
+}/*# sourceMappingURL=sidebar.css.map */
