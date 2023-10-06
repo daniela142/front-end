@@ -8,6 +8,7 @@ import { StudentComponents } from "./student/StudentComponents";
 import { TeacherComponents } from "./teacher/TeacherComponents";
 import { SideBar } from "./sidebar";
 import {TeacherCourses} from "./teacher/TeacherCourses";
+import {StudentCourses} from "./student/StudentCourses";
 
 export const Dashboard = ({page}) => {
     let navigate = useNavigate();
@@ -41,7 +42,18 @@ export const Dashboard = ({page}) => {
         } else if (user.usertype == "admin") { 
             return <TeacherComponents/>
         } else {
-            return <StudentComponents/>
+            if (page === 'dashboard') {
+                return <StudentComponents/>
+            }
+            if (page === 'courses') {
+                return <StudentCourses/>
+            }
+            if (page === "grades") {
+                return null
+            }
+            if (page === "settings") {
+                return null
+            }
         }
     }
 
