@@ -1,6 +1,6 @@
 //import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
 import "./account/fonts/MuseoModerno.ttf";
 import "./account/fonts/DMSans.ttf";
 
@@ -16,10 +16,13 @@ function App() {
   return (
     <Router>
        <Routes>
-        <Route path="/" element={<Dashboard />} ></Route>
+        <Route path="/" element={<Navigate to="/dashboard"/>}></Route>
         <Route path="/signIn" element={<SignIn />} />
         <Route path="/signUp" element={<SignUp />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard page={"dashboard"} />} />
+        <Route path="/courses/*" element={<Dashboard page={"courses"} />} />
+        <Route path="/grades" element={<Dashboard page={"grades"} />} />
+        <Route path="/settings" element={<Dashboard page={"settings"} />} />
        </Routes>
     </Router>
   );
