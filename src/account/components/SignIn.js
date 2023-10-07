@@ -11,10 +11,12 @@ export const SignIn = (_) => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setIsLoading(true);
     try {
       const response = await axios.post(
         global.route + `/api/users/auth`,
@@ -28,14 +30,16 @@ export const SignIn = (_) => {
       navigate("/", { replace: true });
     } catch (error) {
       console.error(error);
+      setErrorMessage(error.message);
     }
+    setIsLoading(false);
   };
 
-    const handleKeypress = async (e) => {
-        if(e.key === "Enter"){
-            handleSubmit(e);
-        }
-    };
+  const handleKeypress = async (e) => {
+    if (e.key === "Enter") {
+      handleSubmit(e);
+    }
+  };
 
   return (
     <div className="background">
@@ -74,7 +78,7 @@ export const SignIn = (_) => {
           onSubmit={(e) => handleSubmit(e)}
           onClick={(e) => handleSubmit(e)}
         >
-          Sign In
+          {!isLoading ? "Sign in" : "Loading..."}
         </button>
         <div className="sign-up-text">
           <p>Don't have an account?</p>
@@ -88,6 +92,11 @@ export const SignIn = (_) => {
           >
             Sign Up
           </text>
+        </div>
+        <div className="sign-up-text">
+          <p style={{
+            color: "red"
+          }}>{errorMessage}</p>
         </div>
       </div>
     </div>

@@ -34,12 +34,10 @@ export const Dashboard = _ => {
         <div className="background">
             <SideBar/>
 
-            <div style={{ width: "100%", marginLeft: "250px" }}>
-
-            
-                <div style={{display:"flex"}}>
+            <div style={{ width: "100%", marginLeft: "250px" }}>        
+                <div className="header">
                     <SearchBar />
-                    <div className="profile-head"><ProfileMenu /></div>
+                    <ProfileMenu />
                 </div>
                 <h1 className="name-header"> Hello, {user.firstname}</h1>
                 <div>

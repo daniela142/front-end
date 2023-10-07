@@ -7,6 +7,11 @@
   overflow: scroll;
 }
 
+.header {
+  display: flex;
+  margin: 15px 20px;
+}
+
 .next-button {
   margin-left: 20px;
   margin-top: 20px;
@@ -35,10 +40,6 @@
   height: -moz-fit-content;
   height: fit-content;
   margin-left: 30px;
-}
-
-.profile-head {
-  gap: "16px";
 }
 
 .scroll-box {

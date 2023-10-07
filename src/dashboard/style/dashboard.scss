@@ -7,6 +7,11 @@
     overflow: scroll;
 }
 
+.header {
+    display: flex;
+    margin: 15px 20px;
+}
+
 .next-button{
     margin-left: 20px;
     margin-top: 20px;
@@ -37,14 +42,6 @@
     height: fit-content;
     margin-left: 30px;
 
-}
-
-.profile-head {
-    // display: block;
-    // width: fit-content;
-    // margin-left: none;
-    // float: right;
-    gap: "16px";
 }
 
 .scroll-box {
