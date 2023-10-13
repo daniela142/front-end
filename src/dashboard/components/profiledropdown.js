@@ -39,6 +39,7 @@ export const ProfileMenu = () => {
   }
 
   const logout = async () => {
+    console.log("test");
     try {
       const response = await fetch(global.route + `/api/users/logout`, {
         method: "POST",

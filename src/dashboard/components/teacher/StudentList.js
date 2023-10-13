@@ -22,7 +22,7 @@ export const StudentList = () => {
 
     return (
         <div className="students-box">
-            <h1>Students</h1>
+            <h1 className="students-title">Students</h1>
             <ul className='student-list'>
                 {students.map((student, index) => {
                     return (<li className="student">{student.name}</li>);

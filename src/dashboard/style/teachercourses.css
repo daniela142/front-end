@@ -1,63 +1,12 @@
-.courses-container {
+.courses-container-t {
   margin-left: 20px;
+  margin-right: 24px;
   display: flex;
+  flex-direction: row !important;
   gap: 20px;
 }
-
-.info-box {
-  display: flex;
-  gap: 24px;
-  width: 759px;
-  padding: 32px 24px;
-  background-color: #FFFFFF;
-  color: #121212;
-  border-radius: 12px;
-  font-family: "DMSans";
-  line-height: 21px;
-  letter-spacing: 0.3px;
-}
-.info-box h1 {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 16px;
-}
-.info-box p {
-  font-size: 13px;
-  margin-right: 48px;
-  color: rgba(18, 18, 18, 0.7019607843);
-}
-.info-box .course-btn-group {
-  width: 100%;
-  display: flex;
-  gap: 24px;
-  justify-content: flex-end;
-  padding-right: 48px;
-}
-.info-box .course-btn-group .course-btn-clear {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 4px 0 4px 8px;
-  background-color: #FFFFFF;
-  border: 1.5px #1177C0 solid;
-  border-radius: 8px;
-  color: #1177C0;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-}
-.info-box .course-btn-group .course-btn-fill {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 4px 0 4px 8px;
-  background-color: #1177C0;
-  border: 1.5px #1177C0 solid;
-  border-radius: 8px;
-  color: #FFFFFF;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
+.courses-container-t .courses-info {
+  width: 70%;
 }
 
 .students-box {
@@ -65,11 +14,17 @@
   background-color: #FFFFFF;
   color: #121212;
   border-radius: 12px;
-  font-family: "DMSans";
   line-height: 21px;
   letter-spacing: 0.3px;
-  width: 371px;
+  width: 30%;
+}
+.students-box .students-title {
+  font-size: 26px;
+  font-family: "Inter";
+  padding-bottom: 32px;
 }
 .students-box .student-list {
   list-style-type: none;
-}/*# sourceMappingURL=teachercourses.css.map */
+}
+
+/*# sourceMappingURL=teachercourses.css.map */

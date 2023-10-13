@@ -6,9 +6,13 @@ import "../fonts/font.css";
 import "../style/sign-up.css";
 import Icon from "../svg/icon";
 import Back from "../svg/back";
+import LoadingCircle from "./LoadingCircle";
 
 export const SignUp = (_) => {
   let navigate = useNavigate();
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [showError, setShowError] = useState(false);
 
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
@@ -38,6 +42,7 @@ export const SignUp = (_) => {
   const createAccount = async (e) => {
     e.preventDefault();
     if(usertype) {
+      setIsLoading(true);
       try {
         const response = await axios.post(
           global.route + `/api/users`,
@@ -51,8 +56,11 @@ export const SignUp = (_) => {
           { withCredentials: true }
         );
         localStorage.setItem("User", JSON.stringify(response.data));
+        setIsLoading(false);
         navigate("/", { replace: true });
       } catch (error) {
+        setIsLoading(false);
+        setShowError(true);
         console.error(error);
       }
     } else {
@@ -176,6 +184,8 @@ export const SignUp = (_) => {
             Administrator
           </button>
         </div>
+
+          {showError ? <p className="error-msg">Account Creation Error. Please try again.</p> : "" }
         
         <div style={{ marginTop: "55px" }} />
         <div className="user-authentication-input-2">
@@ -218,6 +228,7 @@ export const SignUp = (_) => {
 
   return (
     <div className="background">
+        {isLoading ? <div className="background-loading"><LoadingCircle /></div> : "" }
         {signUpStep1()}
         {signUpStep2()}
     </div>
