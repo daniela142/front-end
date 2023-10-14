@@ -10,6 +10,7 @@ import { SideBar } from "./sidebar";
 import {TeacherCourses} from "./teacher/TeacherCourses";
 import {StudentCourses} from "./student/StudentCourses";
 
+
 export const Dashboard = ({page}) => {
     let navigate = useNavigate();
 
@@ -48,7 +49,7 @@ export const Dashboard = ({page}) => {
             if (page === 'courses') {
                 return <StudentCourses/>
             }
-            if (page === "grades") {
+            if (page === 'grades') {
                 return null
             }
             if (page === "settings") {
