@@ -11,6 +11,7 @@ import {TeacherCourses} from "./teacher/TeacherCourses";
 import {StudentCourses} from "./student/StudentCourses";
 
 
+
 export const Dashboard = ({page}) => {
     let navigate = useNavigate();
 
