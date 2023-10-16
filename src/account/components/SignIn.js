@@ -5,6 +5,7 @@ import axios from "axios";
 import "../fonts/font.css";
 import "../style/sign-in.css";
 import Icon from "../svg/icon";
+import LoadingCircle from "./LoadingCircle";
 
 export const SignIn = (_) => {
   let navigate = useNavigate();
@@ -43,6 +44,7 @@ export const SignIn = (_) => {
 
   return (
     <div className="background">
+      {isLoading ? <LoadingCircle /> : "" }
       <div className="primary-box">
         <div style={{ height: "78px" }}></div>
         <div className="title">
@@ -78,7 +80,7 @@ export const SignIn = (_) => {
           onSubmit={(e) => handleSubmit(e)}
           onClick={(e) => handleSubmit(e)}
         >
-          {!isLoading ? "Sign in" : "Loading..."}
+          Sign in
         </button>
         <div className="sign-up-text">
           <p>Don't have an account?</p>

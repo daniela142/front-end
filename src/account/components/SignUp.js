@@ -228,7 +228,7 @@ export const SignUp = (_) => {
 
   return (
     <div className="background">
-        {isLoading ? <div className="background-loading"><LoadingCircle /></div> : "" }
+        {isLoading ? <LoadingCircle /> : "" }
         {signUpStep1()}
         {signUpStep2()}
     </div>

@@ -4,9 +4,12 @@ import DownArrow from "../svg/downArrow";
 import LogOut from "../svg/logOut";
 
 import { useNavigate } from "react-router-dom";
+import LoadingCircle from "../../account/components/LoadingCircle";
 
 export const ProfileMenu = () => {
   let navigate = useNavigate();
+
+  const [isLoading, setIsLoading] = useState(false);
 
   const user = JSON.parse(localStorage.getItem("User"));
 
@@ -20,10 +23,10 @@ export const ProfileMenu = () => {
       }
     };
 
-    document.addEventListener("mousedown", handler);
+    document.addEventListener("click", handler);
 
     return () => {
-      document.removeEventListener("mousedown", handler);
+      document.removeEventListener("click", handler);
     };
   });
 
@@ -39,7 +42,7 @@ export const ProfileMenu = () => {
   }
 
   const logout = async () => {
-    console.log("test");
+    setIsLoading(true);
     try {
       const response = await fetch(global.route + `/api/users/logout`, {
         method: "POST",
@@ -53,11 +56,13 @@ export const ProfileMenu = () => {
       navigate("/signIn");
     } catch (err) {
       console.log(err);
+      setIsLoading(false);
     }
   };
 
   return (
     <div>
+      {isLoading ? <LoadingCircle /> : "" }
       <div
         ref={menuref}
         className="menu-trigger"
