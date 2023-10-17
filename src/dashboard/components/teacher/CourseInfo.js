@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "../../style/teachercourses.css";
 import "../../style/courseinfo.css";
 import CourseIcon from "../../svg/courseIcon";
@@ -7,6 +7,8 @@ import ArrowIcon from "../../svg/arrowIcon";
 
 
 export const CourseInfo = ({viewType}) => {
+    const navigate = useNavigate();
+    const url = useLocation().pathname;
 
     const course = {
         name: 'Development Basics',
@@ -24,7 +26,7 @@ export const CourseInfo = ({viewType}) => {
                 <p>{course.desc}</p>
                 <div className="course-btn-group" style={{display: viewType === 'teacher' ? 'flex' : 'none'}}>
                     <button className="course-btn-clear"><span>View Tests</span><ArrowIcon /></button>
-                    <button className="course-btn-fill">Create Test<ArrowIcon /></button>
+                    <button className="course-btn-fill" onClick={() => navigate(`${url}/createtest`)}>Create Test<ArrowIcon /></button>
                 </div>
             </div>
         </div>
