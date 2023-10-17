@@ -6,113 +6,21 @@
   padding-left: 24px;
   padding-right: 20px;
   border-radius: 20px;
+  padding-top: 20px;
 }
-.summary-box .summary-title {
-  padding-top: 15px;
+
+.summary-title {
   font-size: 26px;
   font-weight: 500;
+}
+
+.course-row {
+  width: auto;
+  height: -moz-max-content;
+  height: max-content;
   display: flex;
-}
-.summary-box .summary-container {
-  display: flex;
-}
-.summary-box .active-courses {
-  width: 287px;
-  height: 95px;
-  margin-left: 34px;
-  margin-top: 33.34px;
-  padding-top: 17px;
-  background-color: #EDFBF7;
-  border-radius: 12px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #0D6047;
-}
-.summary-box .active-courses .title {
-  font-size: 14px;
-  font-weight: 500;
-  color: #0D6047;
-  margin-left: 12px;
-  margin-top: 17px;
-}
-.summary-box .active-courses .value {
-  font-size: 32px;
-  font-weight: 500;
-  color: #0D6047;
-  text-align: center;
-}
-.summary-box .total-courses {
-  width: 287px;
-  height: 95px;
-  margin-left: 70px;
-  margin-top: 33.34px;
-  padding-top: 17px;
-  background-color: #FFF3F8;
-  border-radius: 12px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #E9538D;
-}
-.summary-box .total-courses .title {
-  font-size: 14px;
-  font-weight: 500;
-  color: #E9538D;
-  margin-left: 12px;
-  margin-top: 17px;
-}
-.summary-box .total-courses .value {
-  font-size: 32px;
-  font-weight: 500;
-  color: #E9538D;
-  text-align: center;
-}
-.summary-box .total-students {
-  width: 287px;
-  height: 95px;
-  margin-left: 34px;
-  margin-top: 33.34px;
-  padding-top: 17px;
-  background-color: #E4F4FF;
-  border-radius: 12px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #4785B0;
-}
-.summary-box .total-students .title {
-  font-size: 14px;
-  font-weight: 500;
-  color: #4785B0;
-  margin-left: 12px;
-  margin-top: 17px;
-}
-.summary-box .total-students .value {
-  font-size: 32px;
-  font-weight: 500;
-  color: #4785B0;
-  text-align: center;
-}
-.summary-box .completed-courses {
-  width: 287px;
-  height: 95px;
-  margin-left: 70px;
-  margin-top: 33.34px;
-  padding-top: 17px;
-  background-color: #F9FAFB;
-  border-radius: 12px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #3D4A5C;
-}
-.summary-box .completed-courses .title {
-  font-size: 14px;
-  font-weight: 500;
-  color: #3D4A5C;
-  margin-left: 12px;
-  margin-top: 17px;
-}
-.summary-box .completed-courses .value {
-  font-size: 32px;
-  font-weight: 500;
-  color: #3D4A5C;
-  text-align: center;
+  margin-top: 25px;
+  align-content: center;
+  justify-content: "center";
+  align-items: "center";
 }/*# sourceMappingURL=summary.css.map */

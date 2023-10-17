@@ -7,128 +7,22 @@
     padding-left: 24px;
     padding-right: 20px;
     border-radius: 20px;
-
-    & .summary-title {
-        padding-top: 15px;
+    padding-top: 20px;
+}
+.summary-title {
         font-size: 26px;
         font-weight: 500;
 
-        display: flex;
-    }
+}    
 
-    & .summary-container {
-        display: flex;
-    }
+.course-row{
+    width: auto;
+    height: max-content;
+    display: flex;
+    margin-top: 25px;
+    align-content: center;
+    justify-content: "center";
+    align-items: "center";
 
-    & .active-courses {
-        width: 287px;
-        height: 95px;
-        margin-left: 34px;
-        margin-top: 33.34px;
-        padding-top: 17px;
-        background-color: #EDFBF7;
-        border-radius: 12px;
-        border-style: solid;
-        border-width: 1px;
-        border-color: #0D6047;
-
-        & .title {
-            font-size: 14px;
-            font-weight: 500;
-            color: #0D6047;
-            margin-left: 12px;
-            margin-top: 17px;
-        }
-
-        & .value {
-            font-size: 32px;
-            font-weight: 500;
-            color: #0D6047;
-            text-align: center;
-        }
-    }
-
-    & .total-courses {
-        width: 287px;
-        height: 95px;
-        margin-left: 70px;
-        margin-top: 33.34px;
-        padding-top: 17px;
-        background-color: #FFF3F8;
-        border-radius: 12px;
-        border-style: solid;
-        border-width: 1px;
-        border-color: #E9538D;
-
-        & .title {
-            font-size: 14px;
-            font-weight: 500;
-            color: #E9538D;
-            margin-left: 12px;
-            margin-top: 17px;
-        }
-
-        & .value {
-            font-size: 32px;
-            font-weight: 500;
-            color: #E9538D;
-            text-align: center;
-        }
-    }
-
-        & .total-students {
-            width: 287px;
-            height: 95px;
-            margin-left: 34px;
-            margin-top: 33.34px;
-            padding-top: 17px;
-            background-color: #E4F4FF;
-            border-radius: 12px;
-            border-style: solid;
-            border-width: 1px;
-            border-color: #4785B0;
-    
-            & .title {
-                font-size: 14px;
-                font-weight: 500;
-                color: #4785B0;
-                margin-left: 12px;
-                margin-top: 17px;
-            }
-    
-            & .value {
-                font-size: 32px;
-                font-weight: 500;
-                color: #4785B0;
-                text-align: center;
-            }
-        }
-
-                & .completed-courses {
-                    width: 287px;
-                    height: 95px;
-                    margin-left: 70px;
-                    margin-top: 33.34px;
-                    padding-top: 17px;
-                    background-color: #F9FAFB;
-                    border-radius: 12px;
-                    border-style: solid;
-                    border-width: 1px;
-                    border-color: #3D4A5C;
-        
-                    & .title {
-                        font-size: 14px;
-                        font-weight: 500;
-                        color: #3D4A5C;
-                        margin-left: 12px;
-                        margin-top: 17px;
-                    }
-        
-                    & .value {
-                        font-size: 32px;
-                        font-weight: 500;
-                        color: #3D4A5C;
-                        text-align: center;
-                    }
-                }
 }
+
