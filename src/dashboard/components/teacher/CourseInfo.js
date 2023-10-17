@@ -2,8 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../../style/teachercourses.css";
 import "../../style/courseinfo.css";
-import InfoIcon from "../../svg/infoIcon";
+import CourseIcon from "../../svg/courseIcon";
 import ArrowIcon from "../../svg/arrowIcon";
+
 
 export const CourseInfo = ({viewType}) => {
 
@@ -13,9 +14,10 @@ export const CourseInfo = ({viewType}) => {
     };
 
     return (
+    <div>
         <div className="info-box">
             <div>
-                <InfoIcon />
+                <CourseIcon />
             </div>
             <div>
                 <h1 className="course-title">{course.name}</h1>
@@ -26,5 +28,6 @@ export const CourseInfo = ({viewType}) => {
                 </div>
             </div>
         </div>
+    </div>
     );
 }

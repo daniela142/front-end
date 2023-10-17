@@ -5,6 +5,7 @@ import "../../style/dashboard.css";
 import { Summary } from "./summary";
 import { Assessments } from "../student/assessments";
 import { Profile } from "../student/profile";
+import { Schedule } from "./schedule";
 
 export const TeacherComponents = _ => {
     return (
@@ -13,7 +14,7 @@ export const TeacherComponents = _ => {
                 <Summary />
                 <Assessments />
             </div>
-            <Profile/>
+            <Schedule/>
         </div>   
     );
 }
