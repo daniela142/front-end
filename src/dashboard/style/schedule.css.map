@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"version":3,"sources":["schedule.scss","schedule.css"],"names":[],"mappings":"AAAA;EACI,YAAA;EAEA,aAAA;EACA,uBAAA;EACA,uBAAA;EACA,iBAAA;EAEA,kBAAA;EACA,mBAAA;EACA,mBAAA;ACDJ","file":"schedule.css"}
+=======
+{"version":3,"sourceRoot":"","sources":["schedule.scss"],"names":[],"mappings":"AAAA;EACI;EAEA;EACA;EACA;EACA;EAEA;EACA;EACA","file":"schedule.css"}
+>>>>>>> af1506a2e49d7242c4a675d6fb5dcbf8c29f3f7a

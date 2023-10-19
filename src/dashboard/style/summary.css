@@ -16,11 +16,20 @@
 
 .course-row {
   width: auto;
+<<<<<<< HEAD
   height: -moz-max-content;
+=======
+>>>>>>> af1506a2e49d7242c4a675d6fb5dcbf8c29f3f7a
   height: max-content;
   display: flex;
   margin-top: 25px;
   align-content: center;
   justify-content: "center";
   align-items: "center";
+<<<<<<< HEAD
 }/*# sourceMappingURL=summary.css.map */
+=======
+}
+
+/*# sourceMappingURL=summary.css.map */
+>>>>>>> af1506a2e49d7242c4a675d6fb5dcbf8c29f3f7a
