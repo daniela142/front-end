@@ -1,16 +1,12 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../style/dashboard.css";
-<<<<<<< HEAD
 import "../../style/teachercreatetest.css";
 import "../../fonts/font.css"
-=======
->>>>>>> af1506a2e49d7242c4a675d6fb5dcbf8c29f3f7a
 
 export const TeacherCreateTest = () => {
 
     return (
-<<<<<<< HEAD
        <div>
         <div className="create-test-title">
             <input className="input-text" 
@@ -63,9 +59,5 @@ export const TeacherCreateTest = () => {
             </div>              
         </div>
     </div> 
-=======
-        <div>
-        </div>
->>>>>>> af1506a2e49d7242c4a675d6fb5dcbf8c29f3f7a
     );
 }
