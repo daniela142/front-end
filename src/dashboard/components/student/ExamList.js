@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../../style/studentcourses.css";
 import ArrowIcon from "../../svg/arrowIcon";
 
+
 export const ExamList = () => {
 
     const exams = [
@@ -22,7 +23,7 @@ export const ExamList = () => {
 
     return (
         <div className="exam-list-box">
-            <h1>Examinations</h1>
+            <h1>Examinations </h1>
             <ul className='exam-list'>
                 {exams.map((exam, index) => {
                     return (<li className="exam-list-item">{exam.name}<ArrowIcon /></li>);
