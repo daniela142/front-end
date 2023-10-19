@@ -9,6 +9,10 @@ import { TeacherComponents } from "./teacher/TeacherComponents";
 import { SideBar } from "./sidebar";
 import {TeacherCourses} from "./teacher/TeacherCourses";
 import {StudentCourses} from "./student/StudentCourses";
+import {ExamMenu} from "./student/ExamMenu";
+import {Exam} from "./student/Exam";
+
+
 
 export const Dashboard = ({page}) => {
     let navigate = useNavigate();
@@ -48,11 +52,11 @@ export const Dashboard = ({page}) => {
             if (page === 'courses') {
                 return <StudentCourses/>
             }
-            if (page === "grades") {
-                return null
+            if (page === 'grades') {
+                return <ExamMenu/>
             }
             if (page === "settings") {
-                return null
+                return <Exam/>
             }
         }
     }
