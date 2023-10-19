@@ -1,9 +1,0 @@
-@font-face {
-    font-family: 'MuseoModerno';
-    src: local('MuseoModerno'), url('./MuseoModerno.ttf') format('truetype');
-  }
-
-  @font-face {
-    font-family: 'DMSans';
-    src: local('DMSans'), url('./DMSans.ttf') format('truetype');
-  }
