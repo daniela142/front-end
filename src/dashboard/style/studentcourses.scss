@@ -1,0 +1,85 @@
+.courses-container-s {
+  width: 100%;
+  padding-right: 64px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  & h1 {
+    font-size: 18px;
+    font-family: "Poppins";
+    line-height: 21px;
+    letter-spacing: 0.3px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  & .exams-container {
+    display: flex;
+    gap: 24px;
+  }
+
+  & .exam-list-box, .exam-history-box {
+    padding: 32px;
+    background-color: #FFFFFF;
+    color: #121212;
+    border-radius: 12px;
+  }
+
+  & ul {
+    list-style-type: none;
+    font-family: 'Inter';
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+  }
+
+  & .exam-list-box {
+    width: 60%;
+
+    & .exam-list-item {
+      padding: 14px;
+      margin-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      border: 2px solid #FFFFFF;
+      border-radius: 12px;
+      cursor: pointer;
+
+      & svg {
+        transform: scale(1.5);
+      }
+    }
+
+    & .exam-list-item:hover {
+      background-color: #333269;
+      color: #FFFFFF;
+      font-weight: 800;
+      border: 2px solid #7E7DA3;
+      box-shadow: 0 4px 4px 0 #0000003F;
+      transition: 0.25s;
+
+    }
+  }
+
+  & .exam-history-box {
+    width: 40%;
+
+    & .exam-history {
+      padding-top: 8px;
+
+      & .exam-history-item {
+        padding: 24px 0;
+        color: #606977;
+        border-bottom: 1px solid #D3D3D3;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      & .exam-history-item:last-child {
+        border: none;
+      }
+    }
+  }
+}

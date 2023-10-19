@@ -1,0 +1,26 @@
+.summary-box {
+  margin-left: 15px;
+  height: 316px;
+  width: 759px;
+  background-color: white;
+  padding-left: 24px;
+  padding-right: 20px;
+  border-radius: 20px;
+  padding-top: 20px;
+}
+
+.summary-title {
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.course-row {
+  width: auto;
+  height: -moz-max-content;
+  height: max-content;
+  display: flex;
+  margin-top: 25px;
+  align-content: center;
+  justify-content: "center";
+  align-items: "center";
+}/*# sourceMappingURL=summary.css.map */
