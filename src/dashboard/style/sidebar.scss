@@ -1,0 +1,120 @@
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    overflow-y: auto;
+    z-index: 1;
+    padding-top: 40px;
+    background-color: black;
+    color: white;
+    box-sizing: border-box;
+
+    & .sidebar-logo {
+        display: flex;
+        padding-left: 32px;
+        margin-bottom: 40px;
+        font-size: 24px;
+        font-weight: 500;
+        font-family: "MuseoModerno";
+        gap: 8px;
+    }
+
+    & .sidebar-list {
+        list-style-type: none;
+        padding: 0;
+        font-size: 16px;
+        letter-spacing: 0.48px;
+
+        & .sidebar-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+            padding-left: 32px;
+            cursor: pointer;
+        }
+
+        & .sidebar-courses {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            padding-left: 32px;
+
+            & .courses-header {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 20px;
+                cursor: pointer;
+
+                & .header-text {
+                    display: flex;
+                    gap: 20px;
+                }
+
+                & .header-arrow {
+                    padding-right: 24px;
+                }
+            }
+
+            & .courses-menu {
+                list-style-type: none;
+                max-height: 0;
+                margin: 0;
+                overflow: hidden;
+                transition: 0.5s;
+
+                & .course-item {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 152px;
+                    padding: 8px;
+                    color: #FFFFFF66;
+                    //width: fit-content;
+                    font-size: 14px;
+                    font-weight: 500;
+                    border-radius: 8px;
+                    margin-bottom: 8px;
+                    cursor: pointer;
+
+                    & svg {
+                        visibility: hidden;
+                    }
+                }
+
+                & .course-item:hover {
+                    color: #FFFFFF;
+                    background-color: #FFFFFF19;
+                    transition: 0.25s;
+                }
+
+                & .course-active {
+                    color: #FFFFFF;
+                    background-color: #FFFFFF19;
+                    font-weight: 700;
+
+                    & svg {
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+
+        & .sidebar-active {
+            font-weight: bold;
+            position: relative;
+        }
+
+        & .sidebar-active:before {
+            display: block;
+            content: '';
+            position: absolute;
+            left: 0;
+            top: -8px;
+            background-color: #5855D6;
+            height: 40px;
+            width: 8px;
+            border-bottom-right-radius: 6px;
+            border-top-right-radius: 6px;
+        }
+    }
+}

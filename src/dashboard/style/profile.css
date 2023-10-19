@@ -1,0 +1,20 @@
+.profile-box {
+  width: 371px;
+  height: 647px;
+  background-color: white;
+  border-radius: 23.389px;
+  margin-left: 20px;
+  padding-left: 24px;
+  padding-right: 20px;
+  border-radius: 20px;
+}
+.profile-box .course-title {
+  padding-top: 15px;
+  font-size: 26px;
+  font-weight: 500;
+  display: flex;
+}
+.profile-box .user-name {
+  font-size: 26px;
+  font-weight: 500px;
+}/*# sourceMappingURL=profile.css.map */
