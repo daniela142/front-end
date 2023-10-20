@@ -53,14 +53,18 @@
     margin-right: 10px;
     align-items: center;
 
-    & .question-option-text{
-        font-size: 16px;
-        width: 900px;
-        height: auto;
-        margin-left: 30px;
-        border: none;
-        outline: none;
-    }
+}
+
+.question-option-text{
+    display: block;
+    align-items: center;
+    font-size: 16px;
+    width: 900px;
+    height: auto;
+    margin-left: 30px;
+    border: none;
+    outline: none;
+
 }
 
 .short-answer-box{
@@ -85,3 +89,21 @@
     }
 }
 
+.add-mcq-question-box{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 20px;
+    margin-left: 30px;
+    border-radius: 12px;
+    width: 46%;
+    height: 60px;
+    background-color: white;
+
+   & .add-question-button{
+        font-size: 16px;
+        outline: none;
+        border: none;
+        background-color: white;
+        color: #928d8d;
+    }
+}
