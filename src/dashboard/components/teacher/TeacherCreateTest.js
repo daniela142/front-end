@@ -107,7 +107,7 @@ export const TeacherCreateTest = () => {
               <input
                 type="radio"
                 id="option1"
-                onClick={disableRadio}
+                name="newradio"
                 style={{
                   width: "18px",
                   height: "18px",
@@ -128,7 +128,7 @@ export const TeacherCreateTest = () => {
               <input
                 type="radio"
                 id="option2"
-                onClick={disableRadio}
+                name="newradio"
                 style={{
                   width: "18px",
                   height: "18px",
@@ -149,7 +149,7 @@ export const TeacherCreateTest = () => {
               <input
                 type="radio"
                 id="option3"
-                onClick={disableRadio}
+                name="newradio"
                 style={{
                   width: "18px",
                   height: "18px",
@@ -170,7 +170,7 @@ export const TeacherCreateTest = () => {
               <input
                 type="radio"
                 id="option4"
-                onClick={disableRadio}
+                name="newradio"
                 style={{
                   width: "18px",
                   height: "18px",
