@@ -106,6 +106,7 @@
   width: 46%;
   height: 60px;
   background-color: white;
+  cursor: pointer;
 }
 .add-mcq-question-box .add-question-button {
   font-size: 16px;
@@ -113,5 +114,4 @@
   border: none;
   background-color: white;
   color: #928d8d;
-  cursor: pointer;
 }/*# sourceMappingURL=teachercreatetest.css.map */
