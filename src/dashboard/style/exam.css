@@ -1,0 +1,55 @@
+.question-box {
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 20px;
+  max-width: 1600px;
+}
+
+header {
+  font-size: 30px;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  margin-left: 25px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+.question {
+  font-size: 24px;
+  padding-bottom: 15px;
+}
+
+.options label {
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  color: #555;
+  font-size: 18px;
+}
+
+.options input[type=radio] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+button {
+  background-color: #1177C0;
+  color: #ffffff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-left: 1150px;
+}
+
+button:hover {
+  background-color: #0B5D98;
+}
+
+/*# sourceMappingURL=exam.css.map */
