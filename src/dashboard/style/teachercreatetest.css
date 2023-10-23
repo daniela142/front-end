@@ -1,3 +1,7 @@
+.background-style {
+  padding-bottom: 20px;
+}
+
 .create-test-title {
   width: 95%;
   height: 60px;
@@ -17,7 +21,7 @@
 
 .mcq-box {
   margin-top: 20px;
-  padding-top: 16px;
+  padding-top: 10px;
   padding-left: 25px;
   padding-right: 25px;
   margin-left: 30px;
@@ -29,12 +33,21 @@
 
 .question-input-text {
   height: 40px;
-  width: 95%;
+  width: 75%;
   font-size: 20px;
   margin-left: 10px;
   outline: none;
   border: none;
   text-transform: capitalize;
+  display: inline-block;
+}
+
+.badge-button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin-right: 8px;
+  cursor: pointer;
 }
 
 .line {
@@ -51,7 +64,10 @@
   margin-right: 10px;
   align-items: center;
 }
-.option .question-option-text {
+
+.question-option-text {
+  display: block;
+  align-items: center;
   font-size: 16px;
   width: 900px;
   height: auto;
@@ -79,4 +95,23 @@
   margin-top: 12px;
   border: none;
   outline: none;
+}
+
+.add-mcq-question-box {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 20px;
+  margin-left: 30px;
+  border-radius: 12px;
+  width: 46%;
+  height: 60px;
+  background-color: white;
+}
+.add-mcq-question-box .add-question-button {
+  font-size: 16px;
+  outline: none;
+  border: none;
+  background-color: white;
+  color: #928d8d;
+  cursor: pointer;
 }/*# sourceMappingURL=teachercreatetest.css.map */
