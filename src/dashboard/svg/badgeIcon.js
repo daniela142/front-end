@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function Icon() {
+function Icon(fill) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -15,7 +15,7 @@ function Icon() {
           <ellipse
             cx="32.802"
             cy="30.5"
-            fill="#8B898C" 
+            fill={fill}
             rx="29.802"
             ry="29.5"
           ></ellipse>
