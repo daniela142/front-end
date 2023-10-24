@@ -35,7 +35,8 @@
     border-radius: 20px;
   }
   
-  h1 {
+  /* CHANGE THESE TO NON UNIVERSAL VALUES */
+  /* h1 {
     margin: 0;
   }
   
@@ -46,7 +47,7 @@
   h3 {
     margin-top: 10px;
     margin-bottom: 10px;
-  }
+  } */
   
   .exam-details-box {
     background-color: #ffffff;
