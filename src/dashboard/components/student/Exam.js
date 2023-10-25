@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "../../style/exam.css";
 
 
@@ -12,7 +12,23 @@ export const Exam = () => {
     } else {
       alert('Incorrect');
     }
+
+
   };
+  const [minutes, setMinutes] = useState(24);
+  const [seconds, setSeconds] = useState(13);
+  useEffect(() => {
+    if (seconds === 0) {
+      if (minutes === 0) return;
+
+      setMinutes(minutes - 1);
+      setSeconds(59);
+    } else {
+      setTimeout(() => {
+        setSeconds(seconds - 1);
+      }, 1000);
+    }
+  }, [minutes, seconds]);
 
   return (
     <div className="Exam">
@@ -38,8 +54,32 @@ export const Exam = () => {
     </div>
     <button onClick={handleSubmit}>Submit</button>
 
+
+    <div className="App">
+      <div className="questions-list">
+        <h2>Questions</h2>
+        <ul>
+          <li>Question 1</li>
+          <li>Question 2</li>
+          <li>Question 3</li>
+          <li>Question 4</li>
+          <li>Question 5</li>
+          <li>Question 6</li>
+          <li>Question 7</li>
+          <li>Question 8</li>
+          <li>Question 9</li>
+          <li>Question 10</li>
+        </ul>
+      </div>
+      <div className="timer-section">
+        <h2>Time Remaining</h2>
+        <p>{`${minutes} mins ${seconds} sec`}</p>
+      </div>
+    </div>
+
   </div>
-);
+
+  );
 }
 
 
