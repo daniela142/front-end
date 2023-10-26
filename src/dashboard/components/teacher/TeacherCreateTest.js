@@ -10,69 +10,64 @@ export const TeacherCreateTest = () => {
   const [activeBadge, setActiveBadge] = useState(null);
   const badges = ['#518CFE', '#6D5ED2', '#5ED278', '#F4694C', '#F4D94C'];
   const inactiveBadge = '#ABABAB'
-
+ 
   const handleBadgeChange = (buttonId) => {
     setActiveBadge(buttonId);
   };
 
-  function disableRadio(radioButton) {
-    // Disable the radio button
-    radioButton.disabled = true;
+  function resetMCQ(mcqElement) {
+    mcqElement.querySelector(".question-input-text").value = "";
+    mcqElement.querySelectorAll("input[type=radio]").forEach((radio) => {
+      radio.checked = false;
+    });
+    mcqElement.querySelectorAll(".question-option-text").forEach((option) => {
+      option.value = "";
+    });
+    setActiveBadge(inactiveBadge); 
+  }
+
+  function resetShortAnswer(saElement) {
+    saElement.querySelector(".question-input-text").value = "";
+    saElement.querySelector(".sa-option-text").value = "";
+    
+    setActiveBadge(inactiveBadge); 
   }
 
   function duplicateMCQ() {
+   
     // Find the element you want to duplicate by its ID
-    var originalComponent = document.getElementById("mcq-form");
+    var originalMCQ = document.getElementById("mcq-form");
 
     // Create a new element (a clone) based on the original component
-    var newComponent = originalComponent.cloneNode(true);
-
-    // Update the ID or other attributes of the new component if necessary
-    // newComponent.id = "newComponentID";
+    var newMCQ = originalMCQ.cloneNode(true);
 
     // Append the new component to the parent container
     var container = document.getElementById("questions-container");
-    container.appendChild(newComponent);
+    container.appendChild(newMCQ);
 
-    //duplicateButtons();
+    resetMCQ(newMCQ);
+
   }
 
   function duplicateShortAnswer() {
-    // Find the element you want to duplicate by its ID
-    var originalComponent = document.getElementById("sa-form");
 
-    // Create a new element (a clone) based on the original component
-    var newComponent = originalComponent.cloneNode(true);
+      // Find the element you want to duplicate by its ID
+      var originalSA = document.getElementById("sa-form");
 
-    // Update the ID or other attributes of the new component if necessary
-    // newComponent.id = "newComponentID";
-
-    // Append the new component to the parent container
-    var container = document.getElementById("questions-container");
-    container.appendChild(newComponent);
-
-    // duplicateButtons();
+      // Create a new element (a clone) based on the original component
+      var newSA = originalSA.cloneNode(true);
+  
+      // Append the new component to the parent container
+      var container = document.getElementById("questions-container");
+      container.appendChild(newSA);
+  
+      resetShortAnswer(newSA);
+      
   }
-
-  // function duplicateButtons() {
-  //     // Find the element you want to duplicate by its ID
-  //     var originalComponent = document.getElementById("q-add-button1");
-
-  //     // Create a new element (a clone) based on the original component
-  //     var newComponent = originalComponent.cloneNode(true);
-
-  //     // Update the ID or other attributes of the new component if necessary
-  //     // newComponent.id = "newComponentID";
-
-  //     // Append the new component to the parent container
-  //     var container = document.getElementById("buttons");
-  //     container.appendChild(newComponent);
-  // }
-
 
   return (
     <div>
-      <div className="background-style" id="questions-container">
+      <div id="questions-container">
         <div className="create-test-title">
           <input
             className="input-text"
@@ -191,40 +186,42 @@ export const TeacherCreateTest = () => {
           </div>
         </div>
 
-        <div className="short-answer-box" id="sa-form">
-          <input
+        <div className="short-answer-box" id="sa-form" >
+        <div style={{display:"flex"}}>
+          <input 
             className="question-input-text"
             type="text"
             placeholder="Question..."
+            id="sa-question"
           ></input>
-          <button className="badge-button">
-            <BadgeIcon />
-          </button>
-          <button className="badge-button">
-            <BadgeIcon />
-          </button>
-          <button className="badge-button">
-            <BadgeIcon />
-          </button>
-          <button className="badge-button">
-            <BadgeIcon />
-          </button>
-          <button className="badge-button">
-            <BadgeIcon />
-          </button>
+         <div>
+              {badges.map((badgeId) => (
+                <button
+                  className="badge-button"
+                  key={badgeId}
+                  // className={activeBadge === badgeId ? 'active' : ''}
+                  onClick={() => handleBadgeChange(badgeId)}
+                >
+                  <BadgeIcon fill={activeBadge === badgeId ? badgeId : inactiveBadge} />
+                </button>
+              ))}
+            </div>
+            </div> 
           <hr className="line"></hr>
           <div>
             <input
               className="sa-option-text"
               type="text"
               placeholder="Type your answer..."
+              id="sa-answer"
             ></input>
           </div>
+
         </div>
       </div>
 
       <div id="buttons">
-        <div id="form-clones" style={{ display: "block", paddingBottom: "50px" }}>
+        <div id="form-clones" style={{ display: "block", paddingBottom: "20px" }}>
           <div className="add-mcq-question-box" onClick={duplicateMCQ}>
             <text className="add-question-button">
               + Add multiple choice question
@@ -236,6 +233,10 @@ export const TeacherCreateTest = () => {
             </text>
           </div>
         </div>
+      </div>
+
+      <div>
+        <button className="test-next-button">Next</button>
       </div>
     </div>
   );

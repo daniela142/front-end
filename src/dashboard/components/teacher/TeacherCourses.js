@@ -5,6 +5,7 @@ import "../../style/teachercourses.css"
 import {CourseInfo} from "./CourseInfo";
 import {StudentList} from "./StudentList";
 import {TeacherCreateTest} from "./TeacherCreateTest";
+import { RankingSystem } from "./rankingSystem";
 
 export const TeacherCourses = () => {
 
@@ -16,11 +17,18 @@ export const TeacherCourses = () => {
 
     const courses = () => {
         return (
+
+        <div>
             <div className="courses-container-t">
                 <div className="courses-info">
                     <CourseInfo viewType={"teacher"}/>
                 </div>
                 <StudentList />
+            </div>
+
+            <div>
+                <RankingSystem/>
+            </div>
             </div>
         );
     }

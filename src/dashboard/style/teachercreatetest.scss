@@ -1,6 +1,4 @@
-.background-style{
-    padding-bottom: 20px;
-}
+
 .create-test-title{
     width: 95%;
     height: 60px;
@@ -120,4 +118,18 @@
         color: #928d8d;
 
     }
+}
+
+.test-next-button{
+    height: 40px;
+    width: 90px;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    background-color: #4047FF;
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-right: 35px;
+    margin-bottom: 30px !important;
 }
