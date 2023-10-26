@@ -7,8 +7,14 @@ import {Profile} from "./profile";
 
 export const StudentComponents = _ => {
     return (
-        <div style={{display: "flex", alignItems: "center" }}>
-            <div>
+        <div style={{ 
+            display: "flex", 
+            alignItems: "center", 
+            width: "100%", 
+            minWidth: "1200px",
+            justifyContent: "space-between"
+        }}>
+            <div style={{width: "55%"}}>
                 <Courses />
                 <Assessments />
             </div>

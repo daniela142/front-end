@@ -66,4 +66,32 @@
   //& svg {
   //  width: 63px;
   //}
+
+}
+
+.mark-box {
+  width: 100%;
+  height: 150px;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  position: relative;
+
+  & .mark-box-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);;
+    display: flex;
+    align-items: center;
+
+    & .mark-wrapper {
+      display: flex;
+      justify-content: space-between;
+      font-size: 26px;
+      font-weight: 600;
+      min-width: 500px;
+      margin-left: 40px;
+    }
+  }
+
 }
