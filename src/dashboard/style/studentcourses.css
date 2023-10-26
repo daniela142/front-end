@@ -1,7 +1,7 @@
 .courses-container-s {
   width: 100%;
-  padding-right: 64px;
-  margin-left: 20px;
+  padding-right: 40px;
+  padding-left: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -69,4 +69,6 @@
 }
 .courses-container-s .exam-history-box .exam-history .exam-history-item:last-child {
   border: none;
-}/*# sourceMappingURL=studentcourses.css.map */
+}
+
+/*# sourceMappingURL=studentcourses.css.map */

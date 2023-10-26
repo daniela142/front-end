@@ -54,4 +54,9 @@
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-}/*# sourceMappingURL=courseinfo.css.map */
+}
+.info-box .course-btn-group span {
+  font-family: "Inter";
+}
+
+/*# sourceMappingURL=courseinfo.css.map */

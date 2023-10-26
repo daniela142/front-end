@@ -15,7 +15,7 @@ export const Exam = () => {
   };
 
   return (
-    <div className="Exam">
+    <div className="exam">
     <header>Introduction to Development Basics</header>
     <div className="question-box">
       <h2>Question 3</h2>
@@ -35,8 +35,8 @@ export const Exam = () => {
           ))}
         </form>
       </div>
+      <button className="submit-q" onClick={handleSubmit}>Submit</button>
     </div>
-    <button onClick={handleSubmit}>Submit</button>
 
   </div>
 );

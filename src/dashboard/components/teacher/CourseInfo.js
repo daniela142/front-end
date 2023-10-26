@@ -26,7 +26,7 @@ export const CourseInfo = ({viewType}) => {
                 <p>{course.desc}</p>
                 <div className="course-btn-group" style={{display: viewType === 'teacher' ? 'flex' : 'none'}}>
                     <button className="course-btn-clear"><span>View Tests</span><ArrowIcon /></button>
-                    <button className="course-btn-fill" onClick={() => navigate(`${url}/createtest`)}>Create Test<ArrowIcon /></button>
+                    <button className="course-btn-fill" onClick={() => navigate(`${url}/createtest`)}><span>Create Test</span><ArrowIcon /></button>
                 </div>
             </div>
         </div>

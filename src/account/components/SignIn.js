@@ -15,6 +15,17 @@ export const SignIn = (_) => {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
+  const getTests = async (e) => {
+    try {
+      const response = await axios.get(`${global.route}/api/tests`);
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  getTests();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);

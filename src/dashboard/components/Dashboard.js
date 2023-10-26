@@ -14,7 +14,6 @@ export const Dashboard = ({page}) => {
     let navigate = useNavigate();
 
     const user = JSON.parse(localStorage.getItem("User"));
-    console.log(page);
 
     useEffect(() => {
         if (user === null) {
@@ -24,7 +23,7 @@ export const Dashboard = ({page}) => {
     }, []);
 
     function loadComponents() {
-        if (user.usertype == "teacher") {
+        if (user && user.usertype == "teacher") {
             if (page === "dashboard") {
                 return <TeacherComponents/>
             }
@@ -39,7 +38,7 @@ export const Dashboard = ({page}) => {
             }
             return <TeacherComponents/>
             // return <TeacherCourses />
-        } else if (user.usertype == "admin") { 
+        } else if (user && user.usertype == "admin") {
             return <TeacherComponents/>
         } else {
             if (page === 'dashboard') {
@@ -66,7 +65,7 @@ export const Dashboard = ({page}) => {
                     <SearchBar />
                     <ProfileMenu />
                 </div>
-                <h1 className="name-header"> Hello, {user.firstname}</h1>
+                <h1 className="name-header"> Hello, {user && user.firstname}</h1>
                 <div>
                     {
                         loadComponents()

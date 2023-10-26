@@ -72,7 +72,7 @@ export const SideBar = () => {
                     </div>
                     <ul className='courses-menu' ref={coursesMenu}>
                         {courses.map((course, index) => {
-                            return (<li className={'course-item ' + (location.includes(`/${course.id}`) ? 'course-active' : '')} onClick={() => navigate(`/courses/${course.id}`)}>
+                            return (<li className={'course-item ' + (location.includes(`courses/${course.id}`) ? 'course-active' : '')} onClick={() => navigate(`/courses/${course.id}`)}>
                                 <span>{course.name}</span>
                                 <div>
                                     <ThinArrowIcon />

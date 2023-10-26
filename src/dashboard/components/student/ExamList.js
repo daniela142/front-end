@@ -1,9 +1,12 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import "../../style/studentcourses.css";
 import ArrowIcon from "../../svg/arrowIcon";
 
 export const ExamList = () => {
+
+    const navigate = useNavigate();
+    const url = useLocation().pathname;
 
     const exams = [
         {
@@ -25,7 +28,7 @@ export const ExamList = () => {
             <h1>Examinations</h1>
             <ul className='exam-list'>
                 {exams.map((exam, index) => {
-                    return (<li className="exam-list-item">{exam.name}<ArrowIcon /></li>);
+                    return (<li className="exam-list-item" onClick={() => navigate(`${url}/exam/${exam.id}/menu`)}>{exam.name}<ArrowIcon /></li>);
                 })}
             </ul>
         </div>
