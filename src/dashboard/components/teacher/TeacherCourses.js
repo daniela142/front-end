@@ -19,16 +19,24 @@ export const TeacherCourses = () => {
         return (
 
         <div>
-            <div className="courses-container-t">
+            {/* <div className="courses-container-t">
                 <div className="courses-info">
                     <CourseInfo viewType={"teacher"}/>
                 </div>
                 <StudentList />
+            </div> */}
+
+            <div className="courses-container-t">
+                <div className="courses-info">
+                    <CourseInfo viewType={"teacher"}/>
+                    <RankingSystem/>
+                </div>
+                <StudentList />
             </div>
 
-            <div>
+            {/* <div>
                 <RankingSystem/>
-            </div>
+            </div> */}
             </div>
         );
     }

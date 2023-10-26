@@ -1,8 +1,7 @@
 .ranking-box {
-  width: 810px;
-  height: 362px;
+  width: 100%;
+  height: 330px;
   background-color: white;
   border-radius: 20px;
   margin-top: 16px;
-  margin-left: 20px;
 }/*# sourceMappingURL=rankingsystem.css.map */

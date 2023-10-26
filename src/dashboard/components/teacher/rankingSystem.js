@@ -5,7 +5,7 @@ export const RankingSystem = () =>{
 
 return(
     <div className="ranking-box">
-       test 
+      
     </div>
 );
 }
