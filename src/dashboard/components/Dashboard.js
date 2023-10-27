@@ -28,7 +28,7 @@ export const Dashboard = ({page}) => {
     }, []);
 
     function loadComponents() {
-        if (user && user.usertype == "teacher") {
+        if (user && (user.usertype == "teacher" || user.usertype == "admin")) {
             if (page === "dashboard") {
                 return <TeacherComponents/>
             }
@@ -43,8 +43,6 @@ export const Dashboard = ({page}) => {
             }
             return <TeacherComponents/>
             // return <TeacherCourses />
-        } else if (user && user.usertype == "admin") {
-            return <TeacherComponents/>
         } else {
             if (page === 'dashboard') {
                 return <StudentComponents/>

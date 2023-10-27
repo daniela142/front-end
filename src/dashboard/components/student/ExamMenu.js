@@ -3,21 +3,26 @@ import "../../style/exammenu.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from 'axios';
 
+import LoadingCircle from "../LoadingCircle";
 
 export const ExamMenu = ({id}) => {
   const [test, setTest] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
   const url = useLocation().pathname;
 
   const getTest = async (test_id) => {
+    setIsLoading(true);
     try {
       const response = await axios.get(
         global.route + `/api/tests/${test_id}`,
         { withCredentials: true }
       );
+      setIsLoading(false);
       return response.data;
     } catch (error) {
+      setIsLoading(false);
       console.error(error);
       return null;
     }
@@ -32,6 +37,7 @@ export const ExamMenu = ({id}) => {
 
   return (
     <div className="exam-container">
+      {isLoading ? <LoadingCircle /> : ""}
       <div className="exam-details-box">
         <h2>{test?.name}</h2>
         <div className="exam-info">

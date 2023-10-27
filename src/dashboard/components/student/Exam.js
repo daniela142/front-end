@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import "../../style/exam.css";
 import axios from 'axios';
-
+import LoadingCircle from "../LoadingCircle";
 
 export const Exam = ({id}) => {
   const [test, setTest] = useState({});
   const [selectedOption, setSelectedOption] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const getTest = async (test_id) => {
+    setIsLoading(true);
     try {
       const response = await axios.get(
         global.route + `/api/tests/${test_id}`,
         { withCredentials: true }
       );
+      setIsLoading(false);
       return response.data;
     } catch (error) {
+      setIsLoading(false);
       console.error(error);
       return null;
     }
@@ -37,6 +41,7 @@ export const Exam = ({id}) => {
 
   return (
     <div className="exam">
+      {isLoading ? <LoadingCircle /> : ""}
       <header>{test?.name}</header>
       <div className="question-box">
         <h2>Question 3</h2>
