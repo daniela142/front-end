@@ -1,4 +1,5 @@
-import React, { useState, useRef } from 'react';
+import React, {useState, useRef, useEffect} from 'react';
+import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 
 import Icon from "../svg/icon";
@@ -19,20 +20,35 @@ export const SideBar = () => {
 
     const coursesMenu = useRef(null);
 
-    const courses = [
-        {
-            name: 'Web Design',
-            id: '123',
-        },
-        {
-            name: 'Development Basics',
-            id: '456',
-        },
-        {
-            name: 'Data With Python',
-            id: '789',
-        },
-    ];
+    const [courses, setCourses] = useState([]);
+
+    const user = JSON.parse(localStorage.getItem("User"));
+
+    const getClassroom = async (classroom_id) => {
+        try {
+            const response = await axios.get(
+                global.route + `/api/classrooms/${classroom_id}`,
+                { withCredentials: true }
+            );
+            return response.data;
+        } catch (error) {
+            console.error(error);
+            return null;
+        }
+    }
+
+    useEffect( () => {
+        async function fetchData() {
+            if (user != null) {
+                let classroomsArr = [];
+                for(let i =0; i < user.classroom_ids.length; i++) {
+                    classroomsArr.push(await getClassroom(user.classroom_ids[i]));
+                }
+                setCourses(classroomsArr);
+            }
+        }
+        fetchData();
+    }, []);
 
     function expandCourses() {
         // console.log(coursesMenu.current.style);
@@ -72,7 +88,7 @@ export const SideBar = () => {
                     </div>
                     <ul className='courses-menu' ref={coursesMenu}>
                         {courses.map((course, index) => {
-                            return (<li className={'course-item ' + (location.includes(`courses/${course.id}`) ? 'course-active' : '')} onClick={() => navigate(`/courses/${course.id}`)}>
+                            return (<li className={'course-item ' + (location.includes(`courses/${course._id}`) ? 'course-active' : '')} onClick={() => navigate(`/courses/${course._id}`)}>
                                 <span>{course.name}</span>
                                 <div>
                                     <ThinArrowIcon />
