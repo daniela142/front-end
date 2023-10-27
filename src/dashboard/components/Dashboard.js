@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "../style/dashboard.css";
 import { SearchBar } from "./searchbar";
 import { ProfileMenu } from './profiledropdown';
@@ -10,7 +10,12 @@ import { SideBar } from "./sidebar";
 import {TeacherCourses} from "./teacher/TeacherCourses";
 import {StudentCourses} from "./student/StudentCourses";
 
+import { ExamMenu } from "./student/ExamMenu";
+import { Exam } from "./student/Exam";
+
 export const Dashboard = ({page}) => {
+    const { id } = useParams();
+
     let navigate = useNavigate();
 
     const user = JSON.parse(localStorage.getItem("User"));
@@ -45,13 +50,19 @@ export const Dashboard = ({page}) => {
                 return <StudentComponents/>
             }
             if (page === 'courses') {
-                return <StudentCourses/>
+                return <StudentCourses id={id}/>
             }
             if (page === "grades") {
                 return null
             }
             if (page === "settings") {
                 return null
+            }
+            if (page === "exam-menu") {
+                return <ExamMenu id={id}/>
+            }
+            if (page === "exam-start") {
+                return <Exam id={id}/>
             }
         }
     }
@@ -65,7 +76,9 @@ export const Dashboard = ({page}) => {
                     <SearchBar />
                     <ProfileMenu />
                 </div>
-                <h1 className="name-header"> Hello, {user && user.firstname}</h1>
+                {
+                    page === "exam-start" ? '' : <h1 className="name-header"> Hello, {user && user.firstname}</h1>
+                }
                 <div>
                     {
                         loadComponents()

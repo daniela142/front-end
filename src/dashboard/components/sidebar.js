@@ -51,13 +51,17 @@ export const SideBar = () => {
     }, []);
 
     function expandCourses() {
-        // console.log(coursesMenu.current.style);
         if (!coursesMenu.current.style.maxHeight) {
             coursesMenu.current.style.maxHeight = coursesMenu.current.scrollHeight + 'px';
         }
         else {
             coursesMenu.current.style.maxHeight = "";
         }
+    }
+
+    const handleClick = async(_id) => {
+        navigate(`/courses/${_id}`);
+        window.location.reload(false);
     }
 
     return (
@@ -88,7 +92,7 @@ export const SideBar = () => {
                     </div>
                     <ul className='courses-menu' ref={coursesMenu}>
                         {courses.map((course, index) => {
-                            return (<li className={'course-item ' + (location.includes(`courses/${course._id}`) ? 'course-active' : '')} onClick={() => navigate(`/courses/${course._id}`)}>
+                            return (<li className={'course-item ' + (location.includes(`courses/${course._id}`) ? 'course-active' : '')} onClick={() => handleClick(course._id)}>
                                 <span>{course.name}</span>
                                 <div>
                                     <ThinArrowIcon />
