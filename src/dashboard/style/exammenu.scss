@@ -17,21 +17,32 @@
   }
 
   & .exam-info div {
-    font-weight: bold;
-    font-size: 30px;
-    color: #555;
+    font-weight: 500;
+    font-size: 32px;
+    font-family: "Inter";
+    color: #9592A6;
+    margin-bottom: 32px;
   }
 
   & .exam-info strong {
     display: block;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    font-size: 24px;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 800;
+    color: #333269;
   }
 
   & .exam-rules {
     background-color: #ffffff;
-    padding: 50px;
+    padding: 40px 94px 72px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+  }
+
+  & .ranking-system {
+    background-color: #ffffff;
+    padding: 40px 94px 72px;
     border-radius: 20px;
   }
 
@@ -40,13 +51,36 @@
   }
 
   & h2 {
-    margin-top: 20px;
+    margin-top: 8px;
+    margin-left: 12px;
+    color: #121212;
+    font-family: "Poppins";
     font-size: 24px;
+    font-weight: 600;
+    line-height: 27px;
+    letter-spacing: 0.3px;
   }
 
   & h3 {
     margin-top: 10px;
     margin-bottom: 10px;
+    font-size: 18px;
+    color: #121212;
+    font-family: "Poppins";
+    font-weight: 600;
+    line-height: 27px; /* 150% */
+    letter-spacing: 0.3px;
+  }
+
+  & p {
+    color: #121212;
+    font-family: "Poppins";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px; /* 161.538% */
+    letter-spacing: 0.3px;
+    opacity: 0.7;
   }
 
   & .exam-details-box {

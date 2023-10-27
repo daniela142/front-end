@@ -61,7 +61,7 @@ export const SideBar = () => {
 
     const handleClick = async(_id) => {
         navigate(`/courses/${_id}`);
-        window.location.reload(false);
+        // window.location.reload(false);
     }
 
     return (

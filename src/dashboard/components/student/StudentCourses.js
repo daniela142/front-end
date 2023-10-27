@@ -35,7 +35,7 @@ export const StudentCourses = ({id}) => {
             setCourse(await getClassroom(id));
         }
         fetchData();
-    }, []);
+    }, [id]);
 
     return (
         <div className="courses-container-s">
