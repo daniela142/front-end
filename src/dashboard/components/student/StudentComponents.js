@@ -11,7 +11,6 @@ export const StudentComponents = _ => {
             display: "flex", 
             alignItems: "center", 
             width: "100%", 
-            minWidth: "1200px",
             justifyContent: "space-between"
         }}>
             <div style={{width: "55%"}}>

@@ -2,7 +2,7 @@
     margin-left: 15px;
     height: 316px;
     width: 100%;
-    min-width: 700px;
+    // min-width: 700px;
 
     background-color: white;
     padding-left: 24px;
@@ -61,11 +61,11 @@
 
     & .course-name {
         font-size: 14px;
-        font-weight: 500px;
+        font-weight: 500;
         letter-spacing: -0.24px;
         margin-left: 13px;
-        margin-right: 100px;
-        width: 187px;
+        // margin-right: 100px;
+        // width: 187px;
     }
 
     & .course-value {
