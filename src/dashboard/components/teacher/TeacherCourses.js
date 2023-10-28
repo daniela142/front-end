@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, {useEffect, useState} from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "../../style/dashboard.css";
 import "../../style/teachercourses.css"
@@ -6,8 +6,35 @@ import {CourseInfo} from "./CourseInfo";
 import {StudentList} from "./StudentList";
 import {TeacherCreateTest} from "./TeacherCreateTest";
 import { RankingSystem } from "./rankingSystem";
+import axios from "axios";
+import LoadingCircle from "../LoadingCircle";
 
-export const TeacherCourses = () => {
+export const TeacherCourses = ({id}) => {
+    const [course, setCourse] = useState({});
+    const [isLoading, setIsLoading] = useState(false);
+
+    const getClassroom = async (classroom_id) => {
+        setIsLoading(true);
+        try {
+            const response = await axios.get(
+                global.route + `/api/classrooms/${classroom_id}`,
+                { withCredentials: true }
+            );
+            setIsLoading(false);
+            return response.data;
+        } catch (error) {
+            console.error(error);
+            setIsLoading(false);
+            return null;
+        }
+    }
+
+    useEffect(() => {
+        async function fetchData() {
+            setCourse(await getClassroom(id));
+        }
+        fetchData();
+    }, [id]);
 
     // 0 = main courses page, 1 = create test, 2 = view test
     let mode = 0;
@@ -28,7 +55,8 @@ export const TeacherCourses = () => {
 
             <div className="courses-container-t">
                 <div className="courses-info">
-                    <CourseInfo viewType={"teacher"}/>
+                    {isLoading ? <LoadingCircle /> : ""}
+                    <CourseInfo viewType={"teacher"} courseName={course.name} courseDesc={course.description}/>
                     <RankingSystem/>
                 </div>
                 <StudentList />

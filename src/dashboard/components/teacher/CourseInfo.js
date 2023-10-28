@@ -20,7 +20,7 @@ export const CourseInfo = ({ viewType, courseName, courseDesc }) => {
             <div>
                 <CourseIcon />
             </div>
-            <div>
+            <div style={{width: "100%" }}>
                 <h1 className="course-title">{course.name}</h1>
                 <p>{course.desc}</p>
                 <div className="course-btn-group" style={{display: viewType === 'teacher' ? 'flex' : 'none'}}>

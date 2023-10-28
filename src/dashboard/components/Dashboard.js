@@ -12,13 +12,8 @@ import {StudentCourses} from "./student/StudentCourses";
 import {ExamMenu} from "./student/ExamMenu";
 import {Exam} from "./student/Exam";
 
-
-
-import { ExamMenu } from "./student/ExamMenu";
-import { Exam } from "./student/Exam";
-
 export const Dashboard = ({page}) => {
-    const { id } = useParams();
+    const { id, id_exam } = useParams();
 
     let navigate = useNavigate();
 
@@ -37,7 +32,7 @@ export const Dashboard = ({page}) => {
                 return <TeacherComponents/>
             }
             if (page === "courses") {
-                return <TeacherCourses/>
+                return <TeacherCourses id={id}/>
             }
             if (page === "grades") {
                 return null
@@ -55,13 +50,13 @@ export const Dashboard = ({page}) => {
                 return <StudentCourses id={id}/>
             }
             if (page === 'grades') {
-                return <ExamMenu/>
+                return null
             }
             if (page === "settings") {
-                return <Exam/>
+                return null
             }
             if (page === "exam-menu") {
-                return <ExamMenu id={id}/>
+                return <ExamMenu id_exam={id_exam}/>
             }
             if (page === "exam-start") {
                 return <Exam id={id}/>

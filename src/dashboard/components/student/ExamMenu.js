@@ -5,7 +5,7 @@ import axios from 'axios';
 
 import LoadingCircle from "../LoadingCircle";
 
-export const ExamMenu = ({id}) => {
+export const ExamMenu = ({id_exam}) => {
   const [test, setTest] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
@@ -30,7 +30,7 @@ export const ExamMenu = ({id}) => {
 
   useEffect(() => {
     async function fetchData() {
-      setTest(await getTest(id));
+      setTest(await getTest(id_exam));
     }
     fetchData();
   }, []);

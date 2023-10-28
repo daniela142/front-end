@@ -1,7 +1,3 @@
-.background-style {
-  padding-bottom: 20px;
-}
-
 .create-test-title {
   width: 95%;
   height: 60px;
@@ -128,4 +124,6 @@
   float: right;
   margin-right: 35px;
   margin-bottom: 30px !important;
-}/*# sourceMappingURL=teachercreatetest.css.map */
+}
+
+/*# sourceMappingURL=teachercreatetest.css.map */
