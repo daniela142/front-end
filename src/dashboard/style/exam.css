@@ -1,54 +1,58 @@
-/* .question-box {
-    background-color: #ffffff;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 20px; 
-    max-width: 1600px;
-  }
-
-  header {
-    font-size: 30px;
-    margin-bottom: 25px;
-    margin-top: 25px;
-    margin-left: 25px;
-  }
-  
-  h2 {
-    font-size: 20px;
-    margin-bottom: 25px;
-    color: #555;
-  }
-
-  .question {
-    font-size: 24px;
-    padding-bottom: 15px;
+.exam {
+  width: 100%;
+  padding: 20px 40px 20px 20px;
 }
-  
-  .options label {
-    display: block;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    cursor: pointer;
-    color: #555;
-    font-size: 18px;
-  }
-  
-  .options input[type="radio"] {
-    margin-right: 10px;
-    cursor: pointer;
-  }
-  
-  button {
-    background-color: #1177C0;
-    color: #ffffff;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    margin-left: 1150px;
-  }
-  
-  button:hover {
-    background-color: #0B5D98;
-  }
-   */
+.exam .question-box {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  max-width: 1600px;
+  width: 100%;
+  position: relative;
+}
+.exam header {
+  font-size: 30px;
+  margin-bottom: 25px;
+  margin-left: 25px;
+}
+.exam h2 {
+  font-size: 20px;
+  margin-bottom: 25px;
+  color: #555;
+}
+.exam .question {
+  font-size: 24px;
+  padding-bottom: 15px;
+}
+.exam .options label {
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  color: #555;
+  font-size: 18px;
+}
+.exam .options input[type=radio] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+.exam .submit-q {
+  padding: 10px 24px;
+  background-color: #1177C0;
+  border: 1.5px #1177C0 solid;
+  border-radius: 8px;
+  color: #FFFFFF;
+  font-family: "Poppins";
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  position: absolute;
+  bottom: -56px;
+  right: 0;
+}
+.exam .submit-q:hover {
+  background-color: #0B5D98;
+}
+
+/*# sourceMappingURL=exam.css.map */

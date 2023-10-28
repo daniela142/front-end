@@ -12,6 +12,7 @@ export const ProfileMenu = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const user = JSON.parse(localStorage.getItem("User"));
+  // const user = useLoginCheck();
 
   const [dropdownStatus, setDropdownStatus] = useState(false);
   let menuref = useRef();
@@ -70,12 +71,12 @@ export const ProfileMenu = () => {
           setDropdownStatus(!dropdownStatus);
         }}
       >
-        <div className="profile-in">{user.firstname.charAt(0)}</div>
+        <div className="profile-in">{user && user.firstname.charAt(0)}</div>
         <div>
           <h4 className="profile-name">
-            {user.firstname} {user.lastname.charAt(0)}{" "}
+            {user && user.firstname} {user && user.lastname.charAt(0)}{" "}
           </h4>
-          <h6 className="profile-type"> {user.usertype.charAt(0).toUpperCase() + user.usertype.slice(1)} </h6>
+          <h6 className="profile-type"> {user && (user.usertype.charAt(0).toUpperCase() + user.usertype.slice(1))}</h6>
         </div>
         <button className="profile-arrow">
           <DownArrow />
