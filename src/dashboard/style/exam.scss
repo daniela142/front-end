@@ -1,31 +1,44 @@
 .exam {
   width: 100%;
   padding: 20px 40px 20px 20px;
+  font-family: "Inter";
+
+  & .question-container {
+    display: flex;
+    gap: 12px;
+  }
 
   & .question-box {
     background-color: #ffffff;
-    padding: 20px;
+    padding: 25px;
     border-radius: 20px;
     max-width: 1600px;
-    width: 100%;
+    //height: fit-content;
+    flex: 1;
     position: relative;
   }
 
-  & header {
-    font-size: 30px;
+  & h1 {
+    font-size: 32px;
+    font-weight: 700;
     margin-bottom: 25px;
     margin-left: 25px;
   }
 
   & h2 {
     font-size: 20px;
+    font-weight: 500;
     margin-bottom: 25px;
-    color: #555;
+    padding-left: 10px;
+    color: #000;
   }
 
-  & .question {
-    font-size: 24px;
-    padding-bottom: 15px;
+  & .question-text {
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #C4C4C4;
+    margin-top: 10px;
   }
 
   & .options label {
@@ -33,13 +46,28 @@
     margin-top: 30px;
     margin-bottom: 15px;
     cursor: pointer;
-    color: #555;
-    font-size: 18px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
   }
 
-  & .options input[type="radio"] {
-    margin-right: 10px;
+  & .options label:last-child {
+    margin-bottom: 4px;
+  }
+
+  & .options input[type="checkbox"] {
+    margin-right: 20px;
     cursor: pointer;
+    appearance: none;
+    color: #ABABAB;
+    height: 18px;
+    width: 18px;
+    border: 1px solid #ABABAB;
+    border-radius: 50%;
+  }
+
+  & .options input[type="checkbox"]:checked {
+    background-color: #ABABAB;
   }
 
   & .submit-q {
@@ -60,6 +88,29 @@
 
   & .submit-q:hover {
     background-color: #0B5D98;
+  }
+
+  & .question-side {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 200px;
+
+    & h4 {
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    & .side-list {
+      background-color: #FFF;
+      border-radius: 20px;
+    }
+
+    & .side-time {
+      background-color: #FFF;
+      border-radius: 20px;
+    }
   }
 }
   

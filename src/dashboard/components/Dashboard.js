@@ -59,7 +59,7 @@ export const Dashboard = ({page}) => {
                 return <ExamMenu id_exam={id_exam}/>
             }
             if (page === "exam-start") {
-                return <Exam id={id}/>
+                return <Exam id_exam={id_exam}/>
             }
         }
     }

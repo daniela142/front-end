@@ -1,40 +1,64 @@
 .exam {
   width: 100%;
   padding: 20px 40px 20px 20px;
+  font-family: "Inter";
+}
+.exam .question-container {
+  display: flex;
+  gap: 12px;
 }
 .exam .question-box {
   background-color: #ffffff;
-  padding: 20px;
+  padding: 25px;
   border-radius: 20px;
   max-width: 1600px;
-  width: 100%;
+  flex: 1;
   position: relative;
 }
-.exam header {
-  font-size: 30px;
+.exam h1 {
+  font-size: 32px;
+  font-weight: 700;
   margin-bottom: 25px;
   margin-left: 25px;
 }
 .exam h2 {
   font-size: 20px;
+  font-weight: 500;
   margin-bottom: 25px;
-  color: #555;
+  padding-left: 10px;
+  color: #000;
 }
-.exam .question {
-  font-size: 24px;
-  padding-bottom: 15px;
+.exam .question-text {
+  font-size: 20px;
+  font-weight: 600;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #C4C4C4;
+  margin-top: 10px;
 }
 .exam .options label {
   display: block;
   margin-top: 30px;
   margin-bottom: 15px;
   cursor: pointer;
-  color: #555;
-  font-size: 18px;
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
 }
-.exam .options input[type=radio] {
-  margin-right: 10px;
+.exam .options label:last-child {
+  margin-bottom: 4px;
+}
+.exam .options input[type=checkbox] {
+  margin-right: 20px;
   cursor: pointer;
+  appearance: none;
+  color: #ABABAB;
+  height: 18px;
+  width: 18px;
+  border: 1px solid #ABABAB;
+  border-radius: 50%;
+}
+.exam .options input[type=checkbox]:checked {
+  background-color: #ABABAB;
 }
 .exam .submit-q {
   padding: 10px 24px;
@@ -53,6 +77,25 @@
 }
 .exam .submit-q:hover {
   background-color: #0B5D98;
+}
+.exam .question-side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 200px;
+}
+.exam .question-side h4 {
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+}
+.exam .question-side .side-list {
+  background-color: #FFF;
+  border-radius: 20px;
+}
+.exam .question-side .side-time {
+  background-color: #FFF;
+  border-radius: 20px;
 }
 
 /*# sourceMappingURL=exam.css.map */

@@ -40,6 +40,18 @@
   padding: 40px 94px 72px;
   border-radius: 20px;
 }
+.exam-container .ranking-system .badge-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  margin-top: 20px;
+  padding: 0 24px;
+}
+.exam-container .ranking-system .badge-group svg {
+  transform-origin: 50% 50%;
+  transform: scale(3);
+}
 .exam-container h1 {
   margin: 0;
 }
@@ -89,6 +101,8 @@
   border-radius: 25px;
   padding: 10px 30px;
   font-size: 16px;
+  font-family: "Inter";
+  font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
   display: flex;
