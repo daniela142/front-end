@@ -34,7 +34,6 @@
   margin-left: 10px;
   outline: none;
   border: none;
-  text-transform: capitalize;
   display: inline-block;
 }
 
@@ -124,6 +123,4 @@
   float: right;
   margin-right: 35px;
   margin-bottom: 30px !important;
-}
-
-/*# sourceMappingURL=teachercreatetest.css.map */
+}/*# sourceMappingURL=teachercreatetest.css.map */
