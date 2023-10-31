@@ -1,10 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../../style/profile.css";
 import "../../fonts/font.css";
 
 import BadgeIcon from "../../svg/badgeIcon";
 
 export const Profile = () => {
+    let navigate = useNavigate();
     const user = JSON.parse(localStorage.getItem("User"));
 
     return (

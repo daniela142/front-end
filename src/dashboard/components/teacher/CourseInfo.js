@@ -6,13 +6,12 @@ import CourseIcon from "../../svg/courseIcon";
 import ArrowIcon from "../../svg/arrowIcon";
 
 
-export const CourseInfo = ({viewType}) => {
+export const CourseInfo = ({ viewType, courseName, courseDesc }) => {
     const navigate = useNavigate();
     const url = useLocation().pathname;
-
     const course = {
-        name: 'Development Basics',
-        desc: `Laravel is a PHP based web framework for building high-end web applications using its significant and graceful syntaxes. It comes with a robust collection of tools and provides application architecture. Laravel is a PHP based web framework for building high-end web applications using its significant and graceful syntaxes. It comes with a robust collection of tools and provides application architecture. Laravel is a PHP based web framework for building high-end web applications using its significant and graceful syntaxes. It comes with a robust collection of tools and provides application architecture. Laravel is a PHP based web framework for building high-end web applications using its significant and graceful syntaxes. It comes with a robust collection of tools and provides application architecture.`,
+        name: courseName,
+        desc: courseDesc,
     };
 
     return (
@@ -21,12 +20,12 @@ export const CourseInfo = ({viewType}) => {
             <div>
                 <CourseIcon />
             </div>
-            <div>
+            <div style={{width: "100%" }}>
                 <h1 className="course-title">{course.name}</h1>
                 <p>{course.desc}</p>
                 <div className="course-btn-group" style={{display: viewType === 'teacher' ? 'flex' : 'none'}}>
                     <button className="course-btn-clear"><span>View Tests</span><ArrowIcon /></button>
-                    <button className="course-btn-fill" onClick={() => navigate(`${url}/createtest`)}>Create Test<ArrowIcon /></button>
+                    <button className="course-btn-fill" onClick={() => navigate(`${url}/createtest`)}><span>Create Test</span><ArrowIcon /></button>
                 </div>
             </div>
         </div>

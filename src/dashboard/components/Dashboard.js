@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "../style/dashboard.css";
 import { SearchBar } from "./searchbar";
 import { ProfileMenu } from './profiledropdown';
@@ -12,13 +12,12 @@ import {StudentCourses} from "./student/StudentCourses";
 import {ExamMenu} from "./student/ExamMenu";
 import {Exam} from "./student/Exam";
 
-
-
 export const Dashboard = ({page}) => {
+    const { id, id_exam } = useParams();
+
     let navigate = useNavigate();
 
     const user = JSON.parse(localStorage.getItem("User"));
-    console.log(page);
 
     useEffect(() => {
         if (user === null) {
@@ -28,12 +27,12 @@ export const Dashboard = ({page}) => {
     }, []);
 
     function loadComponents() {
-        if (user.usertype == "teacher") {
+        if (user && (user.usertype == "teacher" || user.usertype == "admin")) {
             if (page === "dashboard") {
                 return <TeacherComponents/>
             }
             if (page === "courses") {
-                return <TeacherCourses/>
+                return <TeacherCourses id={id}/>
             }
             if (page === "grades") {
                 return null
@@ -43,20 +42,24 @@ export const Dashboard = ({page}) => {
             }
             return <TeacherComponents/>
             // return <TeacherCourses />
-        } else if (user.usertype == "admin") { 
-            return <TeacherComponents/>
         } else {
             if (page === 'dashboard') {
                 return <StudentComponents/>
             }
             if (page === 'courses') {
-                return <StudentCourses/>
+                return <StudentCourses id={id}/>
             }
             if (page === 'grades') {
-                return <ExamMenu/>
+                return null
             }
             if (page === "settings") {
-                return <Exam/>
+                return null
+            }
+            if (page === "exam-menu") {
+                return <ExamMenu id_exam={id_exam}/>
+            }
+            if (page === "exam-start") {
+                return <Exam id_exam={id_exam}/>
             }
         }
     }
@@ -70,7 +73,9 @@ export const Dashboard = ({page}) => {
                     <SearchBar />
                     <ProfileMenu />
                 </div>
-                <h1 className="name-header"> Hello, {user.firstname}</h1>
+                {
+                    page === "exam-start" ? '' : <h1 className="name-header"> Hello, {user && user.firstname}</h1>
+                }
                 <div>
                     {
                         loadComponents()
