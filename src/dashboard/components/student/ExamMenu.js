@@ -43,7 +43,7 @@ export const ExamMenu = ({id_exam}) => {
         <h2>{test?.name}</h2>
         <div className="exam-info">
           <div><strong>Time Limit</strong>30 mins</div>
-          <div><strong>Questions</strong>20</div>
+          <div><strong>Questions</strong>{test?.questions?.length}</div>
           <div><strong>Date</strong>13/10/23</div>
           <div><strong>Time</strong>6:00PM</div>
         </div>
