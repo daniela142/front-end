@@ -3,6 +3,9 @@ import "../../style/exam.css";
 import axios from 'axios';
 import LoadingCircle from "../LoadingCircle";
 import {Question} from "./Question";
+import CorrectIcon from "../../svg/correctIcon";
+import IncorrectIcon from "../../svg/incorrectIcon";
+import {ExamEnd} from "./ExamEnd";
 
 export const Exam = ({id_exam}) => {
   const [test, setTest] = useState({});
@@ -11,6 +14,9 @@ export const Exam = ({id_exam}) => {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [examComplete, setExamComplete] = useState(false);
+
+  const [showResult, setShowResult] = useState(0);
+  const [isCorrect, setIsCorrect] = useState(false);
 
   const getTest = async (test_id) => {
     setIsLoading(true);
@@ -45,23 +51,35 @@ export const Exam = ({id_exam}) => {
     setQuestion(test?.questions?.[currentQuestion]);
   }, [currentQuestion]);
 
-  const handleSubmit = (studentAnswer) => {
-    console.log(studentAnswer);
-    console.log(test.questions[currentQuestion]);
+  const handleSubmit = async (studentAnswer) => {
     // CheckBoxes validation
     if (test.questions[currentQuestion].type === "CheckBoxes") {
-      if (compareCheckBoxes(studentAnswer, test.questions[currentQuestion].answers)) alert('Correct!');
-      else alert('Incorrect!');
+      if (compareCheckBoxes(studentAnswer, test.questions[currentQuestion].answers)) await setIsCorrect(true);
+      else await setIsCorrect(false);
     }
     // MultiChoice/ShortAnswer validation
     else {
-      if (studentAnswer[0] === test.questions[currentQuestion].answers[0]) alert('Correct!');
-      else alert('Incorrect!');
+      if (studentAnswer[0] === test.questions[currentQuestion].answers[0]) await setIsCorrect(true);
+      else await setIsCorrect(false);
     }
+    await showResultPopop();
     if (currentQuestion + 1 === test.questions.length) {
       setExamComplete(true);
     }
     setCurrentQuestion(currentQuestion + 1);
+  };
+
+  const showResultPopop = async () => {
+    return new Promise((res) => {
+      setShowResult(1);
+      setTimeout(() => {
+        setShowResult(2);
+        setTimeout(() => {
+          setShowResult(0);
+          res();
+        }, 250)
+      }, 1500);
+    });
   };
 
   const compareCheckBoxes = (studentArr, correctArr) => {
@@ -79,8 +97,10 @@ export const Exam = ({id_exam}) => {
   return (
     <div className="exam">
       {isLoading ? <LoadingCircle /> : ""}
+      { isCorrect && <div className={`result-popup ${!showResult ? 'hidden' : ''}`}><div><CorrectIcon />Correct</div></div> }
+      { !isCorrect && <div className={`result-popup ${!showResult ? 'hidden' : ''}`}><div><IncorrectIcon />Incorrect</div></div> }
       <h1>{test?.name}</h1>
-      <h2>Question {currentQuestion + 1}</h2>
+      { !examComplete && <h2>Question {currentQuestion + 1}</h2> }
       <div className="question-container" style={{ display: (examComplete ? 'none' : 'flex') }}>
         <Question handleSubmit={handleSubmit} question={question} />
         <div className="question-side">
@@ -100,7 +120,7 @@ export const Exam = ({id_exam}) => {
           </div>
         </div>
       </div>
-      { examComplete && 'Exam Complete!' }
+      { examComplete && <ExamEnd totalMarks={ test.questions.length } /> }
     </div>
   );
 }

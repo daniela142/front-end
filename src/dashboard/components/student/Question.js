@@ -43,7 +43,7 @@ export const Question = ({handleSubmit, question}) => {
                         />
                 )}
             </form>
-            <button className="submit-q" onClick={() => handleSubmit(selectedOptions)}>Submit</button>
+            <button className="submit-q" onClick={() => handleSubmit(selectedOptions)} disabled={selectedOptions.length === 0}>Submit</button>
         </div>
     );
 }

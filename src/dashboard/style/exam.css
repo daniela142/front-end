@@ -86,6 +86,11 @@
 .exam .submit-q:hover {
   background-color: #0B5D98;
 }
+.exam .submit-q:disabled {
+  background-color: #ABABAB;
+  border-color: #8A8A8A;
+  cursor: not-allowed;
+}
 .exam .question-side {
   display: flex;
   flex-direction: column;
@@ -104,6 +109,72 @@
 .exam .question-side .side-time {
   background-color: #FFF;
   border-radius: 20px;
+}
+.exam .result-popup {
+  width: 112px;
+  background-color: #000;
+  color: #FFF;
+  opacity: 0.5;
+  border-radius: 20px;
+  padding: 16px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: opacity 0.25s;
+}
+.exam .result-popup.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.exam .end-container {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.exam .end-container .end-info-box {
+  display: flex;
+  background-color: #FFF;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 0;
+}
+.exam .end-container .end-info-box div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 550px;
+}
+.exam .end-container .end-info-box h2 {
+  margin-top: 40px;
+  font-size: 24px;
+  font-weight: 700;
+}
+.exam .end-container .end-info-box p {
+  margin: 0;
+  font-size: 16px;
+}
+.exam .end-container .end-results-box {
+  display: flex;
+  background-color: #FFF;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 32px;
+  font-weight: 500;
+  gap: 32px;
+}
+.exam .end-container .end-results-box .rank-update-svg {
+  padding-top: 8px;
+  transform-origin: 50% 50%;
+  transform: scale(1.66);
 }
 
 /*# sourceMappingURL=exam.css.map */
