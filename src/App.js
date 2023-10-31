@@ -10,8 +10,8 @@ import { Dashboard } from './dashboard/components/Dashboard';
 import { SignUp } from './account/components/SignUp'
 
 function App() {
-  global.route = 'https://testing-system-blush.vercel.app';
-  // global.route = 'http://localhost:3000';
+  //global.route = 'https://testing-system-blush.vercel.app';
+  global.route = 'http://localhost:3000';
 
   return (
     <Router>
@@ -23,7 +23,7 @@ function App() {
         <Route path="/courses/:id" element={<Dashboard page={"courses"} />} />
         <Route path="/courses/:id/tests/:id_exam/menu" element={<Dashboard page={"exam-menu"} />} />
         <Route path="/courses/:id/tests/:id_exam/start" element={<Dashboard page={"exam-start"} />} />
-        <Route path="/courses/:id/createtest" element={<Dashboard page={"courses"} />} />
+        <Route path="/courses/:id/createtest" element={<Dashboard page={"exam-create"} />} />
         <Route path="/grades" element={<Dashboard page={"grades"} />} />
         <Route path="/settings" element={<Dashboard page={"settings"} />} />
        </Routes>

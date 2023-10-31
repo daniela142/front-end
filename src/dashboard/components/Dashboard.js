@@ -9,8 +9,13 @@ import { TeacherComponents } from "./teacher/TeacherComponents";
 import { SideBar } from "./sidebar";
 import {TeacherCourses} from "./teacher/TeacherCourses";
 import {StudentCourses} from "./student/StudentCourses";
+
+// tea
+
+// student
 import {ExamMenu} from "./student/ExamMenu";
 import {Exam} from "./student/Exam";
+import { TeacherCreateTest } from "./teacher/TeacherCreateTest";
 
 export const Dashboard = ({page}) => {
     const { id, id_exam } = useParams();
@@ -39,6 +44,12 @@ export const Dashboard = ({page}) => {
             }
             if (page === "settings") {
                 return null
+            }
+            if (page === "exam-menu") {
+                return <ExamMenu id_exam={id_exam} />
+            }
+            if (page === "exam-create") {
+                return <TeacherCreateTest id_exam={id_exam} />
             }
             return <TeacherComponents/>
             // return <TeacherCourses />
