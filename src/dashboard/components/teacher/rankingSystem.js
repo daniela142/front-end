@@ -6,6 +6,7 @@ export const RankingSystem = () =>{
 
 return(
     <div className="ranking-box">
+        <h3>Ranking System</h3>
        <RankingSystemBox/>
     </div>
 );
