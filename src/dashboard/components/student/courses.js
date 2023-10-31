@@ -13,10 +13,11 @@ export const Courses = () => {
 
             <div className="headings">
                 <label className="course-h1">Course name</label>
-                <label className="course-h2">Tests remaining</label>
-                <label className="course-h3">Ranking</label>
-                <label className="course-h4">Grade</label>
-                <label className="course-h5">Average</label>
+                <div className="course-h2">
+                    <label className="course-h3">Tests remaining</label>
+                    <label className="course-h3">Skill Ranking</label>
+                    <label className="course-h3">Badge</label>
+                </div>
             </div>
             
             

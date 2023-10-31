@@ -1,25 +1,38 @@
 .profile-box {
-    width: 371px;
-    //height: 697px;
+    width: 40%;
+    min-width: 200px;
     height: 647px;
     background-color: white;
-    border-radius: 23.389px;
-    margin-left: 20px;
-
-    padding-left: 24px;
-    padding-right: 20px;
+    margin-right: 20px;
     border-radius: 20px;
-
-    & .course-title {
-        padding-top: 15px;
-        font-size: 26px;
-        font-weight: 500;
-
-        display: flex;
+    position: relative;
+    
+    & .profile-name {
+        width: 100%;
+        font-weight: 600;
+        font-size: 28px;
+        margin: 10px 0;
     }
 
-        & .user-name {
-            font-size: 26px;
-            font-weight: 500px;
+    & .profile-metric {
+        display: flex;
+        justify-content: space-between;
+        margin: 15px 0;
+        font-size: 20px;
+        font-weight: 200;
+
+        & div:last-child {
+            font-weight: 600;
         }
+    }
+
+
+    & .profile-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        min-width: 200px;
+    }
 }

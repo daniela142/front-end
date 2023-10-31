@@ -7,6 +7,7 @@ import "../../style/studentcourses.css";
 import {CourseInfo} from "../teacher/CourseInfo";
 import {ExamList} from "./ExamList";
 import {PastExams} from "./PastExams";
+import { OverallMark } from "./OverallMark";
 
 import LoadingCircle from "../LoadingCircle";
 
@@ -45,6 +46,7 @@ export const StudentCourses = ({id}) => {
                 <ExamList testIds={course?.test_ids} />
                 <PastExams />
             </div>
+            <OverallMark />
         </div>
     );
 }

@@ -2,7 +2,8 @@
     margin-top: 15px;
     margin-left: 15px;
     height: 316px;
-    width: 759px;
+    width: 100%;
+    // min-width: 700px;
 
     background-color: white;
     padding-left: 24px;
@@ -20,6 +21,7 @@
     & .headings {
         display: flex;
         align-items: center;
+        justify-content: space-between;
     }
 
     & .assessment-h1 {
@@ -34,7 +36,7 @@
         font-size: 10px;
         color: #9BA5B7;
         margin-top: 15px;
-        margin-left: 101px;
+        // margin-left: 101px;
         height: 16px;
     }
 
@@ -42,7 +44,7 @@
         font-size: 10px;
         color: #9BA5B7;
         margin-top: 15px;
-        margin-left: 372px;
+        // margin-left: 372px;
         height: 16px;
     }
 
@@ -77,7 +79,8 @@
 
     & .class-container {
         margin-left: 60px;
-        width: 570px;
+        width: 83%;
+        // width: 570px;
         height: 57px;
         border-radius: 10px;
         background-color: white;
@@ -85,18 +88,20 @@
 
         display: flex;
         align-items: center;
+        justify-content: space-between;
     }
 
     & .class-container:hover {
         margin-left: 60px;
-            width: 570px;
-            height: 57px;
-            border-radius: 10px;
-            background-color: #FAFAFF;
-            box-shadow: rgba(0, 0, 0, 0.10) 0px 14px 20px 0px;
-        
-            display: flex;
-            align-items: center;
+        width: 83%;
+        // width: 570px;
+        height: 57px;
+        border-radius: 10px;
+        background-color: #FAFAFF;
+        box-shadow: rgba(0, 0, 0, 0.10) 0px 14px 20px 0px;
+    
+        display: flex;
+        align-items: center;
     }
 
     & .class-heading {
@@ -111,7 +116,7 @@
     }
 
     & .time-container {
-        margin-left: 190px;
+        // margin-left: 190px;
         width: 100px;
         height: 24px;
         border-radius: 11px;
