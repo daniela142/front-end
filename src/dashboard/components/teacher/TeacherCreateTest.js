@@ -14,7 +14,7 @@ export const TeacherCreateTest = () => {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const [title, setTitle] = useState("No name");
+  const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [timeLimit, setTimeLimit] = useState(60);
@@ -24,18 +24,16 @@ export const TeacherCreateTest = () => {
       question: "",
       type: "MultipleChoice",
       options: ["", "", "", ""],
-      answer: "",
-      badge: null,
+      answer: "0",
+      badge: "#518CFE",
     },
     {
       question: "",
       type: "ShortAnswer",
       answer: "",
-      badge: null,
+      badge: "#518CFE",
     },
   ]);
-
-  const [objectIdArray, setObjectIdArray] = useState([]);
 
   const [showDatetimeBox, setShowDatetimeBox] = useState(false);
 
@@ -56,14 +54,20 @@ export const TeacherCreateTest = () => {
     setQuestions(updatedQuestions);
   };
 
+  const handleRadioChange = async (index, optionIndex) => {
+    const updatedQuestions = [...questions];
+    updatedQuestions[index].answer = optionIndex.toString();
+    setQuestions(updatedQuestions)
+  }
+
   const duplicateMCQ = () => {
     const updatedQuestions = [...questions];
     updatedQuestions.push({
       question: "",
       type: "MultipleChoice",
       options: ["", "", "", ""],
-      answer: "",
-      badge: null,
+      answer: "0",
+      badge: "#518CFE",
     });
     setQuestions(updatedQuestions);
   };
@@ -74,23 +78,31 @@ export const TeacherCreateTest = () => {
       question: "",
       type: "ShortAnswer",
       answer: "",
-      badge: null,
+      badge: "#518CFE",
     });
     setQuestions(updatedQuestions);
   };
 
   const handleNext = async () => {
-    setShowDatetimeBox(true);
+    const allElementsFilled = questions.every((question) => (
+      question.question && (question.type === "MultipleChoice" ? question.options.every(option => option) : question.answer) && title && question.answer
+    ));
+
+    if (allElementsFilled) {
+      setShowDatetimeBox(true);
+    } else {
+      alert("Please fill out all elements before proceeding.");
+    }
   }
 
   const handleBack = async () => {
     setShowDatetimeBox(false);
   }
 
-  const createQuestions = async() => {
-    setIsLoading(true);
+  const createQuestions = async () => {
+    const newObjectIds = [];
 
-    for(let i = 0; i < questions.length; i++) {
+    for (let i = 0; i < questions.length; i++) {
       let elo;
       switch (questions[i].badge) {
         case "#518CFE":
@@ -114,44 +126,48 @@ export const TeacherCreateTest = () => {
       }
 
       try {
+        let formattedOptions = null;
+        
+        if (questions[i].type === "MultipleChoice")
+          formattedOptions = questions[i].options.map(option => option.toString());
+
         const response = await axios.post(
           global.route + `/api/questions`,
           {
             name: questions[i].question,
             type: questions[i].type,
-            options: questions[i].options,
+            options: formattedOptions,
             answers: [questions[i].answer],
             elo: elo,
-            
+
           },
           { withCredentials: true }
         );
 
         const newObjectId = response.data._id;
-        const updatedArray = [...objectIdArray, newObjectId];
-        setObjectIdArray(updatedArray);
-
-        setIsLoading(false);
+        newObjectIds.push(newObjectId);
       } catch (error) {
         console.error(error);
       }
     }
 
-    setIsLoading(false)
+    await Promise.all(newObjectIds);
+    return newObjectIds;
   }
 
   const createTest = async () => {
     setIsLoading(true);
 
     try {
-      createQuestions();
-      
+      const questionsArr = await createQuestions();
+      setIsLoading(false);
+
       const response = await axios.post(
         global.route + `/api/tests`,
         {
           name: title,
           description: "no description yet",
-          questions: objectIdArray,
+          questions: questionsArr,
           datetime: new Date(date + "T" + time),
           time_limit: timeLimit,
         },
@@ -160,7 +176,6 @@ export const TeacherCreateTest = () => {
       setIsLoading(false);
 
       const parentPath = url.slice(0, url.lastIndexOf('/'));
-
       navigate(parentPath, { replace: true });
     } catch (error) {
       setIsLoading(false);
@@ -231,6 +246,7 @@ export const TeacherCreateTest = () => {
                 className="input-text"
                 type="text"
                 placeholder="Title of Quiz"
+                defaultValue={title}
                 onChange={
                   (e) => {
                     setTitle(e.target.value);
@@ -290,10 +306,9 @@ export const TeacherCreateTest = () => {
                                   alignItems: "center",
                                   marginTop: "20px",
                                 }}
-                                onChange={(e) => {
-                                  const updatedQuestions = [...questions];
-                                  updatedQuestions[index].answer = optionIndex.toString();
-                                  setQuestions(updatedQuestions);
+                                defaultChecked={optionIndex === 0}
+                                onChange={() => {
+                                  handleRadioChange(index, optionIndex)
                                 }}
                               />
                               <input
