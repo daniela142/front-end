@@ -8,7 +8,7 @@ import axios from "axios";
 import LoadingCircle from "../LoadingCircle";
 import { useNavigate, useLocation } from "react-router-dom";
 
-export const TeacherCreateTest = () => {
+export const TeacherCreateTest = ({ id }) => {
   const navigate = useNavigate();
   const url = useLocation().pathname;
 
@@ -173,6 +173,16 @@ export const TeacherCreateTest = () => {
         },
         { withCredentials: true }
       );
+
+      // add test to classroom
+      const response2 = await axios.put(
+        global.route + `/api/classrooms/${id}`,
+        {
+          test_ids: [response.data._id],
+        },
+        { withCredentials: true }
+      );
+
       setIsLoading(false);
 
       const parentPath = url.slice(0, url.lastIndexOf('/'));

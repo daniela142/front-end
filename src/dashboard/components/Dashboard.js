@@ -49,7 +49,7 @@ export const Dashboard = ({page}) => {
                 return <ExamMenu id_exam={id_exam} />
             }
             if (page === "exam-create") {
-                return <TeacherCreateTest id_exam={id_exam} />
+                return <TeacherCreateTest id={id} />
             }
             return <TeacherComponents/>
             // return <TeacherCourses />

@@ -59,7 +59,7 @@ export const TeacherCourses = ({ id }) => {
                 <div className="courses-container-t">
                     <div className="courses-info">
                         {isLoading ? <LoadingCircle /> : ""}
-                        <CourseInfo viewType={"teacher"} courseId={id} courseName={course.name} courseDesc={course.description} />
+                        <CourseInfo viewType={"teacher"} courseName={course.name} courseDesc={course.description} />
                         <RankingSystem />
                     </div>
                     <StudentList />

@@ -6,7 +6,7 @@ import CourseIcon from "../../svg/courseIcon";
 import ArrowIcon from "../../svg/arrowIcon";
 
 
-export const CourseInfo = ({ viewType, courseId, courseName, courseDesc }) => {
+export const CourseInfo = ({ viewType, courseName, courseDesc }) => {
     const navigate = useNavigate();
     const url = useLocation().pathname;
     const course = {
