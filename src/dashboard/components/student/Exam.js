@@ -107,19 +107,16 @@ export const Exam = ({id_exam}) => {
           <div className="side-list">
             <h4>Questions</h4>
             <ul className="question-list">
-              <li>Question 1</li>
-              <li>Question 2</li>
-              <li>Question 3</li>
-              <li>Question 4</li>
-              <li>Question 5</li>
-              <li>Question 6</li>
-              <li>Question 7</li>
-              <li>Question 8</li>
+              {
+                test?.questions?.map((question, index) => (
+                  <li>Question {index+1}</li>
+                ))
+              }
             </ul>
           </div>
           <div className="side-time">
             <h4>Time Remaining</h4>
-            <p style={{marginLeft:"45px"}}>30 mins 0 sec</p>
+            <p style={{marginLeft:"45px"}}>{test?.time_limit} mins 0 secs  </p>
           </div>
         </div>
       </div>
