@@ -34,6 +34,7 @@ export const TeacherCreateTest = ({ id }) => {
       badge: "#518CFE",
     },
   ]);
+  const [selectedOptions, setSelectedOptions] = useState([]);
 
   const [showDatetimeBox, setShowDatetimeBox] = useState(false);
 
@@ -54,10 +55,22 @@ export const TeacherCreateTest = ({ id }) => {
     setQuestions(updatedQuestions);
   };
 
-  const handleRadioChange = async (index, optionIndex) => {
-    const updatedQuestions = [...questions];
-    updatedQuestions[index].answer = optionIndex.toString();
-    setQuestions(updatedQuestions)
+  const handleRadioChange = async (index, optionIndex, option, isRadio) => {
+    setSelectedOptions((prevSelectedOptions) => {
+      const newSelectedOptions = [...prevSelectedOptions];
+      newSelectedOptions[index] = option;
+      return newSelectedOptions;
+    });
+
+    setQuestions((prevQuestions) => {
+      const updatedQuestions = [...prevQuestions];
+      if (isRadio) {
+        updatedQuestions[index].answer = option.toString();
+      } else {
+        updatedQuestions[index].options[optionIndex] = option;
+      }
+      return updatedQuestions;
+    });
   }
 
   const duplicateMCQ = () => {
@@ -85,7 +98,7 @@ export const TeacherCreateTest = ({ id }) => {
 
   const handleNext = async () => {
     const allElementsFilled = questions.every((question) => (
-      question.question && (question.type === "MultipleChoice" ? question.options.every(option => option) : question.answer) && title && question.answer
+      question.question && (question.type === "MultipleChoice" ? question.options.every(option => option) : question.answer) && title && question.answer && selectedOptions
     ));
 
     if (allElementsFilled) {
@@ -96,6 +109,7 @@ export const TeacherCreateTest = ({ id }) => {
   }
 
   const handleBack = async () => {
+    setSelectedOptions([]);
     setShowDatetimeBox(false);
   }
 
@@ -130,7 +144,7 @@ export const TeacherCreateTest = ({ id }) => {
         
         if (questions[i].type === "MultipleChoice")
           formattedOptions = questions[i].options.map(option => option.toString());
-
+        
         const response = await axios.post(
           global.route + `/api/questions`,
           {
@@ -159,34 +173,40 @@ export const TeacherCreateTest = ({ id }) => {
     setIsLoading(true);
 
     try {
-      const questionsArr = await createQuestions();
-      setIsLoading(false);
+      const examDate = new Date(date + "T" + time)
+      if (!isNaN(examDate.getTime())) {
+        const questionsArr = await createQuestions();
+        setIsLoading(false);
 
-      const response = await axios.post(
-        global.route + `/api/tests`,
-        {
-          name: title,
-          description: "no description yet",
-          questions: questionsArr,
-          datetime: new Date(date + "T" + time),
-          time_limit: timeLimit,
-        },
-        { withCredentials: true }
-      );
+        const response = await axios.post(
+          global.route + `/api/tests`,
+          {
+            name: title,
+            description: "no description yet",
+            questions: questionsArr,
+            datetime: examDate,
+            time_limit: timeLimit,
+          },
+          { withCredentials: true }
+        );
 
-      // add test to classroom
-      const response2 = await axios.put(
-        global.route + `/api/classrooms/${id}`,
-        {
-          test_ids: [response.data._id],
-        },
-        { withCredentials: true }
-      );
+        // add test to classroom
+        const response2 = await axios.put(
+          global.route + `/api/classrooms/${id}`,
+          {
+            test_ids: [response.data._id],
+          },
+          { withCredentials: true }
+        );
 
-      setIsLoading(false);
+        setIsLoading(false);
 
-      const parentPath = url.slice(0, url.lastIndexOf('/'));
-      navigate(parentPath, { replace: true });
+        const parentPath = url.slice(0, url.lastIndexOf('/'));
+        navigate(parentPath, { replace: true });
+      } else {
+        console.error("Invalid date " + examDate)
+        setIsLoading(false);
+      }
     } catch (error) {
       setIsLoading(false);
       console.error(error);
@@ -317,8 +337,8 @@ export const TeacherCreateTest = ({ id }) => {
                                   marginTop: "20px",
                                 }}
                                 defaultChecked={optionIndex === 0}
-                                onChange={() => {
-                                  handleRadioChange(index, optionIndex)
+                                onChange={(e) => {
+                                  handleRadioChange(index, optionIndex, option.toString(), true);
                                 }}
                               />
                               <input
@@ -326,12 +346,9 @@ export const TeacherCreateTest = ({ id }) => {
                                 style={{ marginTop: "-22px" }}
                                 type="text"
                                 placeholder={`Option ${optionIndex + 1}`}
-                                value={option}
+                                defaultValue={option}
                                 onChange={(e) => {
-                                  const updatedQuestions = [...questions];
-                                  updatedQuestions[index].options[optionIndex] =
-                                    e.target.value;
-                                  setQuestions(updatedQuestions);
+                                  handleRadioChange(index, optionIndex, e.target.value, false);
                                 }}
                               />
                             </div>
