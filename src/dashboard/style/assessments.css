@@ -2,11 +2,12 @@
   margin-top: 15px;
   margin-left: 15px;
   height: 316px;
-  width: 759px;
+  width: 100%;
   background-color: white;
   padding-left: 24px;
   padding-right: 20px;
   border-radius: 20px;
+  position: relative;
 }
 .assessments-box .course-title {
   padding-top: 15px;
@@ -15,28 +16,30 @@
   display: flex;
 }
 .assessments-box .headings {
+  width: 100%;
+  height: 5px;
   display: flex;
-  align-items: center;
 }
 .assessments-box .assessment-h1 {
   font-size: 10px;
   color: #9BA5B7;
-  margin-top: 15px;
-  margin-left: 8px;
+  left: 4%;
+  position: absolute;
   height: 16px;
 }
 .assessments-box .assessment-h2 {
   font-size: 10px;
   color: #9BA5B7;
-  margin-top: 15px;
-  margin-left: 101px;
+  left: 18%;
+  position: absolute;
   height: 16px;
 }
 .assessments-box .assessment-h3 {
   font-size: 10px;
   color: #9BA5B7;
-  margin-top: 15px;
-  margin-left: 372px;
+  justify-self: end;
+  left: 70%;
+  position: absolute;
   height: 16px;
 }
 .assessments-box .assessment-item {
@@ -49,8 +52,8 @@
   align-items: center;
 }
 .assessments-box .date-container {
-  height: 48px;
-  width: 91px;
+  height: 100%;
+  width: 6%;
 }
 .assessments-box .date-1 {
   font-size: 10px;
@@ -63,36 +66,35 @@
   font-weight: 700;
 }
 .assessments-box .class-container {
-  margin-left: 60px;
-  width: 570px;
+  margin-left: 8%;
   height: 57px;
-  border-radius: 10px;
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0) 0px;
+  width: 80%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .assessments-box .class-container:hover {
-  margin-left: 60px;
-  width: 570px;
+  margin-left: 8%;
   height: 57px;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   border-radius: 10px;
   background-color: #FAFAFF;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 14px 20px 0px;
-  display: flex;
-  align-items: center;
 }
 .assessments-box .class-heading {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 500;
   color: black;
 }
 .assessments-box .class-sub {
-  font-size: 11px;
+  font-size: 14px;
   color: #9BA5B7;
 }
 .assessments-box .time-container {
-  margin-left: 190px;
+  margin-right: min(20px, 10%);
   width: 100px;
   height: 24px;
   border-radius: 11px;

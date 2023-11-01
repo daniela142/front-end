@@ -19,7 +19,7 @@
 
 .mcq-box{
     margin-top: 20px;
-    padding-top: 10px;
+    padding-top: 16px;
     padding-left: 25px;
     padding-right: 25px;
     margin-left: 30px;
@@ -37,7 +37,6 @@
     margin-left: 10px;
     outline: none;
     border: none;
-    text-transform: capitalize;
     display: inline-block;
 }
 
@@ -132,4 +131,59 @@
     float: right;
     margin-right: 35px;
     margin-bottom: 30px !important;
+    cursor: pointer;
+}
+
+.test-finish-button{
+    height: 40px;
+    width: 90px;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    background-color: #4047FF;
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-right: 35px;
+    margin-bottom: 30px !important;
+    cursor: pointer;
+}
+
+.date-time-box{
+    height: 290px;
+    width: 95%;
+    background-color: white;
+    border-radius: 20px;
+    margin-left: 30px;
+    margin-bottom: 12px;
+    padding: 50px;
+
+    & .date-time-input-label{
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+}
+
+.date-time-input-box{
+    outline: none;
+    border: none;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.test-publish-button{
+    height: 40px;
+    width: 90px;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    background-color:#1DB469;
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-right: 35px;
+    margin-bottom: 30px !important;
+    cursor: pointer;
 }

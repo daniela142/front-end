@@ -5,6 +5,8 @@
     display: flex;
     position: fixed;
     overflow: scroll;
+    // padding-bottom: 30px;
+
 }
 
 .header {
@@ -60,6 +62,7 @@
 
 .scroll-box__container {
     height: 100%;
+    width: 100%;
     flex-direction: column;
     display: inline-flex;
 }

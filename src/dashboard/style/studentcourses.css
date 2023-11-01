@@ -58,10 +58,10 @@
   transform: scale(1.5);
 }
 .courses-container-s .exam-list-box .exam-list-item:hover {
-  background-color: #333269;
+  background-color: #4E4CB6;
   color: #FFFFFF;
   font-weight: 800;
-  border: 2px solid #7E7DA3;
+  border: none;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2470588235);
   transition: 0.25s;
 }
@@ -77,9 +77,8 @@
   border-bottom: 1px solid #D3D3D3;
   display: flex;
   justify-content: space-between;
+  font-size: 18px;
 }
 .courses-container-s .exam-history-box .exam-history .exam-history-item:last-child {
   border: none;
-}
-
-/*# sourceMappingURL=studentcourses.css.map */
+}/*# sourceMappingURL=studentcourses.css.map */

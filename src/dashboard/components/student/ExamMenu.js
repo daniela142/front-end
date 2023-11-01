@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 import LoadingCircle from "../LoadingCircle";
-import BadgeIcon from "../../svg/badgeIcon";
+import BadgesRow from "../../svg/badgesRow";
 
 export const ExamMenu = ({id_exam}) => {
   const [test, setTest] = useState({});
@@ -42,10 +42,10 @@ export const ExamMenu = ({id_exam}) => {
       <div className="exam-details-box">
         <h2>{test?.name}</h2>
         <div className="exam-info">
-          <div><strong>Time Limit</strong>30 mins</div>
-          <div><strong>Questions</strong>{test?.questions?.length}</div>
-          <div><strong>Date</strong>13/10/23</div>
-          <div><strong>Time</strong>6:00PM</div>
+          <div><strong>Time Limit</strong>{test?.time_limit} mins</div>
+          <div><strong>Questions</strong>{test?.questions.length}</div>
+          <div><strong>Date</strong>{new Date(test?.datetime).toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' })}</div>
+          <div><strong>Time</strong> {new Date(test?.datetime).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}</div>
         </div>
       </div>
       <div className="exam-rules">
@@ -55,11 +55,7 @@ export const ExamMenu = ({id_exam}) => {
       <div className="ranking-system">
         <h3>Ranking System</h3>
         <div className="badge-group">
-          <BadgeIcon fill="#518CFE" />
-          <BadgeIcon fill="#6D5ED2" />
-          <BadgeIcon fill="#5ED278" />
-          <BadgeIcon fill="#F4694C" />
-          <BadgeIcon fill="#F4D94C" />
+          <BadgesRow/>
         </div>
       </div>
       <button className="start-exam-button" onClick={() => navigate(url.replace('menu', 'start'))}>Start Exam</button>

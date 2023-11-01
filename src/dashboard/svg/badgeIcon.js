@@ -1,12 +1,12 @@
 import React from "react";
 
 
-function Icon({fill}) {
+function Icon({fill, width, height}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="30"
-      height="30"
+      width={width ? width : "30"}
+      height={height ? height : "30"}
       fill="none"
       viewBox="0 0 66 65"
     >

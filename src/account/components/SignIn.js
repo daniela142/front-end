@@ -18,7 +18,7 @@ export const SignIn = (_) => {
   const getTests = async (e) => {
     try {
       const response = await axios.get(`${global.route}/api/tests`);
-      console.log(response);
+      // console.log(response);
     } catch (error) {
       console.error(error);
     }

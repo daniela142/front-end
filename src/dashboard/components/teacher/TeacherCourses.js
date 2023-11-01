@@ -1,15 +1,18 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import "../../style/dashboard.css";
-import "../../style/teachercourses.css"
-import {CourseInfo} from "./CourseInfo";
-import {StudentList} from "./StudentList";
-import {TeacherCreateTest} from "./TeacherCreateTest";
-import { RankingSystem } from "./rankingSystem";
 import axios from "axios";
 import LoadingCircle from "../LoadingCircle";
 
-export const TeacherCourses = ({id}) => {
+import "../../style/dashboard.css";
+import "../../style/teachercourses.css"
+
+import { CourseInfo } from "./CourseInfo";
+import { StudentList } from "./StudentList";
+import { TeacherCreateTest } from "./TeacherCreateTest";
+
+import { RankingSystem } from "./rankingSystem";
+
+export const TeacherCourses = ({ id }) => {
     const [course, setCourse] = useState({});
     const [isLoading, setIsLoading] = useState(false);
 
@@ -45,24 +48,24 @@ export const TeacherCourses = ({id}) => {
     const courses = () => {
         return (
 
-        <div>
-            {/* <div className="courses-container-t">
+            <div>
+                {/* <div className="courses-container-t">
                 <div className="courses-info">
                     <CourseInfo viewType={"teacher"}/>
                 </div>
                 <StudentList />
             </div> */}
 
-            <div className="courses-container-t">
-                <div className="courses-info">
-                    {isLoading ? <LoadingCircle /> : ""}
-                    <CourseInfo viewType={"teacher"} courseName={course.name} courseDesc={course.description}/>
-                    <RankingSystem/>
+                <div className="courses-container-t">
+                    <div className="courses-info">
+                        {isLoading ? <LoadingCircle /> : ""}
+                        <CourseInfo viewType={"teacher"} courseName={course.name} courseDesc={course.description} />
+                        <RankingSystem />
+                    </div>
+                    <StudentList />
                 </div>
-                <StudentList />
-            </div>
 
-            {/* <div>
+                {/* <div>
                 <RankingSystem/>
             </div> */}
             </div>
@@ -70,9 +73,9 @@ export const TeacherCourses = ({id}) => {
     }
 
     return (
-        <div>
-            {mode === 0 && courses() }
-            {mode === 1 && <TeacherCreateTest /> }
+        <div className="courses-container-s">
+            {isLoading ? <LoadingCircle /> : ""}
+            {courses()}
         </div>
     )
 }
