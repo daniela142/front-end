@@ -87,17 +87,20 @@ export const Exam = ({id_exam}) => {
         <div className="question-side">
           <div className="side-list">
             <h4>Questions</h4>
-            <ol>
+            <ul className="question-list">
               <li>Question 1</li>
               <li>Question 2</li>
               <li>Question 3</li>
               <li>Question 4</li>
               <li>Question 5</li>
-            </ol>
+              <li>Question 6</li>
+              <li>Question 7</li>
+              <li>Question 8</li>
+            </ul>
           </div>
           <div className="side-time">
             <h4>Time Remaining</h4>
-            <p>30 mins 0 sec</p>
+            <p style={{marginLeft:"45px"}}>30 mins 0 sec</p>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import "../../style/exam.css";
+import "../../fonts/font.css";
 
 export const Question = ({handleSubmit, question}) => {
 
@@ -12,7 +13,7 @@ export const Question = ({handleSubmit, question}) => {
             <h3 className="question-text">{ question?.name }</h3>
             <form onSubmit={e => e.preventDefault()} className="options">
                 {(question?.type === "MultipleChoice" || question?.type === "CheckBoxes") && question.options.map(option => (
-                    <label key={option}>
+                    <label key={option} >
                         <input
                             type="checkbox"
                             name="option"

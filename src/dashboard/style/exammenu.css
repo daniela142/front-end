@@ -31,26 +31,18 @@
 }
 .exam-container .exam-rules {
   background-color: #ffffff;
-  padding: 40px 94px 72px;
+  padding: 50px;
   border-radius: 20px;
   margin-bottom: 18px;
 }
 .exam-container .ranking-system {
   background-color: #ffffff;
-  padding: 40px 94px 72px;
+  padding: 40px;
   border-radius: 20px;
 }
 .exam-container .ranking-system .badge-group {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 90px;
-  margin-top: 20px;
-  padding: 0 24px;
-}
-.exam-container .ranking-system .badge-group svg {
-  transform-origin: 50% 50%;
-  transform: scale(3);
+  margin-top: 30px;
+  margin-left: 50px;
 }
 .exam-container h1 {
   margin: 0;
@@ -92,8 +84,9 @@
   border-radius: 20px;
 }
 .exam-container .start-exam-button {
-  position: fixed;
-  bottom: 16px;
+  float: right;
+  margin-top: 12px;
+  margin-bottom: 16px;
   right: 40px;
   background-color: #4CAF50;
   color: #fff;
@@ -104,11 +97,11 @@
   font-family: "Inter";
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  transition: 0.1s;
 }
 .exam-container .start-exam-button:hover {
-  background-color: #45a049;
+  background-color: #F5F5F5;
+  color: #4CAF50;
+  border: solid;
+  border-width: 1.5px;
 }/*# sourceMappingURL=exammenu.css.map */

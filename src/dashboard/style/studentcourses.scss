@@ -66,10 +66,10 @@
     }
 
     & .exam-list-item:hover {
-      background-color: #333269;
+      background-color: #4E4CB6;
       color: #FFFFFF;
       font-weight: 800;
-      border: 2px solid #7E7DA3;
+      border: none;
       box-shadow: 0 4px 4px 0 #0000003F;
       transition: 0.25s;
 
@@ -88,6 +88,7 @@
         border-bottom: 1px solid #D3D3D3;
         display: flex;
         justify-content: space-between;
+        font-size: 18px;
       }
 
       & .exam-history-item:last-child {

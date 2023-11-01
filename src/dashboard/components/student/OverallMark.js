@@ -8,7 +8,7 @@ export const OverallMark = () => {
     return (
     <div className="mark-box">
         <div className="mark-box-wrapper">
-          <BadgeIcon width={88} height={88} fill={"orange"}/>
+          <BadgeIcon width={75} height={75} fill={"orange"}/>
           <div className="mark-wrapper">
             <div>Overall Course Mark</div>
             <div>---</div>

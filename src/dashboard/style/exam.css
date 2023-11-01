@@ -17,14 +17,15 @@
 }
 .exam h1 {
   font-size: 32px;
-  font-weight: 700;
+  font-family: "Inter";
+  font-weight: 800px;
   margin-bottom: 25px;
-  margin-left: 25px;
+  margin-left: 10px;
 }
 .exam h2 {
   font-size: 20px;
   font-weight: 500;
-  margin-bottom: 25px;
+  margin-bottom: 16px;
   padding-left: 10px;
   color: #000;
 }
@@ -36,7 +37,8 @@
   margin-top: 10px;
 }
 .exam .options label {
-  display: block;
+  align-items: center;
+  display: flex;
   margin-top: 30px;
   margin-bottom: 15px;
   cursor: pointer;
@@ -94,8 +96,19 @@
 .exam .question-side .side-list {
   background-color: #FFF;
   border-radius: 20px;
+  overflow: auto;
 }
 .exam .question-side .side-time {
   background-color: #FFF;
   border-radius: 20px;
+}
+
+.label {
+  margin-top: 5px;
+}
+
+.question-list {
+  margin-top: -5px;
+  margin-left: -15px;
+  list-style-type: none;
 }/*# sourceMappingURL=exam.css.map */

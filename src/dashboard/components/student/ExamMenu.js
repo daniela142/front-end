@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 import LoadingCircle from "../LoadingCircle";
-import BadgeIcon from "../../svg/badgeIcon";
+import BadgesRow from "../../svg/badgesRow";
 
 export const ExamMenu = ({id_exam}) => {
   const [test, setTest] = useState({});
@@ -55,11 +55,7 @@ export const ExamMenu = ({id_exam}) => {
       <div className="ranking-system">
         <h3>Ranking System</h3>
         <div className="badge-group">
-          <BadgeIcon fill="#518CFE" />
-          <BadgeIcon fill="#6D5ED2" />
-          <BadgeIcon fill="#5ED278" />
-          <BadgeIcon fill="#F4694C" />
-          <BadgeIcon fill="#F4D94C" />
+          <BadgesRow/>
         </div>
       </div>
       <button className="start-exam-button" onClick={() => navigate(url.replace('menu', 'start'))}>Start Exam</button>
