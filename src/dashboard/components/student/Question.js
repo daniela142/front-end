@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "../../style/exam.css";
 import "../../fonts/font.css";
 
@@ -6,7 +6,9 @@ export const Question = ({handleSubmit, question}) => {
 
     const [selectedOptions, setSelectedOptions] = useState([]);
 
-    // need to clear selectedOptions after submission
+    useEffect(() => {
+        setSelectedOptions([]);
+    }, [question]);
 
     return (
         <div className="question-box">
@@ -18,9 +20,7 @@ export const Question = ({handleSubmit, question}) => {
                             type="checkbox"
                             name="option"
                             value={option}
-                            // checked={selectedOption === option}
                             checked={selectedOptions.includes(option)}
-                            // onChange={e => setSelectedOption(e.target.value)}
                             onChange={e => {
                                 if (question.type === "CheckBoxes") {
                                     if (e.target.checked) {
@@ -36,8 +36,15 @@ export const Question = ({handleSubmit, question}) => {
                         {option}
                     </label>
                 ))}
+                {question?.type === "ShortAnswer" && (
+                        <input
+                            type="text"
+                            placeholder="Type your answer..."
+                            onInput={e => { setSelectedOptions([e.target.value]) }}
+                        />
+                )}
             </form>
-            <button className="submit-q" onClick={() => handleSubmit(selectedOptions)}>Submit</button>
+            <button className="submit-q" onClick={() => handleSubmit(selectedOptions)} disabled={selectedOptions.length === 0}>Submit</button>
         </div>
     );
 }

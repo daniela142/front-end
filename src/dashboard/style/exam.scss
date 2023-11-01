@@ -13,7 +13,7 @@
     padding: 25px;
     border-radius: 20px;
     max-width: 1600px;
-    //height: fit-content;
+    height: fit-content;
     flex: 1;
     position: relative;
   }
@@ -72,6 +72,14 @@
     background-color: #ABABAB;
   }
 
+  & .options input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: "Inter";
+    width: 100%;
+  }
+
   & .submit-q {
     padding: 10px 24px;
     background-color: #1177C0;
@@ -90,6 +98,12 @@
 
   & .submit-q:hover {
     background-color: #0B5D98;
+  }
+
+  & .submit-q:disabled {
+    background-color: #ABABAB;
+    border-color: #8A8A8A;
+    cursor: not-allowed;
   }
 
   & .question-side {
@@ -116,16 +130,79 @@
     }
 
   }
-}
-  
-.label{
-  margin-top: 5px;
-  
-}
 
-.question-list{
-  margin-top: -5px;
-  margin-left: -15px;
-  list-style-type: none;
-  
+  & .result-popup {
+    width: 112px;
+    background-color: #000;
+    color: #FFF;
+    opacity: 0.5;
+    border-radius: 20px;
+    padding: 16px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: opacity 0.25s;
+  }
+
+  & .result-popup.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  & .end-container {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+
+    & .end-info-box {
+      display: flex;
+      background-color: #FFF;
+      border-radius: 20px;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 0;
+
+      & div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 550px;
+      }
+
+      & h2 {
+        margin-top: 40px;
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      & p {
+        margin: 0;
+        font-size: 16px;
+      }
+    }
+
+    & .end-results-box {
+      display: flex;
+      background-color: #FFF;
+      border-radius: 20px;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 0;
+      font-size: 32px;
+      font-weight: 500;
+      gap: 32px;
+
+      & .rank-update-svg {
+        padding-top: 8px;
+        transform-origin: 50% 50%;
+        transform: scale(1.66);
+      }
+    }
+  }
 }
