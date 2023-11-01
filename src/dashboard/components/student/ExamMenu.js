@@ -42,10 +42,10 @@ export const ExamMenu = ({id_exam}) => {
       <div className="exam-details-box">
         <h2>{test?.name}</h2>
         <div className="exam-info">
-          <div><strong>Time Limit</strong>30 mins</div>
-          <div><strong>Questions</strong>20</div>
-          <div><strong>Date</strong>13/10/23</div>
-          <div><strong>Time</strong>6:00PM</div>
+          <div><strong>Time Limit</strong>{test?.time_limit} mins</div>
+          <div><strong>Questions</strong>{test?.questions.length}</div>
+          <div><strong>Date</strong>{new Date(test?.datetime).toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' })}</div>
+          <div><strong>Time</strong> {new Date(test?.datetime).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}</div>
         </div>
       </div>
       <div className="exam-rules">

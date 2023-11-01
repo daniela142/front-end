@@ -5,12 +5,12 @@ import "../../fonts/font.css";
 import CourseIcon from "../../svg/courseIcon";
 import BadgeIcon from "../../svg/badgeIcon";
 
-export const CourseItem = () => {
+export const CourseItem = ({title}) => {
   return (
     <div className="course-item">
       <div className="course-icon">
         <CourseIcon />
-        <label className="course-name">Web Design</label>
+        <label className="course-name">{title}</label>
       </div>
 
       <div className="course-value">

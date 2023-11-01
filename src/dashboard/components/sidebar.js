@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -21,15 +21,22 @@ export const SideBar = () => {
     const coursesMenu = useRef(null);
 
     const [courses, setCourses] = useState([]);
+    const [exams, setExams] = useState([]);
 
     const user = JSON.parse(localStorage.getItem("User"));
+    const classrooms = JSON.parse(localStorage.getItem('Classrooms')) || [];
+    const tests = JSON.parse(localStorage.getItem('Tests')) || [];
 
-    const getClassroom = async (classroom_id) => {
+    const getTest = async (test_id) => {
         try {
             const response = await axios.get(
-                global.route + `/api/classrooms/${classroom_id}`,
+                global.route + `/api/tests/${test_id}`,
                 { withCredentials: true }
             );
+            
+            // tests.push(response.data);
+            // localStorage.setItem('Tests', JSON.stringify(tests));
+
             return response.data;
         } catch (error) {
             console.error(error);
@@ -37,18 +44,61 @@ export const SideBar = () => {
         }
     }
 
-    useEffect( () => {
+    const getClassroom = async (classroom_id) => {
+        try {
+            const response = await axios.get(
+                global.route + `/api/classrooms/${classroom_id}`,
+                { withCredentials: true }
+            );
+
+            // classrooms.push(response.data);
+            // localStorage.setItem('Classrooms', JSON.stringify(classrooms));
+
+            return response.data;
+        } catch (error) {
+            console.error(error);
+            return null;
+        }
+    }
+
+    useEffect(() => {
         async function fetchData() {
             if (user != null) {
-                let classroomsArr = [];
-                for(let i =0; i < user.classroom_ids.length; i++) {
-                    classroomsArr.push(await getClassroom(user.classroom_ids[i]));
+                const classroomPromises = user.classroom_ids.map(classroom_id =>
+                    getClassroom(classroom_id)
+                );
+
+                try {
+                    const classroomsArr = await Promise.all(classroomPromises);
+                    setCourses(classroomsArr);
+
+                    let temp = [];
+                    for (let i = 0; i < classroomsArr.length; i++) {
+                        for (let j = 0; j < classroomsArr[i].test_ids.length; j++) {
+                            temp.push(classroomsArr[i].test_ids[j]);
+                        }
+                    }
+
+                    const testPromises = temp.map(test_id =>
+                        getTest(test_id)
+                    );
+
+                    const testsArr = await Promise.all(testPromises)
+                    setExams(testsArr);
+
+                    localStorage.removeItem('Classrooms');
+                    localStorage.setItem('Classrooms', JSON.stringify(classroomsArr));
+                    
+                    // localStorage.removeItem('Tests');
+                    localStorage.setItem('Tests', JSON.stringify(testsArr));
+                } catch (error) {
+                    console.error(error);
                 }
-                setCourses(classroomsArr);
             }
         }
         fetchData();
     }, []);
+
 
     function expandCourses() {
         if (!coursesMenu.current.style.maxHeight) {
@@ -59,7 +109,7 @@ export const SideBar = () => {
         }
     }
 
-    const handleClick = async(_id) => {
+    const handleClick = async (_id) => {
         navigate(`/courses/${_id}`);
         // window.location.reload(false);
     }

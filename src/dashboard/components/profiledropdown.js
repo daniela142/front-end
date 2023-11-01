@@ -54,6 +54,8 @@ export const ProfileMenu = () => {
         },
       });
       localStorage.removeItem("User");
+      localStorage.removeItem("Classrooms");
+      localStorage.removeItem("Tests");
       navigate("/signIn");
     } catch (err) {
       console.log(err);
