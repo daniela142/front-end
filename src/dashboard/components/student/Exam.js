@@ -104,7 +104,9 @@ export const Exam = ({id_exam}) => {
           </div>
         </div>
       </div>
+      <div style={{backgroundColor: "#F5F5F5", width:"100%", height:"200px"}}>
 
+      </div>
     </div>
   );
 }

@@ -16,7 +16,7 @@
 .profile-box .profile-metric {
   display: flex;
   justify-content: space-between;
-  margin: 15px 0;
+  margin: 30px 0;
   font-size: 20px;
   font-weight: 200;
 }
