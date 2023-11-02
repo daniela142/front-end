@@ -6,6 +6,7 @@ import "../../style/exam.css";
 import ExamIcon from "../../svg/examIcon";
 import BadgeIcon from "../../svg/badgeIcon";
 import LoadingCircle from "../LoadingCircle";
+import BackArrow from "../../svg/backArrow";
 
 export const ExamEnd = ({marksArr, eloArr, totalMarks}) => {
     const user = JSON.parse(localStorage.getItem("User"));
@@ -98,6 +99,9 @@ export const ExamEnd = ({marksArr, eloArr, totalMarks}) => {
                     <BadgeIcon fill={selectedBadge} />
                 </div>
                 <text style={{color:eloColour}}>+ {eloGained}</text>
+            </div>
+            <div>
+                <button className="return-course-button"> <BackArrow/> Return to Course Page</button>
             </div>
         </div>
     );

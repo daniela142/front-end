@@ -2,12 +2,12 @@
     margin-top: 15px;
     margin-left: 15px;
     height: 316px;
-    width: 100%;
+    width: 108%;
     // min-width: 700px;
-
     background-color: white;
     padding-left: 24px;
     padding-right: 20px;
+    margin-bottom: 30px;
     border-radius: 20px;
     position: relative;
 
@@ -15,51 +15,56 @@
         padding-top: 15px;
         font-size: 26px;
         font-weight: 500;
-
+        margin-bottom: 10px;
         display: flex;
     }
 
     & .headings {
-        width: 100%;
+        background-color: white;
+        width: max-content;
         height: 5px;
         display: flex;
     }
 
     & .assessment-h1 {
-        margin-top: 5px;
+        background-color: white;
+        margin-top: 10px;
         font-size: 10px;
         color: #9BA5B7;
-        left: 5%;
-        position: absolute;
+        left: 2%;
+        position: relative;
         height: 16px;
+
     }
 
     & .assessment-h2 {
-        margin-top: 5px;
+        background-color: white;
+        margin-top: 10px;
         font-size: 10px;
         color: #9BA5B7;
-        left: 18%;
-        position: absolute;
+        left: 12%;
+        position: relative;
         height: 16px;
     }
 
     & .assessment-h3 {
-        margin-top: 5px;
+        background-color: white;
+        margin-top: 10px;
         font-size: 10px;
         color: #9BA5B7;
         justify-self: end;
-        left: 73%;
-        position: absolute;
+        left: 63%;
+        position: relative;
         height: 16px;
     }
 
     & .assessment-item {
-        margin-top: 15px;
+        margin-top: 10px;
+        margin-bottom: 12px;
         margin-left: 8px;
-        height: 63px;
+        height: 53px;
         width: 100%;
         text-align: justify;
-
         display: flex;
         align-items: center;
 

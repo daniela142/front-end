@@ -65,6 +65,7 @@
   background-color: #FFFFFF;
   border-radius: 12px;
   position: relative;
+  margin-bottom: 30px;
 }
 .mark-box .mark-box-wrapper {
   position: absolute;

@@ -5,8 +5,8 @@
     display: flex;
     position: fixed;
     overflow: scroll;
-    // padding-bottom: 30px;
-
+    overflow-x: hidden;
+    //padding-bottom: 30px;
 }
 
 .header {
@@ -50,12 +50,17 @@
     position: relative;
     width: 100%;
     height: 68%;
-    overflow: hidden;
+    
 }
 
 .scroll-box__wrapper {
     width: 100%;
     height: 100%;
+    overflow: hidden;
+    
+}
+
+.scroll-box__wrapper:hover{
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -65,4 +70,5 @@
     width: 100%;
     flex-direction: column;
     display: inline-flex;
+  
 }

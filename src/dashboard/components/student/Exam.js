@@ -115,7 +115,7 @@ export const Exam = ({id_exam}) => {
             <ul className="question-list">
               {
                 test?.questions?.map((question, index) => (
-                  <li style={{fontWeight: index === currentQuestion ? '600' : '400'}}>Question {index+1}</li>
+                  <li className={index === currentQuestion ? 'bold-question' : ''} style={{marginBottom:"5px"}}>Question {index+1}</li>
                 ))
               }
             </ul>

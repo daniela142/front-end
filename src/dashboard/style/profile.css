@@ -1,11 +1,12 @@
 .profile-box {
-  width: 40%;
+  width: 35%;
   min-width: 200px;
   height: 647px;
   background-color: white;
   margin-right: 20px;
   border-radius: 20px;
   position: relative;
+  margin-bottom: 30px;
 }
 .profile-box .profile-name {
   width: 100%;

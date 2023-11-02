@@ -1,7 +1,7 @@
 .courses-box {
   margin-left: 15px;
   height: 316px;
-  width: 100%;
+  width: 108%;
   background-color: white;
   padding-left: 24px;
   padding-right: 20px;
@@ -27,14 +27,16 @@
 }
 .courses-box .course-h2 {
   display: flex;
+  margin-right: 40px;
+  margin-left: none;
 }
 .courses-box .course-h3 {
   font-size: 10px;
   color: #9BA5B7;
   margin-top: 15px;
   height: 16px;
-  width: 100px;
-  text-align: center;
+  width: 85px;
+  text-align: right;
 }
 .courses-box .course-item {
   margin: 10px 0px;
@@ -65,8 +67,10 @@
   font-weight: 700px;
   font-family: "MuseoModerno";
   text-align: center;
+  margin-top: 12px;
 }
 .courses-box .course-badge {
   width: 100px;
   text-align: center;
+  margin-top: 12px;
 }/*# sourceMappingURL=courses.css.map */

@@ -102,7 +102,7 @@
 
   & .submit-q:disabled {
     background-color: #ABABAB;
-    border-color: #8A8A8A;
+    border: none;
     cursor: not-allowed;
   }
 
@@ -111,6 +111,17 @@
     flex-direction: column;
     gap: 12px;
     width: 200px;
+
+    & .question-list{
+      list-style-type: none;
+      margin-left: -8px;
+
+    }
+    
+    & .bold-question {
+      font-weight: bold;
+    }
+    
 
     & h4 {
       font-size: 16px;
@@ -202,12 +213,31 @@
       font-size: 32px;
       font-weight: 500;
       gap: 32px;
+      margin-bottom: -16px;
 
       & .rank-update-svg {
         padding-top: 8px;
         transform-origin: 50% 50%;
         transform: scale(1.66);
       }
+
+    
+    }
+
+    & .return-course-button{
+  
+      float: right;
+      outline: none;
+      border: none;
+      font-size: 15px;
+      border-radius: 8px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      background-color: #F5F5F5;
     }
   }
 }
+

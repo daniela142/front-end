@@ -30,7 +30,7 @@ export const Assessments = () => {
         <div className="assessments-box">
             <label className="course-title">Assessments</label>
 
-            <div className="headings">
+            <div>
                 <label className="assessment-h1">Date</label>
                 <label className="assessment-h2">Class</label>
                 <label className="assessment-h3">Time</label>
@@ -38,6 +38,7 @@ export const Assessments = () => {
 
             <div className="scroll-box">
                 <div className="scroll-box__wrapper">
+                    
                     <div className="scroll-box__container" role="list">
                         {tests !== null ? (
                             tests.map((test, index) => (

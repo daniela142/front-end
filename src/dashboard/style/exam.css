@@ -12,6 +12,7 @@
   padding: 25px;
   border-radius: 20px;
   max-width: 1600px;
+  height: -moz-fit-content;
   height: fit-content;
   flex: 1;
   position: relative;
@@ -90,7 +91,7 @@
 }
 .exam .submit-q:disabled {
   background-color: #ABABAB;
-  border-color: #8A8A8A;
+  border: none;
   cursor: not-allowed;
 }
 .exam .question-side {
@@ -98,6 +99,13 @@
   flex-direction: column;
   gap: 12px;
   width: 200px;
+}
+.exam .question-side .question-list {
+  list-style-type: none;
+  margin-left: -8px;
+}
+.exam .question-side .bold-question {
+  font-weight: bold;
 }
 .exam .question-side h4 {
   font-size: 16px;
@@ -177,11 +185,23 @@
   font-size: 32px;
   font-weight: 500;
   gap: 32px;
+  margin-bottom: -16px;
 }
 .exam .end-container .end-results-box .rank-update-svg {
   padding-top: 8px;
   transform-origin: 50% 50%;
   transform: scale(1.66);
 }
-
-/*# sourceMappingURL=exam.css.map */
+.exam .end-container .return-course-button {
+  float: right;
+  outline: none;
+  border: none;
+  font-size: 15px;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  background-color: #F5F5F5;
+}/*# sourceMappingURL=exam.css.map */
