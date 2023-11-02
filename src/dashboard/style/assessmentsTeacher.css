@@ -1,8 +1,8 @@
-.assessments-box {
+.assessments-box2 {
   margin-top: 15px;
   margin-left: 15px;
   height: 316px;
-  width: 108%;
+  width: 98%;
   background-color: white;
   padding-left: 24px;
   padding-right: 20px;
@@ -10,21 +10,21 @@
   border-radius: 20px;
   position: relative;
 }
-.assessments-box .course-title {
+.assessments-box2 .course-title2 {
   padding-top: 15px;
   font-size: 26px;
   font-weight: 500;
   margin-bottom: 10px;
   display: flex;
 }
-.assessments-box .headings {
+.assessments-box2 .headings2 {
   background-color: white;
   width: -moz-max-content;
   width: max-content;
   height: 5px;
   display: flex;
 }
-.assessments-box .assessment-h1 {
+.assessments-box2 .assessment-h1-2 {
   background-color: white;
   margin-top: 10px;
   font-size: 10px;
@@ -33,7 +33,7 @@
   position: relative;
   height: 16px;
 }
-.assessments-box .assessment-h2 {
+.assessments-box2 .assessment-h2-2 {
   background-color: white;
   margin-top: 10px;
   font-size: 10px;
@@ -42,17 +42,17 @@
   position: relative;
   height: 16px;
 }
-.assessments-box .assessment-h3 {
+.assessments-box2 .assessment-h3-2 {
   background-color: white;
   margin-top: 10px;
   font-size: 10px;
   color: #9BA5B7;
   justify-self: end;
-  left: 70%;
+  left: 73%;
   position: relative;
   height: 16px;
 }
-.assessments-box .assessment-item {
+.assessments-box2 .assessment-item {
   margin-top: 10px;
   margin-bottom: 12px;
   margin-left: 8px;
@@ -62,21 +62,21 @@
   display: flex;
   align-items: center;
 }
-.assessments-box .date-container {
+.assessments-box2 .date-container {
   height: 100%;
   width: 6%;
 }
-.assessments-box .date-1 {
+.assessments-box2 .date-1 {
   font-size: 10px;
   color: #9BA5B7;
   text-align: center;
 }
-.assessments-box .date-2 {
+.assessments-box2 .date-2 {
   font-size: 18px;
   color: black;
   font-weight: 700;
 }
-.assessments-box .class-container {
+.assessments-box2 .class-container {
   margin-left: 8%;
   height: 57px;
   width: 80%;
@@ -84,7 +84,7 @@
   align-items: center;
   justify-content: space-between;
 }
-.assessments-box .class-container:hover {
+.assessments-box2 .class-container:hover {
   margin-left: 8%;
   height: 57px;
   width: 80%;
@@ -95,16 +95,16 @@
   background-color: #FAFAFF;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 14px 20px 0px;
 }
-.assessments-box .class-heading {
+.assessments-box2 .class-heading {
   font-size: 16px;
   font-weight: 500;
   color: black;
 }
-.assessments-box .class-sub {
+.assessments-box2 .class-sub {
   font-size: 14px;
   color: #9BA5B7;
 }
-.assessments-box .time-container {
+.assessments-box2 .time-container {
   margin-right: min(20px, 10%);
   width: 100px;
   height: 24px;
@@ -112,19 +112,19 @@
   background-color: #E7E7FF;
   text-align: center;
 }
-.assessments-box .time-heading {
+.assessments-box2 .time-heading {
   font-size: 9px;
   font-weight: 700;
   width: 200px;
 }
-.assessments-box .loading-box {
+.assessments-box2 .loading-box {
   width: 100%;
   height: 100%;
   line-height: 200px;
   text-align: center;
 }
-.assessments-box .loading-text {
+.assessments-box2 .loading-text {
   display: inline-block;
   vertical-align: middle;
   line-height: normal;
-}/*# sourceMappingURL=assessments.css.map */
+}/*# sourceMappingURL=assessmentsTeacher.css.map */

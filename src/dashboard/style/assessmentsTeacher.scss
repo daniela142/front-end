@@ -1,8 +1,8 @@
-.assessments-box {
+.assessments-box2 {
     margin-top: 15px;
     margin-left: 15px;
     height: 316px;
-    width: 108%;
+    width: 98%;
     //min-width: 700px;
     background-color: white;
     padding-left: 24px;
@@ -11,7 +11,7 @@
     border-radius: 20px;
     position: relative;
 
-    & .course-title {
+    & .course-title2 {
         padding-top: 15px;
         font-size: 26px;
         font-weight: 500;
@@ -19,14 +19,14 @@
         display: flex;
     }
 
-    & .headings {
+    & .headings2 {
         background-color: white;
         width: max-content;
         height: 5px;
         display: flex;
     }
 
-    & .assessment-h1 {
+    & .assessment-h1-2 {
         background-color: white;
         margin-top: 10px;
         font-size: 10px;
@@ -37,7 +37,7 @@
 
     }
 
-    & .assessment-h2 {
+    & .assessment-h2-2 {
         background-color: white;
         margin-top: 10px;
         font-size: 10px;
@@ -47,13 +47,13 @@
         height: 16px;
     }
 
-    & .assessment-h3 {
+    & .assessment-h3-2 {
         background-color: white;
         margin-top: 10px;
         font-size: 10px;
         color: #9BA5B7;
         justify-self: end;
-        left: 70%;
+        left: 73%;
         position: relative;
         height: 16px;
     }
