@@ -1,5 +1,5 @@
 import React from "react";
-import "../../style/courses.css";
+import "../../style/assessments.css";
 import "../../fonts/font.css";
 
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
