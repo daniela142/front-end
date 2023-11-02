@@ -61,7 +61,7 @@ export const ExamMenu = ({id_exam}) => {
       <div className="button-position">
       
       <button className="start-exam-button" onClick={() => navigate(url.replace('menu', 'start'))}>Start Exam</button>
-      <button className="return-exam-button">Return</button>
+      <button className="return-exam-button" onClick={() => navigate(-1)} >Return</button>
       </div>
     </div>
 

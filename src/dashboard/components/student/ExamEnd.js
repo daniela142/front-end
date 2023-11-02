@@ -9,8 +9,10 @@ import LoadingCircle from "../LoadingCircle";
 import BackArrow from "../../svg/backArrow";
 
 export const ExamEnd = ({marksArr, eloArr, totalMarks}) => {
-    const user = JSON.parse(localStorage.getItem("User"));
+    const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(false);
+
+    const user = JSON.parse(localStorage.getItem("User"));
 
     let tempElo;
 
@@ -101,7 +103,7 @@ export const ExamEnd = ({marksArr, eloArr, totalMarks}) => {
                 <text style={{color:eloColour}}>+ {eloGained}</text>
             </div>
             <div>
-                <button className="return-course-button"> <BackArrow/> Return to Course Page</button>
+                <button className="return-course-button" onClick={() => navigate("/dashboard")}> <BackArrow/> Return to Home</button>
             </div>
         </div>
     );
