@@ -41,7 +41,7 @@ export const Assessments = () => {
                     <div className="scroll-box__container" role="list">
                         {tests !== null ? (
                             tests.map((test, index) => (
-                                <AssessmentItem key={index} title={test.name} datetime={test.datetime} time_limit={test.time_limit} />
+                                <AssessmentItem key={index} title={test?.name} datetime={test?.datetime} time_limit={test?.time_limit} />
                             ))
                         ) : (
                             <div className="exam-list-text"><span className="loading-text">Loading Assessments...</span></div>
