@@ -20,6 +20,7 @@ export const Exam = ({id_exam}) => {
   const [isCorrect, setIsCorrect] = useState(false);
 
   const [studentAnswers, setStudentAnswers] = useState([]);
+  const [questionElos, setQuestionElos] = useState([]);
 
   const getTest = async (test_id) => {
     setIsLoading(true);
@@ -66,6 +67,7 @@ export const Exam = ({id_exam}) => {
       else await setIsCorrect(false);
     }
     await setStudentAnswers((prevState) => [...prevState, isCorrect]);
+    await setQuestionElos((prevState) => [...prevState, test?.questions[currentQuestion]?.elo]);
     await showResultPopop();
     if (currentQuestion + 1 === test.questions.length) {
       setExamComplete(true);
@@ -124,7 +126,7 @@ export const Exam = ({id_exam}) => {
           </div>
         </div>
       </div>
-      { examComplete && <ExamEnd marksArr={studentAnswers} totalMarks={ test.questions.length } /> }      <div style={{backgroundColor: "#F5F5F5", width:"100%", height:"200px"}}>
+      { examComplete && <ExamEnd marksArr={studentAnswers} eloArr={questionElos} totalMarks={ test.questions.length } /> }      <div style={{backgroundColor: "#F5F5F5", width:"100%", height:"200px"}}>
 
       </div>
     </div>
