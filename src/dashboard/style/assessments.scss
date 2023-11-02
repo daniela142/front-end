@@ -136,4 +136,17 @@
         font-weight: 700;
         width: 200px;
     }
+
+    & .loading-box {
+        width: 100%;
+        height: 100%;
+        line-height: 200px;
+        text-align: center;
+    }
+
+    & .loading-text {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: normal;
+    }
 }

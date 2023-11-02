@@ -54,7 +54,9 @@
 .exam .options input[type=checkbox] {
   margin-right: 20px;
   cursor: pointer;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   color: #ABABAB;
   height: 18px;
   width: 18px;

@@ -45,7 +45,9 @@ export const Assessments = () => {
                                 <AssessmentItem key={index} title={test?.name} datetime={test?.datetime} time_limit={test?.time_limit} />
                             ))
                         ) : (
-                            <div className="exam-list-text"><span className="loading-text">Loading Assessments...</span></div>
+                                <div className="loading-box">
+                                    <div className="exam-list-text"><span className="loading-text">Loading Assessments...</span></div>
+                                </div> 
                         )}
                     </div>
                 </div>

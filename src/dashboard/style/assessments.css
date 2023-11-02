@@ -116,4 +116,15 @@
   font-size: 9px;
   font-weight: 700;
   width: 200px;
+}
+.assessments-box .loading-box {
+  width: 100%;
+  height: 100%;
+  line-height: 200px;
+  text-align: center;
+}
+.assessments-box .loading-text {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
 }/*# sourceMappingURL=assessments.css.map */

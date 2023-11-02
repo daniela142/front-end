@@ -46,8 +46,10 @@ export const Courses = () => {
                             classrooms.map((course, index) => (
                                 <CourseItem title={course.name} key={index} />
                             ))
-                        ) : (
-                                <div className="exam-list-text"><span className="loading-text">Loading Courses...</span></div>
+                        ) : (   
+                                <div className="loading-box">
+                                    <div className="exam-list-text"><span className="loading-text">Loading Courses...</span></div>
+                                </div> 
                         )}
                     </div>
                 </div>
