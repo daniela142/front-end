@@ -56,17 +56,17 @@ export const Exam = ({id_exam}) => {
   }, [currentQuestion]);
 
   const handleSubmit = async (studentAnswer) => {
+    let correct;
     // CheckBoxes validation
     if (test.questions[currentQuestion].type === "CheckBoxes") {
-      if (compareCheckBoxes(studentAnswer, test.questions[currentQuestion].answers)) await setIsCorrect(true);
-      else await setIsCorrect(false);
+      correct = compareCheckBoxes(studentAnswer, test.questions[currentQuestion].answers);
     }
     // MultiChoice/ShortAnswer validation
     else {
-      if (studentAnswer[0] === test.questions[currentQuestion].answers[0]) await setIsCorrect(true);
-      else await setIsCorrect(false);
+      correct = studentAnswer[0] === test.questions[currentQuestion].answers[0];
     }
-    await setStudentAnswers((prevState) => [...prevState, isCorrect]);
+    setIsCorrect(correct);
+    await setStudentAnswers((prevState) => [...prevState, correct]);
     await setQuestionElos((prevState) => [...prevState, test?.questions[currentQuestion]?.elo]);
     await showResultPopop();
     if (currentQuestion + 1 === test.questions.length) {

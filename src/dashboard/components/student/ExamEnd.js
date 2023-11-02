@@ -40,7 +40,6 @@ export const ExamEnd = ({marksArr, eloArr, totalMarks}) => {
             setEloColour(user.elo >= tempElo ? "#008000" : "#880808");
 
             localStorage.setItem("User", JSON.stringify(response.data));
-            setIsLoading(false);
         } catch (error) {
             setIsLoading(false);
             console.error(error);
@@ -48,6 +47,7 @@ export const ExamEnd = ({marksArr, eloArr, totalMarks}) => {
     }
 
     useEffect(() => {
+        setIsLoading(true);
         async function getElo() {
             // do something with marksArr here
             // can also be converted to a number if you don't care about which specific questions the student got right:
@@ -60,6 +60,7 @@ export const ExamEnd = ({marksArr, eloArr, totalMarks}) => {
             await marksArr.map((mark, index) => {
                 updateElo(user.elo, eloArr[index], marksArr[index]);
             })
+            setIsLoading(false);
 
             switch (true) {
                 case user.elo >= 0 && user.elo <= 200:
