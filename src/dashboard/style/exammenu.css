@@ -1,7 +1,7 @@
 .exam-container {
   padding: 20px 40px 20px 20px;
   width: 100%;
-  max-width: 1600px;
+  height: 118vh;
 }
 .exam-container .exam-details {
   background-color: #f5f5f5;
@@ -83,11 +83,14 @@
   margin-bottom: 20px;
   border-radius: 20px;
 }
+.exam-container.button-position {
+  margin-bottom: 30px;
+}
 .exam-container .start-exam-button {
   float: right;
-  margin-top: 25px;
-  margin-bottom: 16px;
-  right: 40px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-left: 12px;
   background-color: #4CAF50;
   color: #fff;
   border: none;
@@ -104,4 +107,26 @@
   color: #4CAF50;
   border: solid;
   border-width: 1.5px;
+}
+.exam-container .return-exam-button {
+  float: right;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-left: 12px;
+  background-color: #F5F5F5;
+  color: #7f7f7f;
+  border: solid;
+  border-width: 1.5px;
+  border-radius: 25px;
+  padding: 10px 30px;
+  font-size: 16px;
+  font-family: "Inter";
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.exam-container .return-exam-button:hover {
+  background-color: #7f7f7f;
+  color: #fff;
+  border: none;
 }/*# sourceMappingURL=exammenu.css.map */

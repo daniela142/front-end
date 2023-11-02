@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../../style/exam.css";
 import ExamIcon from "../../svg/examIcon";
 import BadgeIcon from "../../svg/badgeIcon";
+import BackArrow from "../../svg/backArrow";
 
 export const ExamEnd = ({totalMarks}) => {
 
@@ -20,6 +21,9 @@ export const ExamEnd = ({totalMarks}) => {
                 <div className='rank-update-svg'>
                     <BadgeIcon fill='#ABABAB' />
                 </div>
+            </div>
+            <div>
+                <button className="return-course-button"> <BackArrow/> Return to Course Page</button>
             </div>
         </div>
     );

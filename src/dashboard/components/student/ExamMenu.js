@@ -58,7 +58,11 @@ export const ExamMenu = ({id_exam}) => {
           <BadgesRow/>
         </div>
       </div>
+      <div className="button-position">
+      
       <button className="start-exam-button" onClick={() => navigate(url.replace('menu', 'start'))}>Start Exam</button>
+      <button className="return-exam-button">Return</button>
+      </div>
     </div>
 
 

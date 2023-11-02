@@ -30,10 +30,10 @@ export const AssessmentItem = ({title, datetime, time_limit}) => {
         <div>
             <div className="assessment-item">
                 <div className="date-container">
-                    <div style={{ textAlign: "center", height: "30%" }}>
+                    <div style={{ textAlign: "center", height: "30%", marginBottom:"5px" }}>
                         <label className="date-1"> {dayName} </label>
                     </div>
-                    <div style={{ textAlign: "center", height: "40%" }}>
+                    <div style={{ textAlign: "center", height: "40%" , marginBottom:"3px" }}>
                         <label className="date-2"> {day} </label>
                     </div>
                     <div style={{ textAlign: "center", height: "30%", marginTop: "-4px" }}>

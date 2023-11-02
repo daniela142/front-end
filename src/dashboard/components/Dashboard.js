@@ -77,6 +77,7 @@ export const Dashboard = ({page}) => {
 
     return (
         <div className="background">
+           
             <SideBar/>
 
             <div style={{ width: "100%", marginLeft: "250px" }}>        
