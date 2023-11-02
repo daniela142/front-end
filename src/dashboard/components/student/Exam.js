@@ -6,6 +6,7 @@ import {Question} from "./Question";
 import CorrectIcon from "../../svg/correctIcon";
 import IncorrectIcon from "../../svg/incorrectIcon";
 import {ExamEnd} from "./ExamEnd";
+import {CountdownTimer} from "./CountdownTimer";
 
 export const Exam = ({id_exam}) => {
   const [test, setTest] = useState({});
@@ -17,6 +18,9 @@ export const Exam = ({id_exam}) => {
 
   const [showResult, setShowResult] = useState(0);
   const [isCorrect, setIsCorrect] = useState(false);
+
+  const [studentAnswers, setStudentAnswers] = useState([]);
+  const [questionElos, setQuestionElos] = useState([]);
 
   const getTest = async (test_id) => {
     setIsLoading(true);
@@ -62,6 +66,8 @@ export const Exam = ({id_exam}) => {
       if (studentAnswer[0] === test.questions[currentQuestion].answers[0]) await setIsCorrect(true);
       else await setIsCorrect(false);
     }
+    await setStudentAnswers((prevState) => [...prevState, isCorrect]);
+    await setQuestionElos((prevState) => [...prevState, test?.questions[currentQuestion]?.elo]);
     await showResultPopop();
     if (currentQuestion + 1 === test.questions.length) {
       setExamComplete(true);
@@ -116,11 +122,11 @@ export const Exam = ({id_exam}) => {
           </div>
           <div className="side-time">
             <h4>Time Remaining</h4>
-            <p style={{marginLeft:"45px"}}>{test?.time_limit} mins 0 secs  </p>
+            <p style={{marginLeft:"45px"}}><CountdownTimer duration={test?.time_limit} /></p>
           </div>
         </div>
       </div>
-      { examComplete && <ExamEnd totalMarks={ test.questions.length } /> }      <div style={{backgroundColor: "#F5F5F5", width:"100%", height:"200px"}}>
+      { examComplete && <ExamEnd marksArr={studentAnswers} eloArr={questionElos} totalMarks={ test.questions.length } /> }      <div style={{backgroundColor: "#F5F5F5", width:"100%", height:"200px"}}>
 
       </div>
     </div>

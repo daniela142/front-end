@@ -132,8 +132,12 @@
     & .side-list {
       background-color: #FFF;
       border-radius: 20px;
-      overflow:auto;
-      
+
+      & ul {
+        max-height: 100px;
+        list-style-type: none;
+        overflow-y: scroll;
+      }
     }
 
     & .side-time {

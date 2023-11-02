@@ -5,10 +5,17 @@ import "../../fonts/font.css";
 export const Question = ({handleSubmit, question}) => {
 
     const [selectedOptions, setSelectedOptions] = useState([]);
+    const [isSubmitted, setIsSubmitted] = useState(false);
 
     useEffect(() => {
         setSelectedOptions([]);
+        setIsSubmitted(false);
     }, [question]);
+
+    const onSubmit = () => {
+        setIsSubmitted(true);
+        handleSubmit(selectedOptions);
+    }
 
     return (
         <div className="question-box">
@@ -44,7 +51,7 @@ export const Question = ({handleSubmit, question}) => {
                         />
                 )}
             </form>
-            <button className="submit-q" onClick={() => handleSubmit(selectedOptions)} disabled={selectedOptions.length === 0}>Submit</button>
+            <button className="submit-q" onClick={onSubmit} disabled={selectedOptions.length === 0 || isSubmitted}>Submit</button>
         </div>
     );
 }

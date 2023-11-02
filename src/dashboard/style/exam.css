@@ -54,9 +54,7 @@
 .exam .options input[type=checkbox] {
   margin-right: 20px;
   cursor: pointer;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   color: #ABABAB;
   height: 18px;
   width: 18px;
@@ -117,7 +115,11 @@
 .exam .question-side .side-list {
   background-color: #FFF;
   border-radius: 20px;
-  overflow: auto;
+}
+.exam .question-side .side-list ul {
+  max-height: 100px;
+  list-style-type: none;
+  overflow-y: scroll;
 }
 .exam .question-side .side-time {
   background-color: #FFF;
